@@ -1,0 +1,9 @@
+.env
+.DS_Store
+__pycache__/
+*.pyc
+mineracao_ofertas/
+produtos-modelados/
+briefing-ativo.md
+node_modules/
+.claude/
