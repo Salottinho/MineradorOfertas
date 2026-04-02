@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pack de Templates Prontos</title>
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap');
+
+:root {
+    --primary: #1a1a2e;
+    --accent: #e94560;
+    --accent-light: #ff6b6b;
+    --bg: #ffffff;
+    --bg-alt: #f8f9fa;
+    --text: #2d3436;
+    --text-light: #636e72;
+    --border: #e9ecef;
+    --gold: #f39c12;
+    --success: #00b894;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--text);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+}
+
+.container {
+    max-width: 750px;
+    margin: 0 auto;
+    padding: 40px 50px;
+}
+
+/* CAPA */
+.cover {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    color: white;
+    padding: 60px 40px;
+    page-break-after: always;
+}
+
+.cover h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3em;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, #fff 0%, #e2e2e2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.cover .subtitle {
+    font-size: 1.3em;
+    font-weight: 300;
+    color: #b2bec3;
+    margin-bottom: 40px;
+    max-width: 500px;
+}
+
+.cover .badge {
+    display: inline-block;
+    background: var(--accent);
+    color: white;
+    padding: 10px 30px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1.1em;
+    letter-spacing: 1px;
+}
+
+.cover .price {
+    margin-top: 30px;
+    font-size: 1.5em;
+    font-weight: 700;
+    color: var(--gold);
+}
+
+.cover .author {
+    margin-top: 60px;
+    font-size: 0.9em;
+    color: #636e72;
+}
+
+/* HEADINGS */
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2em;
+    font-weight: 700;
+    color: var(--primary);
+    margin: 50px 0 20px 0;
+    line-height: 1.3;
+}
+
+h2 {
+    font-size: 1.6em;
+    font-weight: 700;
+    color: var(--primary);
+    margin: 40px 0 15px 0;
+    padding-bottom: 10px;
+    border-bottom: 3px solid var(--accent);
+    display: inline-block;
+}
+
+h3 {
+    font-size: 1.25em;
+    font-weight: 600;
+    color: var(--primary);
+    margin: 30px 0 12px 0;
+}
+
+h4 {
+    font-size: 1.1em;
+    font-weight: 600;
+    color: var(--text-light);
+    margin: 20px 0 10px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* PARAGRAPHS */
+p {
+    margin-bottom: 16px;
+    text-align: justify;
+    hyphens: auto;
+}
+
+/* LISTS */
+ul, ol {
+    margin: 15px 0 15px 25px;
+}
+
+li {
+    margin-bottom: 8px;
+    padding-left: 5px;
+}
+
+li::marker {
+    color: var(--accent);
+    font-weight: 700;
+}
+
+strong {
+    font-weight: 700;
+    color: var(--primary);
+}
+
+em {
+    font-style: italic;
+    color: var(--text-light);
+}
+
+blockquote {
+    border-left: 4px solid var(--accent);
+    background: linear-gradient(135deg, #fff5f5 0%, #ffe8e8 100%);
+    padding: 20px 25px;
+    margin: 25px 0;
+    border-radius: 0 12px 12px 0;
+    font-style: italic;
+}
+
+blockquote p {
+    margin-bottom: 0;
+    color: var(--primary);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.95em;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+thead {
+    background: var(--primary);
+    color: white;
+}
+
+th {
+    padding: 14px 18px;
+    text-align: left;
+    font-weight: 600;
+}
+
+td {
+    padding: 12px 18px;
+    border-bottom: 1px solid var(--border);
+}
+
+tbody tr:nth-child(even) {
+    background: var(--bg-alt);
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border), var(--accent), var(--border), transparent);
+    margin: 40px 0;
+}
+
+/* CHECKBOX styling */
+.checkbox {
+    background: var(--bg-alt);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--accent);
+    padding: 8px 15px;
+    margin: 4px 0;
+    border-radius: 0 6px 6px 0;
+    font-size: 0.95em;
+}
+
+/* TEMPLATE BOX */
+.template-box {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border: 1px solid var(--border);
+    border-left: 5px solid var(--accent);
+    padding: 25px;
+    border-radius: 0 10px 10px 0;
+    margin: 25px 0;
+}
+
+/* PRINT STYLES */
+@media print {
+    body { font-size: 11pt; line-height: 1.6; }
+    .container { max-width: 100%; padding: 0; margin: 0; }
+    .cover {
+        min-height: auto;
+        padding: 120px 40px;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+    h1 { page-break-after: avoid; }
+    h2, h3 { page-break-after: avoid; }
+    table, blockquote, pre { page-break-inside: avoid; }
+    thead { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    a { color: var(--accent); text-decoration: none; }
+    @page { size: A4; margin: 2cm 2.5cm; }
+}
+</style>
+</head>
+<body>
+    
+    <div class="cover">
+        <div class="badge">METODO RENDA SILENCIOSA</div>
+        <h1>Pack de Templates Prontos</h1>
+        <p class="subtitle">Metodo Renda Silenciosa</p>
+        <p class="price">R$ 14,90</p>
+        <p class="author">2026 &mdash; Todos os direitos reservados</p>
+    </div>
+    
+    <div class="container">
+        <h2>PACK DE TEMPLATES PRONTOS</h2>
+<p>Metodo Renda Silenciosa</p>
+<hr />
+<h2>COMO USAR ESTES TEMPLATES</h2>
+<p>Estes templates foram criados para voce copiar, colar e adaptar para o seu produto e nicho. Nao precisa reinventar a roda — basta trocar as informacoes entre [colchetes] pelo seu produto especifico.</p>
+<p>Instrucoes rapidas:</p>
+<ol>
+<li>Escolha o template que mais combina com o seu produto e objetivo</li>
+<li>Substitua tudo que estiver entre [colchetes] pelas informacoes reais</li>
+<li>Adapte o tom para soar natural — como se fosse uma conversa, nao uma propaganda</li>
+<li>Teste diferentes versoes e veja qual traz mais resultados</li>
+<li>Os templates que mais converterem, use como base para criar variacoes</li>
+</ol>
+<p>Conteudo deste pack:<br />
+- 5 templates de anuncio para Facebook/Instagram Ads<br />
+- 3 templates de legenda para posts organicos<br />
+- 2 templates de mensagem para grupos/WhatsApp<br />
+- 1 template de pagina de pre-venda</p>
+<p>Vamos aos templates.</p>
+<hr />
+<h2>5 TEMPLATES DE ANUNCIO (Facebook/Instagram Ads)</h2>
+<h3>TEMPLATE DE ANUNCIO #1: CURIOSIDADE</h3>
+<p>[Produto: Emagrecimento]</p>
+<p>TITULO DO ANUNCIO: Ela eliminou 8kg sem academia</p>
+<p><strong>TEXTO PRINCIPAL:</strong></p>
+<p>Depois dos 35, parecia impossivel perder peso.<br />
+Ja tinha tentado dieta, cha, tudo que voce imagina.<br />
+Ate que descobriu um suplemento 100% natural que acelera o metabolismo mesmo dormindo.<br />
+Em 60 dias, os resultados falam por si.<br />
+Quer saber qual e? Clique em "Saiba Mais" e veja voce mesma.</p>
+<p>TEXTO DO TITULO (abaixo da imagem): Suplemento natural com milhares de avaliacoes positivas<br />
+BOTAO: Saiba Mais<br />
+IMAGEM SUGERIDA: Mulher sorridente com roupa fitness, produto ao lado</p>
+<hr />
+<h3>TEMPLATE DE ANUNCIO #2: PROVA SOCIAL</h3>
+<p>[Produto: Beleza/Cosmetico]</p>
+<p>TITULO DO ANUNCIO: +47.000 mulheres ja usam</p>
+<p><strong>TEXTO PRINCIPAL:</strong></p>
+<p>Esse serum anti-idade virou febre no Brasil.<br />
+A razao e simples: funciona de verdade.<br />
+Em 15 dias, as primeiras linhas de expressao comecam a suavizar.<br />
+Em 30 dias, ate suas amigas vao perceber a diferenca.<br />
+Nao e magica. E ciencia dermatologica acessivel.<br />
+Veja os resultados reais de quem ja usa.</p>
+<p>TEXTO DO TITULO: Aprovado por dermatologistas. Resultados visiveis em 15 dias.<br />
+BOTAO: Saiba Mais<br />
+IMAGEM SUGERIDA: Close do rosto de mulher com pele bonita + produto</p>
+<hr />
+<h3>TEMPLATE DE ANUNCIO #3: OFERTA/URGENCIA</h3>
+<p>[Produto: Qualquer nicho]</p>
+<p>TITULO DO ANUNCIO: Kit com 60% OFF so hoje</p>
+<p><strong>TEXTO PRINCIPAL:</strong></p>
+<p>O kit mais vendido de [categoria do produto] esta com promocao por tempo limitado.<br />
+De R$397 por apenas R$197 no kit completo.<br />
+Mais de 30.000 unidades vendidas este ano.<br />
+Aproveite antes que volte ao preco normal.<br />
+Frete gratis para todo o Brasil.</p>
+<p>TEXTO DO TITULO: Promocao por tempo limitado — estoque acabando<br />
+BOTAO: Comprar Agora<br />
+IMAGEM SUGERIDA: Produto com selo de desconto + badges "frete gratis" e "mais vendido"</p>
+<hr />
+<h3>TEMPLATE DE ANUNCIO #4: HISTORIA/IDENTIFICACAO</h3>
+<p>[Produto: Emagrecimento/Saude]</p>
+<p>TITULO DO ANUNCIO: "Achei que nunca ia conseguir..."</p>
+<p><strong>TEXTO PRINCIPAL:</strong></p>
+<p>A Claudia tem 42 anos, trabalha o dia todo e nao tem tempo para academia.<br />
+Como milhares de brasileiras, ela lutava contra a balanca ha anos.<br />
+Ate que uma amiga indicou um suplemento natural.<br />
+Sem dieta radical. Sem exercicio pesado. Sem efeitos colaterais.<br />
+3 meses depois, ela nao acredita no espelho.<br />
+Quer conhecer o mesmo produto?</p>
+<p>TEXTO DO TITULO: Milhares de mulheres ja transformaram seus corpos com este metodo<br />
+BOTAO: Saiba Mais<br />
+IMAGEM SUGERIDA: Imagem do tipo "lifestyle" — mulher comum feliz</p>
+<hr />
+<h3>TEMPLATE DE ANUNCIO #5: DIRETO AO PONTO</h3>
+<p>[Produto: Tecnologia/Gadget]</p>
+<p>TITULO DO ANUNCIO: O smartwatch que custa menos que um jantar</p>
+<p><strong>TEXTO PRINCIPAL:</strong></p>
+<p>Monitor de saude. Notificacoes no pulso. Resistente a agua.<br />
+Bateria que dura 7 dias.<br />
+E o preco? Menos de R$150.<br />
+Ja vendeu mais de 50.000 unidades no Brasil.<br />
+Veja as funcoes e cores disponiveis.</p>
+<p>TEXTO DO TITULO: Entrega rapida + garantia de 30 dias<br />
+BOTAO: Ver Produto<br />
+IMAGEM SUGERIDA: Smartwatch no pulso, fundo clean</p>
+<hr />
+<h2>3 TEMPLATES DE LEGENDA PARA POSTS ORGANICOS</h2>
+<h3>TEMPLATE ORGANICO #1: REVIEW</h3>
+<p>Titulo sugerido do post: "Testei por 30 dias e vou contar a verdade"</p>
+<p>Legenda:<br />
+Voce ja comprou algo pela internet e ficou na duvida se funcionava?<br />
+Eu resolvi testar [nome do produto] por 30 dias e anotar tudo.</p>
+<p>Semana 1: [descreva impressao inicial — embalagem, textura, etc.]<br />
+Semana 2: [descreva primeiras mudancas perceptiveis]<br />
+Semana 4: [descreva resultado final]</p>
+<p>Minha nota: X/10<br />
+Vale a pena? [Sua avaliacao honesta]</p>
+<p>Se quiser conhecer, deixei o link na bio / nos comentarios.</p>
+<h1>[nicho] #review #dicasde[nicho] #[nomedoproduto]</h1>
+<hr />
+<h3>TEMPLATE ORGANICO #2: LISTA</h3>
+<p>Titulo sugerido do post: "3 coisas que eu queria saber antes de comecar a [beneficio]"</p>
+<p>Legenda:<br />
+Se eu pudesse voltar no tempo, teria feito diferente.</p>
+<p>1 - [Dica pratica relacionada ao nicho]<br />
+Exemplo: "Nao adianta fazer dieta se voce nao resolve o metabolismo primeiro"</p>
+<p>2 - [Dica pratica relacionada ao nicho]<br />
+Exemplo: "Suplemento bom nao precisa ser caro. Precisa ter os ingredientes certos."</p>
+<p>3 - [Dica pratica + mencionando o produto naturalmente]<br />
+Exemplo: "Depois que comecei a usar [produto], entendi a diferenca entre o barato e o eficaz."</p>
+<p>Link nos comentarios para quem quiser conhecer.</p>
+<h1>dicas #[nicho] #aprendizado #saude</h1>
+<hr />
+<h3>TEMPLATE ORGANICO #3: ANTES/DEPOIS</h3>
+<p>Titulo sugerido do post: "Resultado real em [X] dias"</p>
+<p>Legenda:<br />
+Sem filtro. Sem edicao. So o resultado.</p>
+<p>Comecei a usar [produto] ha [X] dias e a diferenca fala por si.</p>
+<p>O que mudou:<br />
+- [Beneficio 1 concreto]<br />
+- [Beneficio 2 concreto]<br />
+- [Beneficio 3 concreto]</p>
+<p>Nao e propaganda. E experiencia real.<br />
+Quem quiser saber mais, link nos comentarios.</p>
+<h1>resultados #antesedepois #[nicho] #transformacao</h1>
+<hr />
+<h2>2 TEMPLATES DE MENSAGEM PARA GRUPOS/WHATSAPP</h2>
+<h3>TEMPLATE GRUPO #1: OFERTA DIRETA</h3>
+<p>Assunto: Achado do dia</p>
+<p>Mensagem:<br />
+Gente, olha essa oferta que achei!</p>
+<p>[Nome do Produto] — de R$[preco original] por R$[preco promocional]<br />
+Frete gratis<br />
+Avaliacao: 4.8/5 (mais de X avaliacoes)</p>
+<p>Para quem esta precisando de [beneficio principal], esse e o melhor custo-beneficio que encontrei.</p>
+<p>Link: [seu link de afiliado]</p>
+<p>Quem comprar, volta aqui e conta o que achou!</p>
+<hr />
+<h3>TEMPLATE GRUPO #2: RECOMENDACAO PESSOAL</h3>
+<p>Assunto: Recomendacao</p>
+<p>Mensagem:<br />
+Oi pessoal! Queria compartilhar algo que realmente fez diferenca pra mim.</p>
+<p>Eu estava [descreva o problema que o produto resolve] e uma amiga me indicou o [nome do produto].</p>
+<p>Confesso que fiquei desconfiada no inicio, mas depois de [X semanas] usando, [descreva o resultado].</p>
+<p>Se alguem aqui esta passando pelo mesmo, recomendo pelo menos dar uma olhada. O site explica tudo direitinho:</p>
+<p>Link: [seu link de afiliado]</p>
+<p>Qualquer duvida, pode me chamar!</p>
+<hr />
+<h2>1 TEMPLATE DE PAGINA DE PRE-VENDA SIMPLES</h2>
+<p>(Para usar como pagina intermediaria entre o anuncio e a pagina de vendas do produtor.<br />
+Pode ser criada no Canva Sites, WordPress, ou Google Sites — tudo gratuito.)</p>
+<h3>ESTRUTURA DA PAGINA</h3>
+<p>[TOPO — HEADLINE]<br />
+"Descubra o [Tipo de Produto] que ja ajudou mais de [X] brasileiros a [beneficio principal]"</p>
+<p>[SECAO 1 — PROBLEMA]<br />
+Voce ja tentou [descreva o problema] e nada funcionou?<br />
+Nao esta sozinha. Milhares de pessoas passam pela mesma situacao todos os dias.<br />
+O problema nao e falta de forca de vontade. E falta do metodo certo.</p>
+<p>[SECAO 2 — SOLUCAO]<br />
+O [Nome do Produto] foi desenvolvido com [ingredientes/tecnologia/diferencial].<br />
+Ele age diretamente em [mecanismo de acao simplificado].<br />
+Por isso, os resultados aparecem ja nas primeiras [X] semanas.</p>
+<p>[SECAO 3 — PROVA]<br />
+Mais de [X] unidades vendidas no Brasil.<br />
+Avaliacao media de [X]/5 estrelas.<br />
+[Opcional: 2-3 depoimentos curtos]</p>
+<p>"Comecei a usar ha 3 semanas e ja notei diferenca. Recomendo." — Maria S., 38 anos<br />
+"Achei que fosse mais um produto qualquer. Me surpreendi." — Patricia L., 45 anos<br />
+"Melhor investimento que fiz na minha saude esse ano." — Carla M., 33 anos</p>
+<p>[SECAO 4 — OFERTA]<br />
+Preco especial por tempo limitado:<br />
+Kit Completo: de R$[preco original] por R$[preco promocional]<br />
+Frete gratis + Garantia de 30 dias</p>
+<p>[BOTAO GRANDE E CHAMATIVO]<br />
+<strong>"QUERO CONHECER O PRODUTO"</strong></p>
+<p>(Link: seu link de afiliado para a pagina de vendas oficial)</p>
+<p>[RODAPE]<br />
+Este e um site de review independente. Os resultados podem variar de pessoa para pessoa.<br />
+Ao clicar no botao acima, voce sera redirecionado para o site oficial do produto.</p>
+    </div>
+</body>
+</html>

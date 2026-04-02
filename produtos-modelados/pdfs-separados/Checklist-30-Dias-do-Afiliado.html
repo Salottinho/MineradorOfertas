@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checklist 30 Dias do Afiliado</title>
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap');
+
+:root {
+    --primary: #1a1a2e;
+    --accent: #e94560;
+    --accent-light: #ff6b6b;
+    --bg: #ffffff;
+    --bg-alt: #f8f9fa;
+    --text: #2d3436;
+    --text-light: #636e72;
+    --border: #e9ecef;
+    --gold: #f39c12;
+    --success: #00b894;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--text);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+}
+
+.container {
+    max-width: 750px;
+    margin: 0 auto;
+    padding: 40px 50px;
+}
+
+/* CAPA */
+.cover {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    color: white;
+    padding: 60px 40px;
+    page-break-after: always;
+}
+
+.cover h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3em;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, #fff 0%, #e2e2e2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.cover .subtitle {
+    font-size: 1.3em;
+    font-weight: 300;
+    color: #b2bec3;
+    margin-bottom: 40px;
+    max-width: 500px;
+}
+
+.cover .badge {
+    display: inline-block;
+    background: var(--accent);
+    color: white;
+    padding: 10px 30px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1.1em;
+    letter-spacing: 1px;
+}
+
+.cover .price {
+    margin-top: 30px;
+    font-size: 1.5em;
+    font-weight: 700;
+    color: var(--gold);
+}
+
+.cover .author {
+    margin-top: 60px;
+    font-size: 0.9em;
+    color: #636e72;
+}
+
+/* HEADINGS */
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2em;
+    font-weight: 700;
+    color: var(--primary);
+    margin: 50px 0 20px 0;
+    line-height: 1.3;
+}
+
+h2 {
+    font-size: 1.6em;
+    font-weight: 700;
+    color: var(--primary);
+    margin: 40px 0 15px 0;
+    padding-bottom: 10px;
+    border-bottom: 3px solid var(--accent);
+    display: inline-block;
+}
+
+h3 {
+    font-size: 1.25em;
+    font-weight: 600;
+    color: var(--primary);
+    margin: 30px 0 12px 0;
+}
+
+h4 {
+    font-size: 1.1em;
+    font-weight: 600;
+    color: var(--text-light);
+    margin: 20px 0 10px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* PARAGRAPHS */
+p {
+    margin-bottom: 16px;
+    text-align: justify;
+    hyphens: auto;
+}
+
+/* LISTS */
+ul, ol {
+    margin: 15px 0 15px 25px;
+}
+
+li {
+    margin-bottom: 8px;
+    padding-left: 5px;
+}
+
+li::marker {
+    color: var(--accent);
+    font-weight: 700;
+}
+
+strong {
+    font-weight: 700;
+    color: var(--primary);
+}
+
+em {
+    font-style: italic;
+    color: var(--text-light);
+}
+
+blockquote {
+    border-left: 4px solid var(--accent);
+    background: linear-gradient(135deg, #fff5f5 0%, #ffe8e8 100%);
+    padding: 20px 25px;
+    margin: 25px 0;
+    border-radius: 0 12px 12px 0;
+    font-style: italic;
+}
+
+blockquote p {
+    margin-bottom: 0;
+    color: var(--primary);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.95em;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+thead {
+    background: var(--primary);
+    color: white;
+}
+
+th {
+    padding: 14px 18px;
+    text-align: left;
+    font-weight: 600;
+}
+
+td {
+    padding: 12px 18px;
+    border-bottom: 1px solid var(--border);
+}
+
+tbody tr:nth-child(even) {
+    background: var(--bg-alt);
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border), var(--accent), var(--border), transparent);
+    margin: 40px 0;
+}
+
+/* CHECKBOX styling */
+.checkbox {
+    background: var(--bg-alt);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--accent);
+    padding: 8px 15px;
+    margin: 4px 0;
+    border-radius: 0 6px 6px 0;
+    font-size: 0.95em;
+}
+
+/* TEMPLATE BOX */
+.template-box {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border: 1px solid var(--border);
+    border-left: 5px solid var(--accent);
+    padding: 25px;
+    border-radius: 0 10px 10px 0;
+    margin: 25px 0;
+}
+
+/* PRINT STYLES */
+@media print {
+    body { font-size: 11pt; line-height: 1.6; }
+    .container { max-width: 100%; padding: 0; margin: 0; }
+    .cover {
+        min-height: auto;
+        padding: 120px 40px;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+    h1 { page-break-after: avoid; }
+    h2, h3 { page-break-after: avoid; }
+    table, blockquote, pre { page-break-inside: avoid; }
+    thead { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    a { color: var(--accent); text-decoration: none; }
+    @page { size: A4; margin: 2cm 2.5cm; }
+}
+</style>
+</head>
+<body>
+    
+    <div class="cover">
+        <div class="badge">METODO RENDA SILENCIOSA</div>
+        <h1>Checklist 30 Dias do Afiliado</h1>
+        <p class="subtitle">Metodo Renda Silenciosa</p>
+        <p class="price">R$ 9,90</p>
+        <p class="author">2026 &mdash; Todos os direitos reservados</p>
+    </div>
+    
+    <div class="container">
+        <h2>CHECKLIST 30 DIAS DO AFILIADO</h2>
+<p>Metodo Renda Silenciosa</p>
+<hr />
+<h2>COMO USAR ESTE CHECKLIST</h2>
+<p>Este checklist foi feito para ser seu guia pratico durante os primeiros 30 dias como afiliado de produtos fisicos. Cada dia tem tarefas especificas com tempo estimado e investimento necessario.</p>
+<p>Como aproveitar ao maximo:</p>
+<ol>
+<li>Imprima este checklist ou salve no celular para acesso rapido</li>
+<li>Marque cada tarefa conforme for concluindo — o progresso visual motiva</li>
+<li>Siga a ordem proposta — cada semana constroi sobre a anterior</li>
+<li>Nao pule etapas, mesmo que parecam simples</li>
+<li>Ao final dos 30 dias, voce tera sua primeira estrutura de vendas funcionando</li>
+</ol>
+<p>O objetivo e claro: ao final de 4 semanas, voce tera uma maquina de vendas basica rodando com trafego pago, presenca no Pinterest, e participacao em comunidades — tudo sem aparecer.</p>
+<p>Vamos comecar.</p>
+<hr />
+<h2>SEMANA 1 — FUNDACAO (Montar toda a estrutura)</h2>
+<h3>DIA 1 — CONTAS E ACESSOS</h3>
+<p>[ ] Criar conta na Monetizze (monetizze.com.br)<br />
+[ ] Criar conta na Hotmart (hotmart.com)<br />
+[ ] Criar conta no Facebook Business Manager (business.facebook.com)<br />
+[ ] Criar conta Business no Pinterest (pinterest.com/business/create)<br />
+[ ] Criar conta no Canva (canva.com)<br />
+[ ] Anotar todos os logins em lugar seguro<br />
+Tempo estimado: 40 minutos<br />
+Investimento: R$0</p>
+<h3>DIA 2 — ESCOLHER PRODUTO</h3>
+<p>[ ] Acessar Monetizze &gt; Loja &gt; Produtos Fisicos<br />
+[ ] Filtrar por "Maior temperatura"<br />
+[ ] Analisar os 5 melhores com o checklist de 8 pontos<br />
+[ ] Escolher 1 produto principal<br />
+[ ] Solicitar afiliacao<br />
+[ ] Copiar e salvar seu link de afiliado<br />
+[ ] Estudar a pagina de vendas do produto (ler inteira)<br />
+[ ] Anotar: publico-alvo, beneficios principais, objecoes comuns<br />
+Tempo estimado: 1 hora<br />
+Investimento: R$0</p>
+<h3>DIA 3 — CRIAR MATERIAIS</h3>
+<p>[ ] Abrir Canva e buscar templates de "Facebook Ad" e "Pinterest Pin"<br />
+[ ] Criar 3 imagens de anuncio para Facebook (1080x1080)<br />
+[ ] Escrever 3 textos de anuncio diferentes (gancho + beneficio + CTA)<br />
+[ ] Criar 5 pins para Pinterest (1000x1500)<br />
+[ ] Salvar tudo numa pasta organizada<br />
+Tempo estimado: 2 horas<br />
+Investimento: R$0</p>
+<h3>DIA 4 — SUBIR PRIMEIRA CAMPANHA</h3>
+<p>[ ] Acessar Gerenciador de Anuncios do Facebook<br />
+[ ] Criar campanha: objetivo Trafego<br />
+[ ] Configurar publico (idade, genero, interesses)<br />
+[ ] Subir primeiro anuncio (imagem + texto + link)<br />
+[ ] Definir orcamento: R$20/dia<br />
+[ ] Publicar campanha<br />
+[ ] NAO MEXER por 48h<br />
+Tempo estimado: 1 hora<br />
+Investimento: R$20</p>
+<h3>DIA 5 — PINTEREST</h3>
+<p>[ ] Criar 5 paineis tematicos no Pinterest<br />
+[ ] Publicar os 5 pins criados no Dia 3<br />
+[ ] Criar mais 5 pins (total 10 publicados)<br />
+[ ] Escrever descricoes com palavras-chave<br />
+Tempo estimado: 1 hora<br />
+Investimento: R$0</p>
+<h3>DIA 6 — GRUPOS E COMUNIDADES</h3>
+<p>[ ] Buscar e entrar em 5 grupos de Facebook do nicho escolhido<br />
+[ ] Ler as regras de cada grupo<br />
+[ ] Fazer 1 comentario util em cada grupo (sem links)<br />
+[ ] Criar um grupo no Telegram: "[Nicho] — Ofertas do Dia"<br />
+[ ] Convidar 10-20 contatos para o grupo do Telegram<br />
+Tempo estimado: 45 minutos<br />
+Investimento: R$0</p>
+<h3>DIA 7 — PRIMEIRA ANALISE</h3>
+<p>[ ] Verificar metricas do Facebook Ads (impressoes, cliques, CTR)<br />
+[ ] Anotar: CPC (custo por clique), CTR (taxa de clique), alcance<br />
+[ ] Verificar se houve vendas na Monetizze<br />
+[ ] Criar mais 5 pins e publicar no Pinterest<br />
+[ ] Postar primeira oferta no grupo do Telegram<br />
+Tempo estimado: 30 minutos<br />
+Investimento: R$20 (acumulado na campanha)</p>
+<p><strong>RESULTADO ESPERADO SEMANA 1: Estrutura montada, campanha rodando, presenca no Pinterest iniciada.</strong></p>
+<hr />
+<h2>SEMANA 2 — OTIMIZACAO (Ajustar o que esta funcionando)</h2>
+<h3>DIA 8</h3>
+<p>[ ] Analisar 4 dias de dados do Facebook Ads<br />
+[ ] Se CTR abaixo de 1%: trocar imagem do anuncio<br />
+[ ] Se CTR acima de 1% mas sem vendas: verificar se o link esta correto<br />
+[ ] Publicar 5 novos pins no Pinterest</p>
+<h3>DIA 9</h3>
+<p>[ ] Testar nova variacao de texto no anuncio<br />
+[ ] Interagir em 3 grupos do Facebook (comentarios uteis)<br />
+[ ] Postar 2 ofertas no grupo do Telegram</p>
+<h3>DIA 10</h3>
+<p>[ ] Se o anuncio esta com CPC acima de R$2: pausar e criar novo anuncio<br />
+[ ] Se CPC abaixo de R$1: manter e monitorar<br />
+[ ] Criar 5 pins novos no Pinterest<br />
+[ ] Pesquisar um segundo produto como backup</p>
+<h3>DIA 11</h3>
+<p>[ ] Publicar 5 pins no Pinterest<br />
+[ ] Postar 2 ofertas no Telegram<br />
+[ ] Responder comentarios/mensagens nos grupos</p>
+<h3>DIA 12</h3>
+<p>[ ] Revisar orcamento: quanto gastou vs quanto faturou<br />
+[ ] Se ROI positivo (faturou mais do que gastou): manter<br />
+[ ] Se ROI negativo apos R$60 gastos: mudar criativo ou publico<br />
+[ ] Criar 3 novas imagens de anuncio</p>
+<h3>DIA 13</h3>
+<p>[ ] Subir nova variacao de anuncio (publico ou criativo diferente)<br />
+[ ] Publicar 5 pins no Pinterest<br />
+[ ] Postar 2 ofertas no Telegram</p>
+<h3>DIA 14</h3>
+<p>[ ] Analise semanal completa:<br />
+    - Total investido na semana<br />
+    - Total faturado em comissoes<br />
+    - Numero de cliques no link<br />
+    - Numero de vendas<br />
+    - ROI (faturado / investido)<br />
+[ ] Decidir: manter produto atual ou testar outro<br />
+[ ] Publicar 5 pins no Pinterest</p>
+<p><strong>RESULTADO ESPERADO SEMANA 2: Primeiras vendas (1-5), entendimento de quais criativos funcionam melhor.</strong></p>
+<hr />
+<h2>SEMANA 3 — ACELERACAO (Aumentar volume)</h2>
+<h3>DIA 15-16</h3>
+<p>[ ] Aumentar orcamento da campanha vencedora em 25%<br />
+[ ] Criar mais 2 variacoes de anuncio<br />
+[ ] Publicar 5 pins/dia no Pinterest<br />
+[ ] Postar diariamente no Telegram</p>
+<h3>DIA 17-18</h3>
+<p>[ ] Duplicar a campanha vencedora com publico ligeiramente diferente<br />
+[ ] Entrar em mais 5 grupos de Facebook<br />
+[ ] Interagir e recomendar produto quando oportuno<br />
+[ ] Continuar ritmo de 5 pins/dia</p>
+<h3>DIA 19-20</h3>
+<p>[ ] Analisar qual campanha performa melhor<br />
+[ ] Pausar as com ROI negativo, manter as positivas<br />
+[ ] Considerar criar um blog simples (WordPress.com gratuito)<br />
+[ ] Publicar 1 artigo de review do produto</p>
+<h3>DIA 21</h3>
+<p>[ ] Analise semanal completa (mesmo modelo da semana 2)<br />
+[ ] Calcular projecao mensal baseada nos dados atuais<br />
+[ ] Definir meta para semana 4</p>
+<p><strong>RESULTADO ESPERADO SEMANA 3: 5-15 vendas acumuladas, ROI positivo consistente, presenca no Pinterest crescendo.</strong></p>
+<hr />
+<h2>SEMANA 4 — ESCALA (Rumo a R$3k+/mes)</h2>
+<h3>DIA 22-23</h3>
+<p>[ ] Se ROI esta positivo: aumentar orcamento mais 25%<br />
+[ ] Testar segundo produto com campanha separada (R$15/dia)<br />
+[ ] Publicar mais 2 artigos no blog (se criou)<br />
+[ ] Manter ritmo de pins e posts no Telegram</p>
+<h3>DIA 24-25</h3>
+<p>[ ] Analisar segundo produto: converter ou nao?<br />
+[ ] Otimizar anuncios: matar os ruins, escalar os bons<br />
+[ ] Convidar mais pessoas para o grupo do Telegram<br />
+[ ] Publicar 5 pins/dia</p>
+<h3>DIA 26-27</h3>
+<p>[ ] Planejar estrutura para o mes seguinte<br />
+[ ] Listar 3 novos produtos para testar<br />
+[ ] Automatizar publicacao de pins (usar agendador)<br />
+[ ] Criar banco de 10 mensagens de oferta para Telegram</p>
+<h3>DIA 28-30</h3>
+<p>[ ] ANALISE FINAL DO MES:<br />
+    - Total investido no mes<br />
+    - Total faturado em comissoes<br />
+    - ROI geral<br />
+    - Melhores canais (pago vs gratuito)<br />
+    - Melhor criativo de anuncio<br />
+    - Projecao para o mes seguinte<br />
+[ ] Definir meta de faturamento para o mes 2<br />
+[ ] Celebrar suas primeiras vendas como afiliado!</p>
+<p><strong>RESULTADO ESPERADO SEMANA 4: R$500-2.000 em comissoes, estrutura funcionando, clareza do que funciona melhor para voce.</strong></p>
+<hr />
+<h3>METAS PROGRESSIVAS:</h3>
+<ul>
+<li>Mes 1: R$500 - R$2.000 (fase de aprendizado e testes)</li>
+<li>Mes 2: R$1.500 - R$3.000 (otimizacao e escala)</li>
+<li>Mes 3: R$3.000 - R$5.000 (multiplos canais rodando)</li>
+</ul>
+    </div>
+</body>
+</html>
