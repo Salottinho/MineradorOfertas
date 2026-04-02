@@ -80,55 +80,51 @@ URL: https://www.metodoromperdigital.com.br.romperdigital.com/
 
 ---
 
-## Funil Completo (Modelo para qualquer opcao)
+## Funil Completo (Quiz Funnel + Black-Safe)
 
-### Front-end: R$27-37
-- Produto principal (ebook/guia + video aulas curtas)
-- Pagina de vendas com VSL (Panda Video ou Vturb)
-- Copy modelada do Romper Digital (headline + anti-objecao + CTA urgente)
+### Entrada: Quiz Interativo Gamificado (quiz-renda-silenciosa.html)
+- 7 perguntas com cards clicaveis + barra progresso
+- Resultado personalizado com 4 faixas
+- CTA direto pro checkout
 
-### Orderbump 1: R$9,90
-- Checklist imprimivel / Planner de 21-30 dias
-- "Adicione o planner completo por apenas R$9,90"
+### Front-end: R$37 — Metodo Renda Silenciosa (ebook principal)
+- Ebook 6 capitulos completo
+- Copy black-safe (numeros quebrados, curiosity gaps, loss aversion)
 
-### Orderbump 2: R$14,90
-- Pack de receitas/templates/scripts extras
-- Complemento direto do produto principal
+### Orderbump 1: R$9,90 — Checklist 30 Dias do Afiliado
+- Planner imprimivel dia a dia, semana a semana
 
-### Upsell 1: R$47
-- Versao avancada / Modulo bonus exclusivo
-- "Desbloqueie o modulo avancado com [beneficio extra]"
-- Pagina simples com video curto + 3 bullets + CTA
+### Orderbump 2: R$14,90 — Pack Templates + Scripts
+- 5 templates anuncio + 3 legendas + 2 mensagens grupo + 1 pre-venda
 
-### Downsell: R$27
-- Versao lite do upsell 1 (sem 1-2 modulos)
-- "Leve pelo menos o essencial por metade do preco"
+### Upsell 1: R$47 — Renda Silenciosa Pro (ebook trafego avancado)
+- 3 capitulos: Facebook Ads, segmentacao, otimizacao e escala
 
-### Upsell Final: R$67-97
-- Mentoria em grupo / Acesso VIP / Comunidade
-- "Entre no grupo exclusivo com acompanhamento por 30 dias"
+### Downsell 1: R$27 — Renda Silenciosa Pro Lite
+- Versao reduzida sem cap escala
+
+### Upsell 2: R$27 — Quiz Que Vende (ebook criar funis quiz)
+- 5 capitulos: por que converte, anatomia, ferramentas, tecnico, 3 templates
+
+### Downsell 2: R$17 — Quiz Que Vende Essencial
+- So cap 3 (como criar) + cap 5 (3 templates prontos) + checklist
+
+### Ticket maximo: R$152,80/cliente
+### Ticket medio esperado: R$65-80
 
 ---
 
-## Entregaveis do Produto (a produzir)
+## Entregaveis Produzidos (100% ebook, zero video)
 
-1. **Ebook principal** (PDF, 30-50 paginas)
-   - Protocolo passo-a-passo com dias numerados
-   - Linguagem simples, visual clean
-
-2. **Video aulas curtas** (5-8 videos de 5-15min)
-   - Apresentacao do metodo
-   - Passo 1, 2, 3...
-   - Conclusao + proximos passos
-
-3. **Checklist diario** (PDF imprimivel - orderbump)
-   - Dia 1 ao Dia 21/30
-   - Checkboxes + espaco para anotacao
-
-4. **Templates/Scripts** (PDF - orderbump 2)
-   - Modelos prontos para usar
-
-5. **Area de membros** (Hotmart Club ou similar)
+1. **Ebook principal** — entregavel-renda-silenciosa.md (6 caps completos)
+2. **Checklist 30 dias** — entregavel-renda-silenciosa.md (semanas 1-4)
+3. **Pack templates** — entregavel-renda-silenciosa.md (11 templates)
+4. **Ebook Pro Trafego** — ebooks-completos-renda-silenciosa.md (3 caps)
+5. **Ebook Quiz Que Vende** — ebooks-completos-renda-silenciosa.md (5 caps)
+6. **Quiz interativo** — quiz-renda-silenciosa.html (10 telas gamificadas)
+7. **Pagina de vendas** — vendas-renda-silenciosa.html (dark mode, 8 secoes)
+8. **Copy original** — copy-renda-silenciosa.md
+9. **Copy black-safe** — copy-black-safe-renda-silenciosa.md (Facebook compliant)
 
 ---
 
@@ -162,7 +158,18 @@ URL: https://www.metodoromperdigital.com.br.romperdigital.com/
 
 ## Proximos Passos
 
-1. Escolher nicho (A, B ou C)
-2. `/AGENTE-PAGINA` -- Gera as paginas HTML completas
-3. `/AGENTE-COPY` -- Gera headlines, bullets, CTAs, garantia
-4. `/AGENTE-ENTREGAS` -- Produz os entregaveis (PDFs, scripts, etc)
+1. [x] Escolher nicho → B (Renda Extra)
+2. [x] Gerar pagina de vendas HTML
+3. [x] Gerar copy completa
+4. [x] Produzir entregaveis (ebooks, checklist, templates)
+5. [x] Criar quiz interativo gamificado
+6. [x] Reescrever copy black-safe
+7. [x] Converter videoaulas em ebooks
+8. [x] Criar ebook "Quiz Que Vende"
+9. [x] Adicionar downsell 2 (R$17)
+10. [ ] Subir quiz + pagina na Vercel/GitHub Pages
+11. [ ] Cadastrar produto na Hotmart/Kiwify
+12. [ ] Configurar orderbumps + upsells + downsells no checkout
+13. [ ] Instalar pixel Facebook na pagina + quiz
+14. [ ] Criar conta Meta Business + campanha de teste (R$20/dia)
+15. [ ] Converter ebooks .md em PDF (design no Canva)

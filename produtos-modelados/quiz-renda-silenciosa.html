@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Descubra em 60 segundos quanto voce pode faturar sem aparecer na internet">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Diagnostico Renda Silenciosa</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* ===== MARCA D'AGUA ===== */
+        /* Produto: Quiz Renda Silenciosa | Proprietario: rendasilenciosa.com.br | ID: QUIZ-20260402 */
+
+        :root {
+            --bg: #0f0f0f;
+            --surface: #1a1a1a;
+            --border: #2a2a2a;
+            --text: #e8e8e8;
+            --muted: #888888;
+            --accent: #a3e635;
+            --cta: #22c55e;
+            --cta-hover: #16a34a;
+            --accent-dim: rgba(163, 230, 53, 0.15);
+            --font-headline: 'Syne', sans-serif;
+            --font-body: 'Inter', sans-serif;
+        }
+
+        *, *::before, *::after {
+            margin: 0; padding: 0; box-sizing: border-box;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--font-body);
+            font-size: 16px;
+            line-height: 1.6;
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        .quiz-container {
+            max-width: 640px;
+            margin: 0 auto;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* ===== PROGRESS BAR ===== */
+        .progress-wrapper {
+            position: sticky;
+            top: 0;
+            background: var(--bg);
+            padding: 16px 0 12px;
+            z-index: 50;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        .progress-wrapper.visible { opacity: 1; }
+
+        .progress-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+            font-size: 13px;
+            color: var(--muted);
+        }
+        .progress-info .step { color: var(--accent); font-weight: 600; }
+        .progress-info .pct { font-weight: 600; color: var(--text); }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: var(--surface);
+            border-radius: 100px;
+            overflow: hidden;
+        }
+        .progress-fill {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, var(--cta), var(--accent));
+            border-radius: 100px;
+            transition: width 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+            position: relative;
+        }
+        .progress-fill::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            animation: shimmer 2s infinite;
+        }
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        /* ===== SCREENS ===== */
+        .screen {
+            flex: 1;
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            animation: fadeSlideIn 0.5s ease forwards;
+            padding: 20px 0;
+        }
+        .screen.active { display: flex; }
+
+        @keyframes fadeSlideIn {
+            from { opacity: 0; transform: translateY(24px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ===== TELA ABERTURA ===== */
+        .screen-intro .badge {
+            display: inline-block;
+            background: var(--accent-dim);
+            border: 1px solid rgba(163,230,53,0.3);
+            color: var(--accent);
+            font-size: 12px;
+            font-weight: 600;
+            padding: 6px 16px;
+            border-radius: 100px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 28px;
+        }
+
+        .screen-intro h1 {
+            font-family: var(--font-headline);
+            font-weight: 800;
+            font-size: clamp(24px, 5.5vw, 38px);
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+        .screen-intro h1 .hl { color: var(--accent); }
+
+        .screen-intro .sub {
+            font-size: 17px;
+            color: var(--muted);
+            max-width: 480px;
+            margin-bottom: 36px;
+        }
+
+        .btn-start {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--cta);
+            color: #0f0f0f;
+            font-family: var(--font-headline);
+            font-weight: 700;
+            font-size: 18px;
+            padding: 16px 40px;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .btn-start:hover { background: var(--cta-hover); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(34,197,94,0.3); }
+
+        .social-proof {
+            margin-top: 20px;
+            font-size: 13px;
+            color: var(--muted);
+        }
+        .social-proof .dot {
+            display: inline-block;
+            width: 8px; height: 8px;
+            background: var(--cta);
+            border-radius: 50%;
+            margin-right: 6px;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+
+        /* ===== TELAS DE PERGUNTA ===== */
+        .question-title {
+            font-family: var(--font-headline);
+            font-weight: 700;
+            font-size: clamp(20px, 4.5vw, 28px);
+            line-height: 1.3;
+            margin-bottom: 32px;
+            max-width: 520px;
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            width: 100%;
+            max-width: 480px;
+        }
+
+        .option-card {
+            background: var(--surface);
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            padding: 16px 20px;
+            font-size: 15px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-align: left;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .option-card:hover {
+            border-color: var(--accent);
+            background: rgba(163,230,53,0.05);
+        }
+        .option-card.selected {
+            border-color: var(--accent);
+            background: rgba(163,230,53,0.1);
+        }
+        .option-card .letter {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px; height: 32px;
+            border-radius: 8px;
+            background: var(--border);
+            color: var(--muted);
+            font-weight: 700;
+            font-size: 13px;
+            flex-shrink: 0;
+            transition: all 0.2s ease;
+        }
+        .option-card:hover .letter,
+        .option-card.selected .letter {
+            background: var(--accent);
+            color: #0f0f0f;
+        }
+
+        /* ===== TELA LOADING ===== */
+        .loading-screen .loader-icon {
+            width: 64px; height: 64px;
+            border: 4px solid var(--border);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 32px;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .loading-screen .loader-text {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            min-height: 28px;
+        }
+
+        .loader-bar-wrap {
+            width: 100%;
+            max-width: 320px;
+            height: 6px;
+            background: var(--surface);
+            border-radius: 100px;
+            overflow: hidden;
+        }
+        .loader-bar-inner {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, var(--cta), var(--accent));
+            border-radius: 100px;
+            transition: width 0.3s linear;
+        }
+
+        /* ===== TELA RESULTADO ===== */
+        .result-screen { text-align: left; align-items: stretch; }
+
+        .result-header {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+        .result-badge {
+            display: inline-block;
+            background: var(--accent-dim);
+            border: 1px solid rgba(163,230,53,0.3);
+            color: var(--accent);
+            font-family: var(--font-headline);
+            font-weight: 700;
+            font-size: 14px;
+            padding: 8px 20px;
+            border-radius: 100px;
+            margin-bottom: 16px;
+        }
+        .result-header h2 {
+            font-family: var(--font-headline);
+            font-weight: 800;
+            font-size: clamp(22px, 5vw, 32px);
+            line-height: 1.2;
+            margin-bottom: 8px;
+        }
+        .result-header h2 .hl { color: var(--accent); }
+        .result-revenue {
+            font-size: 17px;
+            color: var(--muted);
+        }
+        .result-revenue strong { color: var(--accent); font-weight: 700; }
+
+        .insights-box {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+        .insights-box h3 {
+            font-family: var(--font-headline);
+            font-weight: 700;
+            font-size: 16px;
+            margin-bottom: 16px;
+            color: var(--accent);
+        }
+        .insight-item {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 14px;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        .insight-item:last-child { margin-bottom: 0; }
+        .insight-item .icon {
+            flex-shrink: 0;
+            width: 24px; height: 24px;
+            background: var(--accent-dim);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            margin-top: 2px;
+        }
+
+        .problem-box {
+            background: rgba(239,68,68,0.06);
+            border: 1px solid rgba(239,68,68,0.15);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 24px;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+        .problem-box strong { color: #f87171; }
+        .problem-box .stat { color: var(--accent); font-weight: 600; }
+
+        .solution-box {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 32px;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+        .solution-box p { margin-bottom: 12px; }
+        .solution-box p:last-child { margin-bottom: 0; }
+        .solution-box strong { color: var(--accent); }
+
+        .btn-cta {
+            display: block;
+            width: 100%;
+            background: var(--cta);
+            color: #0f0f0f;
+            font-family: var(--font-headline);
+            font-weight: 700;
+            font-size: 18px;
+            padding: 18px 32px;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            text-align: center;
+            text-decoration: none;
+        }
+        .btn-cta:hover { background: var(--cta-hover); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(34,197,94,0.3); }
+
+        .btn-sub {
+            display: block;
+            text-align: center;
+            margin-top: 12px;
+            font-size: 13px;
+            color: var(--muted);
+        }
+
+        /* ===== CONFETTI ===== */
+        .confetti-piece {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            top: -10px;
+            z-index: 999;
+            animation: confettiFall 3s ease-out forwards;
+        }
+        @keyframes confettiFall {
+            0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+        }
+
+        /* ===== RESPONSIVO ===== */
+        @media (max-width: 480px) {
+            .quiz-container { padding: 16px; }
+            .option-card { padding: 14px 16px; font-size: 14px; }
+            .option-card .letter { width: 28px; height: 28px; font-size: 12px; }
+            .insights-box, .problem-box, .solution-box { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Progresso -->
+<div class="progress-wrapper" id="progressWrapper">
+    <div class="quiz-container" style="min-height:auto; padding-top:0; padding-bottom:0;">
+        <div class="progress-info">
+            <span class="step" id="stepLabel">1 de 7</span>
+            <span class="pct" id="pctLabel">0%</span>
+        </div>
+        <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+        </div>
+    </div>
+</div>
+
+<div class="quiz-container">
+
+    <!-- TELA 0: ABERTURA -->
+    <div class="screen screen-intro active" data-screen="0">
+        <div class="badge">DIAGNOSTICO GRATUITO</div>
+        <h1>Descubra em 60 Segundos <span class="hl">Quanto Voce Pode Faturar</span> Sem Aparecer na Internet</h1>
+        <p class="sub">Responda 7 perguntas rapidas e receba seu diagnostico personalizado com base no seu perfil</p>
+        <button class="btn-start" onclick="startQuiz()">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            FAZER MEU DIAGNOSTICO
+        </button>
+        <div class="social-proof">
+            <span class="dot"></span>
+            <span id="proofCount">847</span> pessoas fizeram hoje
+        </div>
+    </div>
+
+    <!-- TELAS 1-7: PERGUNTAS -->
+    <div class="screen" data-screen="1">
+        <h2 class="question-title">Quanto tempo livre voce tem por dia?</h2>
+        <div class="options">
+            <div class="option-card" onclick="selectOption(this, 1, 0)"><span class="letter">A</span>1 a 2 horas</div>
+            <div class="option-card" onclick="selectOption(this, 1, 1)"><span class="letter">B</span>2 a 4 horas</div>
+            <div class="option-card" onclick="selectOption(this, 1, 2)"><span class="letter">C</span>Mais de 4 horas</div>
+        </div>
+    </div>
+
+    <div class="screen" data-screen="2">
+        <h2 class="question-title">Ja tentou ganhar dinheiro online antes?</h2>
+        <div class="options">
+            <div class="option-card" onclick="selectOption(this, 2, 0)"><span class="letter">A</span>Nunca tentei</div>
+            <div class="option-card" onclick="selectOption(this, 2, 1)"><span class="letter">B</span>Sim, mas nao deu certo</div>
+            <div class="option-card" onclick="selectOption(this, 2, 2)"><span class="letter">C</span>Sim, e tive algum resultado</div>
+        </div>
+    </div>
+
+    <div class="screen" data-screen="3">
+        <h2 class="question-title">Quanto voce pode investir para comecar?</h2>
+        <div class="options">
+            <div class="option-card" onclick="selectOption(this, 3, 0)"><span class="letter">A</span>R$0 por enquanto</div>
+            <div class="option-card" onclick="selectOption(this, 3, 1)"><span class="letter">B</span>Ate R$50 por mes</div>
+            <div class="option-card" onclick="selectOption(this, 3, 2)"><span class="letter">C</span>Ate R$200 por mes</div>
+            <div class="option-card" onclick="selectOption(this, 3, 3)"><span class="letter">D</span>Mais de R$200 por mes</div>
+        </div>
+    </div>
+
+    <div class="screen" data-screen="4">
+        <h2 class="question-title">Voce tem medo de aparecer na internet?</h2>
+        <div class="options">
+            <div class="option-card" onclick="selectOption(this, 4, 0)"><span class="letter">A</span>Sim, muito medo</div>
+            <div class="option-card" onclick="selectOption(this, 4, 1)"><span class="letter">B</span>Um pouco, mas daria um jeito</div>
+            <div class="option-card" onclick="selectOption(this, 4, 2)"><span class="letter">C</span>Nao me importo</div>
+        </div>
+    </div>
+
+    <div class="screen" data-screen="5">
+        <h2 class="question-title">O que mais te impede de ter uma renda extra hoje?</h2>
+        <div class="options">
+            <div class="option-card" onclick="selectOption(this, 5, 0)"><span class="letter">A</span>Nao sei por onde comecar</div>
+            <div class="option-card" onclick="selectOption(this, 5, 1)"><span class="letter">B</span>Falta de tempo</div>
+            <div class="option-card" onclick="selectOption(this, 5, 2)"><span class="letter">C</span>Medo de perder dinheiro</div>
+            <div class="option-card" onclick="selectOption(this, 5, 3)"><span class="letter">D</span>Ja tentei e nao deu certo</div>
+        </div>
+    </div>
+
+    <div class="screen" data-screen="6">
+        <h2 class="question-title">Qual faixa de renda extra voce quer atingir?</h2>
+        <div class="options">
+            <div class="option-card" onclick="selectOption(this, 6, 0)"><span class="letter">A</span>R$1.000 a R$2.000 por mes</div>
+            <div class="option-card" onclick="selectOption(this, 6, 1)"><span class="letter">B</span>R$3.000 a R$5.000 por mes</div>
+            <div class="option-card" onclick="selectOption(this, 6, 2)"><span class="letter">C</span>R$5.000 a R$10.000 por mes</div>
+            <div class="option-card" onclick="selectOption(this, 6, 3)"><span class="letter">D</span>Mais de R$10.000 por mes</div>
+        </div>
+    </div>
+
+    <div class="screen" data-screen="7">
+        <h2 class="question-title">Quando voce quer comecar a ver resultados?</h2>
+        <div class="options">
+            <div class="option-card" onclick="selectOption(this, 7, 0)"><span class="letter">A</span>Esta semana, o quanto antes</div>
+            <div class="option-card" onclick="selectOption(this, 7, 1)"><span class="letter">B</span>Nos proximos 30 dias</div>
+            <div class="option-card" onclick="selectOption(this, 7, 2)"><span class="letter">C</span>Nao tenho pressa</div>
+        </div>
+    </div>
+
+    <!-- TELA 8: LOADING -->
+    <div class="screen loading-screen" data-screen="8">
+        <div class="loader-icon"></div>
+        <div class="loader-text" id="loaderText">Analisando suas respostas...</div>
+        <div class="loader-bar-wrap">
+            <div class="loader-bar-inner" id="loaderBar"></div>
+        </div>
+    </div>
+
+    <!-- TELA 9: RESULTADO -->
+    <div class="screen result-screen" data-screen="9">
+        <div class="result-header">
+            <div class="result-badge" id="resultBadge">PERFIL AVANCADO</div>
+            <h2>Seu Diagnostico: <span class="hl" id="resultLevel">Perfil Avancado</span></h2>
+            <p class="result-revenue">Potencial estimado: <strong id="resultRange">R$3.000 a R$5.000/mes</strong></p>
+        </div>
+
+        <div class="insights-box">
+            <h3>Seus 3 Insights Personalizados</h3>
+            <div id="insightsContainer"></div>
+        </div>
+
+        <div class="problem-box">
+            <strong>O problema:</strong> voce nao tem o METODO certo. <span class="stat">93% das pessoas com seu perfil falharam</span> por falta de um sistema testado e validado. Nao e falta de capacidade -- e falta de direcao.
+        </div>
+
+        <div class="solution-box">
+            <p>Existe um <strong>metodo silencioso</strong> que pessoas com exatamente o seu perfil estao usando para gerar renda todos os meses -- sem aparecer, sem criar conteudo, sem gravar videos.</p>
+            <p>Ele funciona com <strong>produtos fisicos reais</strong>, com demanda comprovada, usando uma operacao simples que cabe em qualquer rotina.</p>
+        </div>
+
+        <a href="#checkout" class="btn-cta" id="ctaButton">QUERO CONHECER O METODO</a>
+        <span class="btn-sub">Acesso imediato -- Garantia de 7 dias</span>
+    </div>
+
+</div>
+
+<script>
+/* ===== VERIFICACAO DE DOMINIO ===== */
+(function(){
+    var d = window.location.hostname;
+    var allowed = ['rendasilenciosa.com.br','www.rendasilenciosa.com.br','localhost','127.0.0.1',''];
+    if (allowed.indexOf(d) === -1) {
+        document.body.innerHTML = '<div style="text-align:center;padding:60px;color:#888;font-family:sans-serif;"><h2>Acesso nao autorizado</h2><p>Este quiz so pode ser acessado em rendasilenciosa.com.br</p></div>';
+    }
+})();
+
+/* ===== BLOQUEIO INSPECAO ===== */
+document.addEventListener('contextmenu', function(e){ e.preventDefault(); });
+document.addEventListener('keydown', function(e){
+    if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J' || e.key === 'C')) || (e.ctrlKey && e.key === 'u')) {
+        e.preventDefault();
+    }
+});
+
+/* ===== ESTADO ===== */
+var answers = [];
+var currentScreen = 0;
+var totalQuestions = 7;
+
+/* ===== VERIFICA LOCALSTORAGE ===== */
+(function(){
+    try {
+        var saved = localStorage.getItem('quiz_rs_done');
+        if (saved) {
+            var data = JSON.parse(saved);
+            if (data && data.answers && data.answers.length === 7) {
+                answers = data.answers;
+                showScreen(9);
+                renderResult();
+                document.getElementById('progressWrapper').classList.add('visible');
+                updateProgress(7);
+            }
+        }
+    } catch(e) {}
+})();
+
+/* ===== SOCIAL PROOF RANDOMIZACAO ===== */
+(function(){
+    var base = 700 + Math.floor(Math.random() * 400);
+    document.getElementById('proofCount').textContent = base;
+})();
+
+/* ===== FUNCOES ===== */
+function showScreen(n) {
+    var screens = document.querySelectorAll('.screen');
+    screens.forEach(function(s){ s.classList.remove('active'); s.style.animation = 'none'; });
+    var target = document.querySelector('[data-screen="'+n+'"]');
+    if (target) {
+        // Force reflow for animation restart
+        void target.offsetWidth;
+        target.style.animation = '';
+        target.classList.add('active');
+    }
+    currentScreen = n;
+}
+
+function updateProgress(questionNum) {
+    var pct = Math.round((questionNum / totalQuestions) * 100);
+    document.getElementById('progressFill').style.width = pct + '%';
+    document.getElementById('pctLabel').textContent = pct + '%';
+    document.getElementById('stepLabel').textContent = Math.min(questionNum, totalQuestions) + ' de ' + totalQuestions;
+}
+
+function startQuiz() {
+    document.getElementById('progressWrapper').classList.add('visible');
+    updateProgress(0);
+    showScreen(1);
+    updateProgress(1);
+}
+
+function selectOption(el, questionNum, value) {
+    // Visual feedback
+    var siblings = el.parentElement.querySelectorAll('.option-card');
+    siblings.forEach(function(s){ s.classList.remove('selected'); });
+    el.classList.add('selected');
+
+    // Store answer
+    answers[questionNum - 1] = value;
+
+    // Advance after brief delay
+    setTimeout(function(){
+        if (questionNum < totalQuestions) {
+            showScreen(questionNum + 1);
+            updateProgress(questionNum + 1);
+        } else {
+            showScreen(8);
+            updateProgress(totalQuestions);
+            runLoader();
+        }
+    }, 400);
+}
+
+function runLoader() {
+    var texts = ['Analisando suas respostas...', 'Calculando seu potencial...', 'Analisando seu perfil...', 'Montando seu plano personalizado...'];
+    var bar = document.getElementById('loaderBar');
+    var label = document.getElementById('loaderText');
+    var step = 0;
+    var totalTime = 4000;
+    var interval = totalTime / texts.length;
+
+    function tick() {
+        if (step < texts.length) {
+            label.textContent = texts[step];
+            var pct = Math.round(((step + 1) / texts.length) * 100);
+            bar.style.width = pct + '%';
+            step++;
+            if (step < texts.length) {
+                setTimeout(tick, interval);
+            } else {
+                setTimeout(function(){
+                    renderResult();
+                    showScreen(9);
+                    launchConfetti();
+                    // Save to localStorage
+                    try {
+                        localStorage.setItem('quiz_rs_done', JSON.stringify({ answers: answers, ts: Date.now() }));
+                    } catch(e){}
+                }, interval);
+            }
+        }
+    }
+    tick();
+}
+
+function calculateScore() {
+    /* Pesos:
+       P1 (tempo): 0=1, 1=2, 2=3
+       P2 (experiencia): 0=1, 1=2, 2=3
+       P3 (investimento): 0=0, 1=1, 2=2, 3=3 — peso 2x
+       P4 (medo aparecer): todos ganham bonus (o metodo nao precisa aparecer)
+       P5 (impedimento): 0=1, 1=1, 2=1, 3=1
+       P6 (meta): 0=1, 1=2, 2=3, 3=4 — peso 2x
+       P7 (urgencia): 0=3, 1=2, 2=1
+    */
+    var score = 0;
+    score += (answers[0] || 0) + 1;                  // P1: 1-3
+    score += (answers[1] || 0) + 1;                  // P2: 1-3
+    score += (answers[2] || 0) * 2;                  // P3: 0-6 (peso 2x)
+    score += 2;                                       // P4: bonus fixo
+    score += 1;                                       // P5: base
+    score += ((answers[5] || 0) + 1) * 2;            // P6: 2-8 (peso 2x)
+    score += [3, 2, 1][answers[6] || 0];             // P7: 1-3
+    return score; // Range: ~8 a ~26
+}
+
+function renderResult() {
+    var score = calculateScore();
+    var level, range, badgeText, insights = [];
+
+    // Faixas (sempre positivas)
+    if (score >= 20) {
+        level = 'Acelerador';
+        badgeText = 'PERFIL ACELERADOR';
+        range = 'R$4.500 a R$8.200/mes';
+    } else if (score >= 15) {
+        level = 'Avancado';
+        badgeText = 'PERFIL AVANCADO';
+        range = 'R$3.000 a R$5.400/mes';
+    } else if (score >= 10) {
+        level = 'Promissor';
+        badgeText = 'PERFIL PROMISSOR';
+        range = 'R$1.800 a R$3.600/mes';
+    } else {
+        level = 'Iniciante Estrategico';
+        badgeText = 'PERFIL INICIANTE ESTRATEGICO';
+        range = 'R$1.200 a R$2.400/mes';
+    }
+
+    // Insights personalizados baseados nas respostas
+    // P1 - Tempo
+    if (answers[0] === 0) {
+        insights.push('Com 1-2h por dia, voce se encaixa no perfil de quem opera no modo "piloto automatico" -- ideal para o metodo silencioso.');
+    } else if (answers[0] === 1) {
+        insights.push('Com 2-4h disponiveis, voce tem tempo suficiente para montar e escalar a operacao rapidamente.');
+    } else {
+        insights.push('Com mais de 4h livres, voce pode acelerar os resultados e potencialmente dobrar o faturamento nos primeiros 60 dias.');
+    }
+
+    // P2 - Experiencia
+    if (answers[1] === 0) {
+        insights.push('Comecar do zero e uma vantagem: voce nao tem vicios de metodos que nao funcionam. O sistema foi criado exatamente para quem nunca vendeu online.');
+    } else if (answers[1] === 1) {
+        insights.push('Voce ja tentou e nao deu certo -- isso acontece com 87% das pessoas antes de encontrar o metodo certo. A diferenca e ter um sistema validado.');
+    } else {
+        insights.push('Voce ja tem experiencia, o que significa que pode aplicar o metodo mais rapido e ver resultados em menos tempo que a media.');
+    }
+
+    // P4 + P5 combinados
+    if (answers[3] === 0) {
+        insights.push('O metodo foi projetado para quem tem medo de aparecer: 100% das operacoes sao feitas nos bastidores, sem camera, sem stories, sem conteudo.');
+    } else if (answers[4] === 0 || answers[4] === 3) {
+        insights.push('A falta de direcao e o impedimento #1 -- e exatamente o que o metodo resolve: um passo a passo diario, do dia 1 ao dia 30.');
+    } else {
+        insights.push('Seu perfil mostra que voce tem disposicao e clareza. So falta o sistema certo para converter isso em faturamento real.');
+    }
+
+    // Render
+    document.getElementById('resultBadge').textContent = badgeText;
+    document.getElementById('resultLevel').textContent = 'Perfil ' + level;
+    document.getElementById('resultRange').textContent = range;
+
+    var container = document.getElementById('insightsContainer');
+    container.innerHTML = '';
+    var icons = ['\u2713', '\u26A1', '\u2192'];
+    insights.forEach(function(text, i){
+        var item = document.createElement('div');
+        item.className = 'insight-item';
+        item.innerHTML = '<div class="icon">' + icons[i] + '</div><div>' + text + '</div>';
+        container.appendChild(item);
+    });
+}
+
+function launchConfetti() {
+    var colors = ['#a3e635', '#22c55e', '#f59e0b', '#3b82f6', '#ec4899'];
+    for (var i = 0; i < 50; i++) {
+        (function(delay){
+            setTimeout(function(){
+                var piece = document.createElement('div');
+                piece.className = 'confetti-piece';
+                piece.style.left = Math.random() * 100 + 'vw';
+                piece.style.background = colors[Math.floor(Math.random() * colors.length)];
+                piece.style.borderRadius = Math.random() > 0.5 ? '50%' : '2px';
+                piece.style.width = (6 + Math.random() * 8) + 'px';
+                piece.style.height = (6 + Math.random() * 8) + 'px';
+                piece.style.animationDuration = (2 + Math.random() * 2) + 's';
+                piece.style.animationDelay = '0s';
+                document.body.appendChild(piece);
+                setTimeout(function(){ piece.remove(); }, 4000);
+            }, delay);
+        })(Math.random() * 1000);
+    }
+}
+</script>
+
+</body>
+</html>
