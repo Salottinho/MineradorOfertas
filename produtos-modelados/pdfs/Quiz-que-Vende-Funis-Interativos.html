@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz que Vende - Funis Interativos</title>
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap');
+
+:root {
+    --primary: #1a1a2e;
+    --accent: #e94560;
+    --accent-light: #ff6b6b;
+    --bg: #ffffff;
+    --bg-alt: #f8f9fa;
+    --text: #2d3436;
+    --text-light: #636e72;
+    --border: #e9ecef;
+    --gold: #f39c12;
+    --success: #00b894;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--text);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+}
+
+.container {
+    max-width: 750px;
+    margin: 0 auto;
+    padding: 40px 50px;
+}
+
+/* CAPA */
+.cover {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    color: white;
+    padding: 60px 40px;
+    page-break-after: always;
+}
+
+.cover h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3em;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, #fff 0%, #e2e2e2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.cover .subtitle {
+    font-size: 1.3em;
+    font-weight: 300;
+    color: #b2bec3;
+    margin-bottom: 40px;
+    max-width: 500px;
+}
+
+.cover .badge {
+    display: inline-block;
+    background: var(--accent);
+    color: white;
+    padding: 10px 30px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1.1em;
+    letter-spacing: 1px;
+}
+
+.cover .author {
+    margin-top: 60px;
+    font-size: 0.9em;
+    color: #636e72;
+}
+
+/* HEADINGS */
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2em;
+    font-weight: 700;
+    color: var(--primary);
+    margin: 50px 0 20px 0;
+    line-height: 1.3;
+}
+
+h2 {
+    font-size: 1.6em;
+    font-weight: 700;
+    color: var(--primary);
+    margin: 40px 0 15px 0;
+    padding-bottom: 10px;
+    border-bottom: 3px solid var(--accent);
+    display: inline-block;
+}
+
+h3 {
+    font-size: 1.25em;
+    font-weight: 600;
+    color: var(--primary);
+    margin: 30px 0 12px 0;
+}
+
+h4 {
+    font-size: 1.1em;
+    font-weight: 600;
+    color: var(--text-light);
+    margin: 20px 0 10px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* PARAGRAPHS */
+p {
+    margin-bottom: 16px;
+    text-align: justify;
+    hyphens: auto;
+}
+
+/* LISTS */
+ul, ol {
+    margin: 15px 0 15px 25px;
+}
+
+li {
+    margin-bottom: 8px;
+    padding-left: 5px;
+}
+
+li::marker {
+    color: var(--accent);
+    font-weight: 700;
+}
+
+/* STRONG / EM */
+strong {
+    font-weight: 700;
+    color: var(--primary);
+}
+
+em {
+    font-style: italic;
+    color: var(--text-light);
+}
+
+/* BLOCKQUOTES - dicas / destaques */
+blockquote {
+    border-left: 4px solid var(--accent);
+    background: linear-gradient(135deg, #fff5f5 0%, #ffe8e8 100%);
+    padding: 20px 25px;
+    margin: 25px 0;
+    border-radius: 0 12px 12px 0;
+    font-style: italic;
+}
+
+blockquote p {
+    margin-bottom: 0;
+    color: var(--primary);
+}
+
+/* TABLES */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.95em;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+thead {
+    background: var(--primary);
+    color: white;
+}
+
+th {
+    padding: 14px 18px;
+    text-align: left;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+
+td {
+    padding: 12px 18px;
+    border-bottom: 1px solid var(--border);
+}
+
+tbody tr:nth-child(even) {
+    background: var(--bg-alt);
+}
+
+tbody tr:hover {
+    background: #eef2ff;
+}
+
+/* CODE / PRE */
+code {
+    background: var(--bg-alt);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.9em;
+    color: var(--accent);
+}
+
+pre {
+    background: var(--primary);
+    color: #dfe6e9;
+    padding: 20px;
+    border-radius: 8px;
+    overflow-x: auto;
+    margin: 20px 0;
+    font-size: 0.9em;
+    line-height: 1.6;
+}
+
+pre code {
+    background: none;
+    color: inherit;
+    padding: 0;
+}
+
+/* HR - section breaks */
+hr {
+    border: none;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border), var(--accent), var(--border), transparent);
+    margin: 40px 0;
+}
+
+/* HIGHLIGHT BOXES */
+.highlight-box {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border: 1px solid var(--border);
+    border-left: 5px solid var(--accent);
+    padding: 25px;
+    border-radius: 0 10px 10px 0;
+    margin: 25px 0;
+}
+
+/* SUMARIO styling */
+.sumario {
+    background: var(--bg-alt);
+    padding: 30px 40px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    margin: 30px 0;
+}
+
+.sumario p {
+    font-family: 'Inter', monospace;
+    margin-bottom: 8px;
+    font-size: 0.95em;
+}
+
+/* CHAPTER HEADER */
+.chapter-header {
+    background: linear-gradient(135deg, var(--primary) 0%, #16213e 100%);
+    color: white;
+    padding: 40px;
+    border-radius: 12px;
+    margin: 40px 0 30px 0;
+    page-break-before: always;
+}
+
+.chapter-header h2 {
+    color: white;
+    border: none;
+    display: block;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8em;
+}
+
+/* PAGE NUMBERS */
+.page-footer {
+    text-align: center;
+    color: var(--text-light);
+    font-size: 0.8em;
+    padding: 20px 0;
+    border-top: 1px solid var(--border);
+    margin-top: 60px;
+}
+
+/* PRINT STYLES */
+@media print {
+    body {
+        font-size: 11pt;
+        line-height: 1.6;
+    }
+
+    .container {
+        max-width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    .cover {
+        min-height: auto;
+        padding: 120px 40px;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    h1 { page-break-after: avoid; }
+    h2, h3 { page-break-after: avoid; }
+
+    table, blockquote, pre {
+        page-break-inside: avoid;
+    }
+
+    .chapter-header {
+        page-break-before: always;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    thead {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    tbody tr:nth-child(even) {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+
+    @page {
+        size: A4;
+        margin: 2cm 2.5cm;
+    }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .container { padding: 20px; }
+    .cover h1 { font-size: 2em; }
+    h1 { font-size: 1.8em; }
+    h2 { font-size: 1.4em; }
+}
+</style>
+</head>
+<body>
+    
+    <div class="cover">
+        <div class="badge">METODO RENDA SILENCIOSA</div>
+        <h1>Quiz que Vende - Funis Interativos</h1>
+        <p class="subtitle">Como Criar Funis Interativos que Convertem 3x Mais</p>
+        <p class="author">2026 &mdash; Todos os direitos reservados</p>
+    </div>
+    
+    <div class="container">
+        <h1>EBOOK 2: QUIZ QUE VENDE</h1>
+<h2>Como Criar Funis Interativos que Convertem 3x Mais</h2>
+<h3>Preco: R$27 (Upsell 2)</h3>
+<hr />
+<h2>SUMARIO</h2>
+<p>Introducao ............................................................. pg 3<br />
+Capitulo 1 - Por que Quiz Funnels Convertem 2-3x Mais ................. pg 5<br />
+Capitulo 2 - Anatomia de um Quiz que Vende ............................. pg 14<br />
+Capitulo 3 - Como Criar Seu Quiz do Zero sem Saber Programar .......... pg 24<br />
+Capitulo 4 - Conectando o Quiz ao Checkout + Pixel + Remarketing ....... pg 35<br />
+Capitulo 5 - Templates Prontos: 3 Modelos de Quiz para Copiar ......... pg 44<br />
+Conclusao + CTA ........................................................ pg 56</p>
+<hr />
+<h2>INTRODUCAO</h2>
+<p>Voce ja parou para pensar por que e tao dificil fazer alguem comprar algo na internet? A pessoa ve seu anuncio, clica, chega na pagina de vendas... e vai embora. Estatisticamente, apenas 1-3% das pessoas que visitam uma pagina de vendas compram. As outras 97% somem para sempre.</p>
+<p>E se existisse uma forma de transformar essa experiencia? Em vez de jogar a pessoa numa pagina cheia de texto pedindo que ela compre, voce primeiro ENGAJA ela com perguntas sobre o problema que ela tem. Ela responde uma, depois outra, depois outra. Sem perceber, ela investiu 2-3 minutos do tempo dela. E no final, voce mostra o produto como a solucao PERSONALIZADA para as respostas que ela deu.</p>
+<p>Isso e um quiz funnel. E os numeros nao mentem: quiz funnels convertem em media 2 a 3 vezes mais do que paginas de vendas tradicionais.</p>
+<p>Este ebook vai te ensinar exatamente como criar quizzes que vendem, passo a passo, sem precisar saber programar. Voce vai aprender a psicologia por tras do funcionamento, a estrutura das perguntas, as ferramentas gratuitas para montar, como conectar ao checkout e ainda vai receber 3 templates prontos para os nichos mais lucrativos.</p>
+<p>Vamos direto ao que interessa.</p>
+<hr />
+<h2>CAPITULO 1 — POR QUE QUIZ FUNNELS CONVERTEM 2-3X MAIS</h2>
+<p>Este capitulo nao e teoria academica. E uma explicacao pratica de por que quizzes funcionam tao bem para vender, com dados reais e exemplos do mercado brasileiro.</p>
+<h3>1.1 Os Dados: Quiz vs Pagina de Vendas Tradicional</h3>
+<p>Antes de tudo, os numeros. Diversas pesquisas e cases de mercado mostram resultados consistentes:</p>
+<ul>
+<li>Taxa de conversao media de pagina de vendas tradicional: 1-3%</li>
+<li>Taxa de conversao media de quiz funnel: 3-8%</li>
+<li>Taxa de conclusao de quizzes (pessoas que comecam e terminam): 70-85%</li>
+<li>Tempo medio de engajamento em quiz: 2-4 minutos (vs 30-60 segundos em pagina de vendas)</li>
+<li>Custo por lead via quiz: 30-50% menor que formularios tradicionais</li>
+</ul>
+<p>Um caso real do mercado brasileiro de infoprodutos: um produtor de suplemento de emagrecimento trocou sua pagina de vendas tradicional por um quiz de 7 perguntas que direcionava para o mesmo checkout. O resultado:</p>
+<ul>
+<li>Antes (pagina tradicional): 1,8% de conversao, CPA de R$42</li>
+<li>Depois (quiz funnel): 4,2% de conversao, CPA de R$19</li>
+<li>Aumento de vendas: 133% com o MESMO trafego</li>
+</ul>
+<p>Esses numeros se repetem em praticamente todos os nichos. Mas por que isso acontece? A resposta esta na psicologia.</p>
+<h3>1.2 A Psicologia dos Micro-Compromissos</h3>
+<p>O principio psicologico mais importante por tras dos quizzes se chama "micro-commitments" (micro-compromissos). Funciona assim:</p>
+<p>Quando voce pede para alguem fazer algo grande (como comprar um produto de R$150), a resistencia natural e alta. Mas quando voce pede algo pequeno primeiro (responder uma pergunta simples), a resistencia e quase zero. E cada pequena acao que a pessoa realiza aumenta o comprometimento dela com o processo.</p>
+<p>Na pratica:</p>
+<ol>
+<li>A pessoa clica no anuncio → primeiro micro-compromisso</li>
+<li>Responde a pergunta 1 ("Qual sua maior dificuldade com peso?") → segundo micro-compromisso</li>
+<li>Responde a pergunta 2 → terceiro</li>
+<li>Responde a pergunta 3 → quarto</li>
+<li>...</li>
+<li>Depois de 5-7 perguntas, ela investiu tempo e energia. Sair agora parece "desperdicio"</li>
+<li>O resultado personalizado aparece e recomenda o produto → a venda parece natural, nao forcada</li>
+</ol>
+<p>Isso se conecta com outro principio: o "commitment and consistency bias" (vies de compromisso e consistencia), documentado pelo psicologo Robert Cialdini. As pessoas tendem a agir de forma consistente com acoes anteriores. Se voce ja respondeu 5 perguntas sobre emagrecimento, e muito mais provavel que voce aceite uma recomendacao de produto para emagrecimento.</p>
+<h3>1.3 O Efeito de Personalizacao</h3>
+<p>Outro fator poderoso: as pessoas valorizam muito mais algo que parece feito sob medida para elas.</p>
+<p>Uma pagina de vendas mostra o MESMO texto para todo mundo. O mesmo headline, os mesmos beneficios, o mesmo CTA. O quiz, por outro lado, coleta informacoes sobre a pessoa e usa essas informacoes para personalizar a recomendacao.</p>
+<p>Exemplo: quiz sobre skincare</p>
+<ul>
+<li>Se a pessoa diz que tem pele oleosa → o resultado fala sobre controle de oleosidade e recomenda o produto nesse angulo</li>
+<li>Se a pessoa diz que tem pele seca → o resultado fala sobre hidratacao profunda e recomenda o mesmo produto por outro angulo</li>
+<li>Se a pessoa diz que tem manchas → o resultado fala sobre uniformizacao do tom e recomenda o produto por outro angulo ainda</li>
+</ul>
+<p>O produto pode ser o MESMO. Mas a percepcao da pessoa e que aquela recomendacao foi feita especificamente para ela. Isso aumenta drasticamente a confianca e a conversao.</p>
+<h3>1.4 A Gamificacao Natural</h3>
+<p>Quizzes ativam o instinto de jogo que todas as pessoas tem. Pensando bem, quizzes existem desde sempre: testes de revista, questionarios de personalidade, "Qual personagem de Friends voce seria?". As pessoas GOSTAM de responder perguntas sobre si mesmas.</p>
+<p>Quando voce transforma uma venda em um "jogo" com perguntas, barra de progresso e resultado no final, voce remove a sensacao de "estao tentando me vender algo" e substitui por "estou participando de algo interativo". A barreira de defesa contra vendas cai.</p>
+<p>Elementos de gamificacao que aumentam a conversao:<br />
+- Barra de progresso (mostra quanto falta para o resultado)<br />
+- Feedback visual a cada resposta (ex: icone de "certo" ou animacao)<br />
+- Contagem de perguntas ("Pergunta 3 de 7")<br />
+- Suspense sobre o resultado ("Aguarde, estamos analisando suas respostas...")<br />
+- Resultado com "score" ou "perfil" personalizado</p>
+<h3>1.5 Quiz como Filtro de Qualificacao</h3>
+<p>Existe ainda uma vantagem pratica que poucas pessoas mencionam: o quiz funciona como filtro de leads.</p>
+<p>Em uma pagina de vendas tradicional, voce nao sabe nada sobre quem esta visitando. O quiz te da informacoes valiosas:</p>
+<ul>
+<li>Qual a dor principal da pessoa</li>
+<li>Qual a intensidade do problema</li>
+<li>O que ela ja tentou antes</li>
+<li>Quanto ela esta disposta a investir</li>
+<li>Qual o perfil demografico</li>
+</ul>
+<p>Com essas informacoes, voce pode:<br />
+- Direcionar para o produto/kit mais adequado (aumentando ticket medio)<br />
+- Personalizar o email de followup (se capturar o email)<br />
+- Criar segmentos de remarketing muito mais precisos<br />
+- Identificar quais dores do publico geram mais vendas</p>
+<p>Isso transforma o quiz em uma ferramenta de inteligencia de mercado, alem de ferramenta de venda.</p>
+<h3>Resumo do Capitulo 1</h3>
+<table>
+<thead>
+<tr>
+<th>Por que quizzes convertem mais</th>
+<th>Impacto</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Micro-compromissos</td>
+<td>Cada resposta aumenta comprometimento</td>
+</tr>
+<tr>
+<td>Personalizacao</td>
+<td>Resultado parece "feito para mim"</td>
+</tr>
+<tr>
+<td>Gamificacao</td>
+<td>Remove barreira de defesa contra vendas</td>
+</tr>
+<tr>
+<td>Qualificacao</td>
+<td>Filtra e segmenta leads automaticamente</td>
+</tr>
+<tr>
+<td>Dados</td>
+<td>2-3x mais conversao vs pagina tradicional</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>CAPITULO 2 — ANATOMIA DE UM QUIZ QUE VENDE</h2>
+<p>Agora que voce entende POR QUE quizzes funcionam, vamos ao COMO. Neste capitulo, voce vai aprender a estrutura exata de um quiz de vendas: quantas perguntas, quais tipos, como organizar e como apresentar o resultado que leva a venda.</p>
+<h3>2.1 Estrutura Geral: As 5 Partes de um Quiz de Vendas</h3>
+<p>Todo quiz de vendas eficiente tem 5 partes, nesta ordem:</p>
+<ol>
+<li><strong>Capa (Hook)</strong> — A primeira tela que a pessoa ve. E o que convence ela a comecar.</li>
+<li><strong>Perguntas de Aquecimento</strong> — 2-3 perguntas faceis para criar os primeiros micro-compromissos.</li>
+<li><strong>Perguntas de Qualificacao</strong> — 2-3 perguntas que identificam o perfil/problema da pessoa.</li>
+<li><strong>Tela de Transicao</strong> — "Analisando suas respostas..." (cria suspense e expectativa).</li>
+<li><strong>Tela de Resultado + CTA</strong> — O resultado personalizado com a recomendacao do produto.</li>
+</ol>
+<p>Numero ideal de perguntas: 5 a 8. Menos que 5 nao cria compromisso suficiente. Mais que 10 causa abandono.</p>
+<p>Tempo ideal para completar: 2 a 4 minutos.</p>
+<h3>2.2 A Capa: Como Fazer a Pessoa Comecar</h3>
+<p>A capa e a tela mais importante porque se a pessoa nao clicar em "Comecar", nada mais importa. Ela precisa de 3 elementos:</p>
+<p><strong>HEADLINE que gera curiosidade ou promete um resultado pessoal:</strong></p>
+<p>Exemplos que funcionam:<br />
+- "Descubra qual o tipo de metabolismo voce tem (e o que fazer com ele)"<br />
+- "Teste: Voce esta sabotando sua pele sem saber?"<br />
+- "Quiz rapido: Qual a melhor estrategia de renda extra para o SEU perfil?"<br />
+- "Em 2 minutos, descubra por que voce ainda nao conseguiu [resultado desejado]"</p>
+<p>Exemplos que NAO funcionam:<br />
+- "Quiz sobre emagrecimento" (generico demais)<br />
+- "Responda e compre nosso produto" (obvio demais)<br />
+- "Teste seus conhecimentos sobre skincare" (nao promete resultado pessoal)</p>
+<p><strong>SUB-HEADLINE com tempo estimado:</strong><br />
+"Leva menos de 2 minutos. Resultado personalizado na hora."</p>
+<p><strong>BOTAO de acao claro:</strong><br />
+"COMECAR O QUIZ" ou "DESCOBRIR MEU RESULTADO" ou "FAZER O TESTE AGORA"</p>
+<blockquote>
+<p><strong>[PRINT DE REFERENCIA: Exemplo de tela de capa de quiz com headline, sub-headline e botao — layout limpo, fundo com cor solida, sem distracao]</strong></p>
+</blockquote>
+<h3>2.3 As Perguntas: Tipos e Estrutura</h3>
+<p>As perguntas precisam seguir uma logica de aquecimento gradual. Comece facil e va aprofundando.</p>
+<p><strong>PERGUNTAS DE AQUECIMENTO (posicoes 1-3)</strong></p>
+<p>Objetivo: criar os primeiros micro-compromissos com perguntas faceis de responder.</p>
+<p>Caracteristicas:<br />
+- Respostas objetivas (2-4 opcoes)<br />
+- Nao exigem pensar muito<br />
+- Relacionadas ao tema mas nao invasivas</p>
+<p>Exemplos para quiz de emagrecimento:<br />
+1. "Qual sua faixa etaria?" → 20-30 / 31-40 / 41-50 / 51+<br />
+2. "Ha quanto tempo voce quer perder peso?" → Menos de 6 meses / 6 meses a 2 anos / Mais de 2 anos<br />
+3. "Voce pratica alguma atividade fisica?" → Sim, regularmente / As vezes / Nao</p>
+<p><strong>PERGUNTAS DE QUALIFICACAO (posicoes 4-6)</strong></p>
+<p>Objetivo: entender o problema especifico e criar conexao emocional.</p>
+<p>Caracteristicas:<br />
+- Respostas que revelam a dor ou desejo<br />
+- Linguagem mais emocional<br />
+- As opcoes de resposta devem refletir dores reais do publico</p>
+<p>Exemplos para quiz de emagrecimento:<br />
+4. "Qual sua maior frustracão com seu peso?" → Ja tentei de tudo e nada funciona / Perco peso mas recupero rapido / Nao consigo manter disciplina / Meu metabolismo parece travado<br />
+5. "Quando voce olha no espelho, o que mais te incomoda?" → Barriga / Bracos / Pernas e quadril / O corpo todo<br />
+6. "O que voce estaria disposta a fazer para resolver isso?" → Algo natural e sem sofrimento / Mudar alimentacao com orientacao / Qualquer coisa que funcione de verdade</p>
+<p>Perceba: a pergunta 6 esta QUALIFICANDO a pessoa para aceitar a recomendacao do produto. Se ela responde "qualquer coisa que funcione de verdade", o resultado do quiz pode dizer "Com base nas suas respostas, identificamos que voce precisa de uma abordagem que realmente funciona — e e exatamente isso que o [produto] faz."</p>
+<p><strong>PERGUNTA ESTRATEGICA FINAL (posicao 7)</strong></p>
+<p>Uma pergunta que prepara o terreno para a venda:</p>
+<p>"Se existisse uma solucao natural, sem efeitos colaterais, que ajudasse a destravar seu metabolismo e perder peso de forma consistente, voce gostaria de conhecer?"<br />
+- Sim, quero conhecer agora<br />
+- Talvez, depende do preco<br />
+- Nao estou interessada</p>
+<p>Quem responde "Sim" esta praticamente pedindo para voce vender. Quem responde "Talvez" precisa de mais persuasao na tela de resultado. Quem responde "Nao" (raro, menos de 5%) pode ser direcionada para conteudo gratuito.</p>
+<h3>2.4 A Barra de Progresso e Elementos de Gamificacao</h3>
+<p>Elementos visuais que aumentam a taxa de conclusao do quiz:</p>
+<p><strong>BARRA DE PROGRESSO</strong></p>
+<p>Mostra visualmente quanto falta. Pode ser uma barra horizontal no topo ou um indicador tipo "3/7".</p>
+<p>Efeito psicologico: quando a pessoa ve que ja esta em 4 de 7 perguntas, a sensacao de "falta pouco" cria motivacao para terminar. Sem barra de progresso, ela nao sabe se faltam 2 ou 20 perguntas e pode abandonar.</p>
+<p><strong>FEEDBACK VISUAL POR RESPOSTA</strong></p>
+<p>Apos cada resposta, uma pequena animacao ou icone confirma que a resposta foi registrada. Pode ser um checkmark verde, uma transicao suave ou ate um emoji.</p>
+<p><strong>TELA DE "ANALISANDO..."</strong></p>
+<p>Entre a ultima pergunta e o resultado, insira uma tela de transicao:</p>
+<p>"Analisando suas respostas..."<br />
+[Barra de loading animada]<br />
+"Preparando seu resultado personalizado..."</p>
+<p>Espera de 3-5 segundos (cronometrada, nao real).</p>
+<p>Por que funciona: cria a impressao de que algo sofisticado esta acontecendo nos bastidores. Que o resultado foi realmente calculado com base nas respostas da pessoa. Na realidade, o resultado ja esta predefinido — mas a percepcao de valor aumenta muito.</p>
+<h3>2.5 A Tela de Resultado: Onde a Venda Acontece</h3>
+<p>O resultado e onde tudo se conecta. E a tela mais importante para a conversao.</p>
+<p><strong>Estrutura da tela de resultado:</strong></p>
+<ol>
+<li>
+<p><strong>Titulo do perfil:</strong> "Seu perfil: Metabolismo Desacelerado Tipo B"<br />
+   - Dar um "nome" ao perfil faz a pessoa se sentir categorizada e entendida</p>
+</li>
+<li>
+<p><strong>Descricao personalizada (2-3 paragrafos):</strong><br />
+   - Paragrafo 1: Validar as respostas ("Com base nas suas respostas, identificamos que voce...")<br />
+   - Paragrafo 2: Explicar o que causa o problema ("Pessoas com o seu perfil geralmente...")<br />
+   - Paragrafo 3: Apresentar a solucao ("A boa noticia e que existe uma abordagem que funciona especificamente para quem tem esse perfil...")</p>
+</li>
+<li>
+<p><strong>Recomendacao do produto:</strong><br />
+   - Nome do produto<br />
+   - 3 beneficios alinhados com as respostas da pessoa<br />
+   - Prova social ("Mais de X mil pessoas com perfil semelhante ao seu ja usaram")</p>
+</li>
+<li>
+<p><strong>CTA (Chamada para acao):</strong><br />
+   - Botao grande e visivel: "QUERO MINHA SOLUCAO" ou "VER OFERTA ESPECIAL"<br />
+   - Elemento de urgencia: "Oferta disponivel por tempo limitado" ou "Desconto exclusivo para quem completou o quiz"</p>
+</li>
+<li>
+<p><strong>Prova social adicional (opcional):</strong><br />
+   - 2-3 depoimentos curtos<br />
+   - Numero de compradores<br />
+   - Avaliacao com estrelas</p>
+</li>
+</ol>
+<blockquote>
+<p><strong>[PRINT DE REFERENCIA: Exemplo de tela de resultado com perfil, descricao, produto e botao CTA — layout mobile-first]</strong></p>
+</blockquote>
+<h3>Resumo do Capitulo 2</h3>
+<table>
+<thead>
+<tr>
+<th>Parte do Quiz</th>
+<th>Funcao</th>
+<th>Detalhes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Capa</td>
+<td>Convencer a comecar</td>
+<td>Headline de curiosidade + tempo estimado</td>
+</tr>
+<tr>
+<td>Perguntas 1-3</td>
+<td>Aquecimento</td>
+<td>Faceis, objetivas, criam compromisso</td>
+</tr>
+<tr>
+<td>Perguntas 4-6</td>
+<td>Qualificacao</td>
+<td>Revelam dor, criam conexao emocional</td>
+</tr>
+<tr>
+<td>Pergunta 7</td>
+<td>Preparacao para venda</td>
+<td>"Gostaria de conhecer a solucao?"</td>
+</tr>
+<tr>
+<td>Transicao</td>
+<td>Criar expectativa</td>
+<td>"Analisando..." com loading</td>
+</tr>
+<tr>
+<td>Resultado</td>
+<td>Converter</td>
+<td>Perfil + descricao + produto + CTA</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>CAPITULO 3 — COMO CRIAR SEU QUIZ DO ZERO SEM SABER PROGRAMAR</h2>
+<p>Voce nao precisa ser programador para criar um quiz profissional. Existem ferramentas que fazem tudo por voce com drag-and-drop (arrastar e soltar). Neste capitulo, voce vai aprender 3 opcoes de ferramentas — da mais simples a mais personalizada — e o passo a passo para criar seu primeiro quiz.</p>
+<h3>3.1 Opcao 1: Typebot (Gratis + Mais Recomendada)</h3>
+<p>O Typebot e uma ferramenta de criacao de chatbots e formularios interativos. E gratuita para ate 200 respostas por mes (suficiente para testar), tem versao em portugues e e perfeita para quizzes de vendas.</p>
+<p><strong>Por que o Typebot e a melhor opcao para comecar:</strong><br />
+- Interface 100% visual (arrastar blocos e conectar)<br />
+- Plano gratuito funcional<br />
+- Permite logica condicional (mostrar resultado diferente baseado nas respostas)<br />
+- Pode ser embutido em qualquer pagina<br />
+- Integra com webhooks (para conectar com checkout)<br />
+- Suporta imagens, GIFs e videos nas perguntas</p>
+<p><strong>Passo a passo para criar seu quiz no Typebot:</strong></p>
+<ol>
+<li>Acesse typebot.io e crie uma conta gratuita</li>
+<li>Clique em "Criar um novo typebot"</li>
+<li>Escolha "Comecar do zero" (ou use um template)</li>
+<li>Monte o fluxo:</li>
+</ol>
+<p><strong>Bloco 1 — Capa:</strong><br />
+- Adicione um bloco de "Texto" com sua headline<br />
+- Adicione um bloco de "Botao" com "COMECAR O QUIZ"</p>
+<p><strong>Blocos 2-8 — Perguntas:</strong><br />
+- Para cada pergunta, adicione um bloco de "Escolha" (Choice)<br />
+- Digite a pergunta no campo de texto<br />
+- Adicione as opcoes de resposta como botoes<br />
+- Opcional: salve a resposta em uma variavel (ex: {{dor_principal}})</p>
+<p><strong>Bloco 9 — Transicao:</strong><br />
+- Bloco de texto: "Analisando suas respostas..."<br />
+- Adicione um bloco de "Espera" (Wait) de 3-5 segundos</p>
+<p><strong>Bloco 10 — Resultado:</strong><br />
+- Bloco de texto com o resultado personalizado<br />
+- Use variaveis para personalizar: "Voce disse que sua maior frustracão e {{dor_principal}}. Isso e mais comum do que voce imagina..."<br />
+- Adicione um bloco de "Botao" com link para o checkout</p>
+<p><strong>Configuracao de logica condicional:</strong></p>
+<p>O Typebot permite criar "caminhos" diferentes baseados nas respostas. Por exemplo:<br />
+- Se a pessoa respondeu "Metabolismo travado" → mostrar resultado sobre metabolismo<br />
+- Se respondeu "Falta de disciplina" → mostrar resultado sobre disciplina</p>
+<p>Para isso, use o bloco "Condicao" (Condition) conectando diferentes caminhos apos a pergunta-chave.</p>
+<blockquote>
+<p><strong>[PRINT DE REFERENCIA: Tela do Typebot mostrando um fluxo de quiz com blocos conectados — visao do editor visual]</strong></p>
+</blockquote>
+<h3>3.2 Opcao 2: involve.me (Mais Bonita + Plano Gratis Limitado)</h3>
+<p>O involve.me e uma plataforma especializada em quizzes, calculadoras e formularios interativos. Tem templates profissionais prontos e uma interface muito intuitiva.</p>
+<p><strong>Vantagens:</strong><br />
+- Templates prontos profissionais (inclusive para vendas)<br />
+- Design visual bonito sem esforco<br />
+- Logica condicional simples<br />
+- Embutivel em qualquer site<br />
+- Integracao nativa com diversas ferramentas</p>
+<p><strong>Desvantagens:</strong><br />
+- Plano gratis limitado a 100 interacoes/mes<br />
+- Plano pago a partir de ~$29/mes<br />
+- Menos flexivel que o Typebot para personalizacoes avancadas</p>
+<p><strong>Como usar:</strong></p>
+<ol>
+<li>Acesse involve.me e crie uma conta</li>
+<li>Na biblioteca de templates, busque por "Quiz" ou "Product Recommendation"</li>
+<li>Selecione um template e personalize:<br />
+   - Troque as perguntas e respostas<br />
+   - Ajuste cores e fontes para combinar com sua marca<br />
+   - Configure a pagina de resultado</li>
+<li>Na pagina de resultado, adicione o botao com link para seu checkout</li>
+<li>Publique e copie o link ou codigo de embed</li>
+</ol>
+<h3>3.3 Opcao 3: HTML Puro (Maximo Controle + Gratis para Sempre)</h3>
+<p>Se voce quer controle total e nao quer depender de nenhuma ferramenta (ou quer rodar sem limite de respostas), pode criar um quiz em HTML simples. Voce nao precisa ser programador — basta copiar, colar e personalizar.</p>
+<p><strong>Estrutura basica de um quiz em HTML:</strong></p>
+<p>O quiz consiste em:<br />
+- Um arquivo HTML unico<br />
+- CSS embutido para estilo<br />
+- JavaScript simples para logica das perguntas e resultado</p>
+<p><strong>O que voce precisa:</strong><br />
+- Um editor de texto (Notepad++, VS Code, ou ate o Bloco de Notas do Windows)<br />
+- Hospedagem gratuita (GitHub Pages, Netlify, ou Vercel — todas gratis)</p>
+<p><strong>Passo a passo simplificado:</strong></p>
+<ol>
+<li>Crie um arquivo chamado <code>quiz.html</code></li>
+<li>Cole a estrutura base (template disponivel no Capitulo 5)</li>
+<li>Personalize: troque perguntas, respostas, cores e textos</li>
+<li>Teste abrindo o arquivo no navegador</li>
+<li>Suba para uma hospedagem gratuita</li>
+</ol>
+<p><strong>Elementos do HTML que voce vai personalizar:</strong><br />
+- As perguntas (dentro de tags <code>&lt;div class="pergunta"&gt;</code>)<br />
+- As opcoes de resposta (dentro de tags <code>&lt;button&gt;</code>)<br />
+- A logica de resultado (no JavaScript — qual resposta leva a qual resultado)<br />
+- O link do checkout (no botao do resultado)</p>
+<p>A vantagem do HTML puro: zero custo, zero limite de respostas, carregamento instantaneo, personalizacao total. A desvantagem: mais trabalhoso para configurar do que as ferramentas visuais.</p>
+<p><strong>Recomendacao:</strong> comece com o Typebot para validar rapidamente. Se o quiz funcionar e voce quiser eliminar custos, migre para HTML puro.</p>
+<h3>3.4 Design e UX que Aumentam a Conversao</h3>
+<p>Independente da ferramenta escolhida, siga estas regras de design:</p>
+<p><strong>MOBILE FIRST</strong></p>
+<p>80%+ do trafego no Brasil vem do celular. Seu quiz PRECISA funcionar perfeitamente no celular. Isso significa:<br />
+- Botoes grandes (minimo 44px de altura) — dedo precisa clicar sem erro<br />
+- Texto legivel sem zoom (minimo 16px)<br />
+- Uma pergunta por tela (nao scroll longo)<br />
+- Sem elementos que quebrem no celular</p>
+<p><strong>CORES E CONTRASTE</strong></p>
+<ul>
+<li>Fundo limpo (branco ou cor clara)</li>
+<li>Texto escuro para leitura facil</li>
+<li>Botoes de resposta com cor de destaque (azul, verde ou laranja funcionam bem)</li>
+<li>Botao CTA do resultado em cor chamativa e contrastante</li>
+</ul>
+<p><strong>VELOCIDADE</strong></p>
+<p>O quiz precisa carregar em menos de 3 segundos. Evite:<br />
+- Imagens pesadas (comprima tudo)<br />
+- Videos nas perguntas (a menos que sejam muito curtos)<br />
+- Scripts externos desnecessarios</p>
+<p><strong>UMA PERGUNTA POR TELA</strong></p>
+<p>Nunca mostre todas as perguntas de uma vez. Mostre uma por vez com transicao suave. Isso:<br />
+- Simplifica a experiencia<br />
+- Forca o foco na pergunta atual<br />
+- Cria a sensacao de progresso<br />
+- Evita overwhelm (sobrecarga visual)</p>
+<blockquote>
+<p><strong>[PRINT DE REFERENCIA: Mesmo quiz mostrado em 3 dispositivos — desktop, tablet e celular — demonstrando responsividade]</strong></p>
+</blockquote>
+<h3>Resumo do Capitulo 3</h3>
+<table>
+<thead>
+<tr>
+<th>Ferramenta</th>
+<th>Custo</th>
+<th>Dificuldade</th>
+<th>Limite Gratis</th>
+<th>Melhor Para</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Typebot</td>
+<td>Gratis / Pago</td>
+<td>Facil</td>
+<td>200 respostas/mes</td>
+<td>Comecar rapido e validar</td>
+</tr>
+<tr>
+<td>involve.me</td>
+<td>Gratis / $29+/mes</td>
+<td>Muito facil</td>
+<td>100 interacoes/mes</td>
+<td>Design profissional rapido</td>
+</tr>
+<tr>
+<td>HTML puro</td>
+<td>Gratis sempre</td>
+<td>Medio</td>
+<td>Ilimitado</td>
+<td>Controle total e escala</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>CAPITULO 4 — CONECTANDO O QUIZ AO CHECKOUT + PIXEL + REMARKETING</h2>
+<p>Criar o quiz e so metade do trabalho. A outra metade e garantir que quem clica no botao de resultado chegue ao checkout corretamente, que voce consiga rastrear tudo e que quem nao comprou receba remarketing. Este capitulo cobre a parte tecnica de forma simples.</p>
+<h3>4.1 Conectando ao Checkout (Hotmart e Kiwify)</h3>
+<p>O objetivo e simples: quando a pessoa clicar no botao CTA no resultado do quiz, ela vai direto para a pagina de checkout do produto, pronta para comprar.</p>
+<p><strong>Para Hotmart:</strong></p>
+<ol>
+<li>Acesse o painel de afiliado na Hotmart</li>
+<li>Copie seu link de afiliado do produto</li>
+<li>O link tera o formato: <code>https://pay.hotmart.com/XXXXXXXX?ref=SEUCODIGO</code></li>
+<li>Cole esse link no botao CTA do resultado do quiz</li>
+</ol>
+<p>Dicas de otimizacao do link Hotmart:<br />
+- Adicione <code>&amp;sck=quiz</code> no final para rastrear que as vendas vieram do quiz<br />
+- Exemplo: <code>https://pay.hotmart.com/XXXXXXXX?ref=SEUCODIGO&amp;sck=quiz</code><br />
+- Depois voce pode ver no painel de vendas quantas vendas vieram da src "quiz"</p>
+<p><strong>Para Kiwify:</strong></p>
+<ol>
+<li>Acesse o painel de afiliado na Kiwify</li>
+<li>Copie seu link de afiliado</li>
+<li>O link tera o formato: <code>https://kiwify.com.br/XXXXXXXX?afid=SEUCODIGO</code></li>
+<li>Cole no botao CTA</li>
+</ol>
+<p>Dica Kiwify:<br />
+- Adicione parametros UTM para rastreamento: <code>&amp;utm_source=quiz&amp;utm_medium=resultado</code></p>
+<p><strong>Para Monetizze:</strong></p>
+<ol>
+<li>Acesse o painel de afiliado na Monetizze</li>
+<li>Copie seu link de afiliado</li>
+<li>Cole no botao CTA</li>
+<li>Use o campo "Sub-ID" para rastrear: adicione <code>&amp;sub=quiz</code> no link</li>
+</ol>
+<p><strong>IMPORTANTE — Links de afiliado no quiz:</strong></p>
+<p>Se voce tem resultados diferentes baseados nas respostas (ex: 3 perfis diferentes), voce pode usar o MESMO link de afiliado em todos — a unica coisa que muda e o texto do resultado, nao o produto.</p>
+<p>Mas se voce quer ser mais avancado e recomendar PRODUTOS DIFERENTES baseado no perfil:<br />
+- Resultado "Metabolismo lento" → link do produto A (suplemento de metabolismo)<br />
+- Resultado "Apetite excessivo" → link do produto B (suplemento de saciedade)</p>
+<p>Nesse caso, use links diferentes em cada tela de resultado. Isso e especialmente poderoso se voce trabalha com multiplos produtos no mesmo nicho.</p>
+<h3>4.2 Instalando o Pixel do Facebook no Quiz</h3>
+<p>O pixel e um codigo de rastreamento que permite ao Facebook saber o que as pessoas fizeram no seu quiz. Sem pixel, voce nao consegue criar publicos de remarketing nem otimizar campanhas para conversao.</p>
+<p><strong>Se voce usa Typebot:</strong></p>
+<p>O Typebot permite inserir um pixel atraves de "Metadata" na configuracao do typebot:<br />
+1. Va nas configuracoes do seu typebot<br />
+2. Procure a secao "Metadata" ou "Custom Head Code"<br />
+3. Cole o codigo base do pixel do Facebook:</p>
+<pre><code>&lt;!-- Facebook Pixel Code --&gt;
+&lt;script&gt;
+!function(f,b,e,v,n,t,s){...}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', 'SEU_PIXEL_ID');
+fbq('track', 'PageView');
+&lt;/script&gt;
+</code></pre>
+<ol start="4">
+<li>Para rastrear eventos (ex: quando a pessoa clica no botao de resultado), adicione blocos de webhook que disparam eventos do pixel.</li>
+</ol>
+<p><strong>Se voce usa HTML puro:</strong></p>
+<p>Muito mais simples — cole o pixel direto no <code>&lt;head&gt;</code> do seu arquivo HTML. E adicione eventos de rastreamento em cada etapa:</p>
+<ul>
+<li><code>fbq('track', 'ViewContent')</code> — quando a pessoa comeca o quiz</li>
+<li><code>fbq('track', 'Lead')</code> — quando a pessoa termina o quiz e ve o resultado</li>
+<li><code>fbq('track', 'InitiateCheckout')</code> — quando clica no botao CTA</li>
+</ul>
+<p>Esses eventos permitem criar publicos extremamente valiosos (proximo topico).</p>
+<p><strong>Se voce usa involve.me:</strong></p>
+<p>O involve.me tem integracao nativa com Facebook Pixel. Na secao de integracoes, basta colar seu Pixel ID.</p>
+<h3>4.3 Estrategia de Remarketing Baseada no Quiz</h3>
+<p>Aqui e onde o quiz se torna uma maquina de vendas automatica. Com o pixel instalado, voce pode criar publicos de remarketing ultra-segmentados:</p>
+<p><strong>PUBLICO 1 — Comecou o quiz mas nao terminou</strong></p>
+<p>Quem: pessoas que abriram o quiz mas abandonaram antes do resultado.<br />
+Anuncio de remarketing: "Voce comecou o quiz mas nao viu seu resultado. Ele esta te esperando — clique para descobrir."</p>
+<p>Taxa tipica de re-engajamento: 15-25% voltam e terminam.</p>
+<p><strong>PUBLICO 2 — Terminou o quiz mas nao clicou no CTA</strong></p>
+<p>Quem: pessoas que viram o resultado mas nao clicaram no botao de compra.<br />
+Anuncio de remarketing: "Seu resultado do quiz: [perfil]. A solucao que recomendamos para voce esta com desconto especial hoje."</p>
+<p><strong>PUBLICO 3 — Clicou no CTA mas nao comprou</strong></p>
+<p>Quem: pessoas que clicaram no botao, chegaram ao checkout mas nao finalizaram a compra.<br />
+Anuncio de remarketing: "Voce estava quase la! O [produto] que recomendamos para o seu perfil ainda esta disponivel. Garanta antes que acabe."</p>
+<p>Esse tipo de remarketing e muito mais eficiente que o remarketing generico porque:<br />
+1. A pessoa ja se envolveu com o quiz (investiu tempo)<br />
+2. Voce sabe qual resultado/perfil ela recebeu<br />
+3. O anuncio pode ser super personalizado</p>
+<p><strong>Orcamento sugerido para remarketing de quiz:</strong></p>
+<ul>
+<li>15-25% do orcamento total de anuncios</li>
+<li>CPA tipico: 40-60% menor que trafego frio</li>
+<li>ROAS tipico: 3x a 5x</li>
+</ul>
+<blockquote>
+<p><strong>[PRINT DE REFERENCIA: Tela do Gerenciador de Anuncios mostrando 3 campanhas de remarketing — quiz abandonado, resultado visto, checkout abandonado]</strong></p>
+</blockquote>
+<h3>4.4 Captura de Email no Quiz (Bonus Estrategico)</h3>
+<p>Um ajuste opcional que pode multiplicar ainda mais seus resultados: capturar o email da pessoa ANTES de mostrar o resultado.</p>
+<p>Como funciona:<br />
+- Apos a ultima pergunta e antes do resultado, adicione uma tela:<br />
+- "Para receber seu resultado personalizado, informe seu melhor email:"<br />
+- [Campo de email]<br />
+- [Botao: "VER MEU RESULTADO"]</p>
+<p>Taxa de captura tipica: 40-60% das pessoas que terminam o quiz. E muito mais alta do que qualquer formulario de captura de email tradicional (que gira em torno de 10-20%).</p>
+<p>O que fazer com esses emails:<br />
+1. Enviar o resultado por email (reforco)<br />
+2. Sequencia de 3-5 emails apos o quiz com conteudo e oferta<br />
+3. Subir a lista no Facebook para criar Lookalike de "pessoas que completaram o quiz"</p>
+<p>Ferramentas para email:<br />
+- Mailchimp (gratis ate 500 contatos)<br />
+- Brevo/Sendinblue (gratis ate 300 emails/dia)<br />
+- LeadLovers (BR, a partir de R$154/mes)</p>
+<h3>Resumo do Capitulo 4</h3>
+<table>
+<thead>
+<tr>
+<th>Tarefa</th>
+<th>Ferramenta/Metodo</th>
+<th>Dica</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Checkout Hotmart</td>
+<td>Link afiliado + <code>&amp;sck=quiz</code></td>
+<td>Rastrear vendas do quiz</td>
+</tr>
+<tr>
+<td>Checkout Kiwify</td>
+<td>Link afiliado + UTM</td>
+<td>utm_source=quiz</td>
+</tr>
+<tr>
+<td>Pixel Facebook</td>
+<td>Instalar no quiz + eventos</td>
+<td>ViewContent, Lead, InitiateCheckout</td>
+</tr>
+<tr>
+<td>Remarketing</td>
+<td>3 publicos baseados no quiz</td>
+<td>Comecou, terminou, clicou</td>
+</tr>
+<tr>
+<td>Captura de email</td>
+<td>Tela antes do resultado</td>
+<td>40-60% de captura</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>CAPITULO 5 — TEMPLATES PRONTOS: 3 MODELOS DE QUIZ PARA COPIAR</h2>
+<p>Este capitulo e 100% pratico. Sao 3 templates completos de quiz, prontos para voce adaptar ao seu produto. Cada template inclui: headline da capa, todas as perguntas com opcoes de resposta, a logica de resultado e o texto da tela final.</p>
+<h3>5.1 Template 1: Quiz para Nicho de Saude/Emagrecimento</h3>
+<p><strong>CAPA:</strong><br />
+- Headline: "Descubra Por Que Voce Ainda Nao Conseguiu Perder Peso (e o que fazer a partir de agora)"<br />
+- Sub-headline: "Quiz de 2 minutos com resultado personalizado"<br />
+- Botao: "COMECAR O QUIZ"</p>
+<p><strong>PERGUNTA 1 (aquecimento):</strong><br />
+"Qual sua faixa etaria?"<br />
+- 18-29 anos<br />
+- 30-39 anos<br />
+- 40-49 anos<br />
+- 50+ anos</p>
+<p><strong>PERGUNTA 2 (aquecimento):</strong><br />
+"Ha quanto tempo voce tenta perder peso?"<br />
+- Menos de 6 meses<br />
+- 6 meses a 2 anos<br />
+- Mais de 2 anos<br />
+- Nunca tentei seriamente</p>
+<p><strong>PERGUNTA 3 (aquecimento):</strong><br />
+"Voce pratica alguma atividade fisica atualmente?"<br />
+- Sim, 3x ou mais por semana<br />
+- Sim, 1-2x por semana<br />
+- Raramente<br />
+- Nao pratico</p>
+<p><strong>PERGUNTA 4 (qualificacao):</strong><br />
+"Qual a sua MAIOR frustracão quando o assunto e peso?"<br />
+- Ja tentei varias dietas e nenhuma funcionou de verdade<br />
+- Perco peso mas recupero tudo depois<br />
+- Meu metabolismo parece travado, nao emagreco nem com esforco<br />
+- Nao consigo manter disciplina por mais de 2 semanas</p>
+<p><strong>PERGUNTA 5 (qualificacao):</strong><br />
+"Como voce se sente quando olha no espelho?"<br />
+- Evito olhar, nao gosto do que vejo<br />
+- Aceito, mas sei que poderia ser melhor<br />
+- Frustrada — meu corpo nao reflete meu esforco<br />
+- Triste, isso afeta minha autoestima</p>
+<p><strong>PERGUNTA 6 (qualificacao):</strong><br />
+"Se existisse uma solucao natural, sem efeitos colaterais, que ajudasse a destravar seu metabolismo, voce tentaria?"<br />
+- Com certeza, quero resolver isso de vez<br />
+- Provavelmente sim, se for acessivel<br />
+- Talvez, dependendo dos resultados de outras pessoas<br />
+- Nao sei</p>
+<p><strong>PERGUNTA 7 (estrategica):</strong><br />
+"O que voce estaria disposta a investir para finalmente resolver esse problema?"<br />
+- Ate R$100 se realmente funcionar<br />
+- Ate R$200 se tiver garantia<br />
+- Qualquer valor se eu tiver certeza que funciona<br />
+- Prefiro opcoes gratuitas</p>
+<p><strong>TELA DE TRANSICAO:</strong><br />
+"Analisando suas respostas..."<br />
+[Loading 4 segundos]<br />
+"Resultado pronto!"</p>
+<p><strong>TELA DE RESULTADO:</strong></p>
+<p>Titulo: "Seu Perfil: Metabolismo Desacelerado"</p>
+<p>Texto:<br />
+"Com base nas suas respostas, identificamos que voce faz parte de um grupo muito comum: mulheres cujo metabolismo desacelerou com o tempo — seja por idade, dietas restritivas anteriores ou fatores hormonais.</p>
+<p>Isso explica por que voce sente que 'come pouco e engorda' ou que 'faz tudo certo e nao ve resultado'. Nao e falta de disciplina — e biologia.</p>
+<p>A boa noticia: existem suplementos naturais desenvolvidos especificamente para reativar o metabolismo de forma segura. Mais de 15.000 mulheres com perfil semelhante ao seu ja utilizaram e reportaram resultados visiveis em 30-60 dias.</p>
+<p>Preparamos uma oferta especial para voce que completou o quiz:"</p>
+<p>[Botao: "VER MINHA SOLUCAO PERSONALIZADA" → link do checkout]</p>
+<p>"100% natural | Satisfacao garantida ou dinheiro de volta"</p>
+<hr />
+<h3>5.2 Template 2: Quiz para Nicho de Renda Extra</h3>
+<p><strong>CAPA:</strong><br />
+- Headline: "Descubra Qual a Melhor Forma de Ganhar Dinheiro Extra para o SEU Perfil"<br />
+- Sub-headline: "7 perguntas rapidas. Resultado personalizado em 2 minutos."<br />
+- Botao: "DESCOBRIR MEU PERFIL"</p>
+<p><strong>PERGUNTA 1 (aquecimento):</strong><br />
+"Quanto tempo livre voce tem por dia para dedicar a uma renda extra?"<br />
+- Menos de 1 hora<br />
+- 1 a 2 horas<br />
+- 2 a 4 horas<br />
+- Mais de 4 horas</p>
+<p><strong>PERGUNTA 2 (aquecimento):</strong><br />
+"Voce ja tentou ganhar dinheiro pela internet antes?"<br />
+- Nunca tentei<br />
+- Sim, mas nao funcionou<br />
+- Sim, ganhei um pouco mas quero mais<br />
+- Sim, ja tenho algum resultado</p>
+<p><strong>PERGUNTA 3 (aquecimento):</strong><br />
+"Quanto voce gostaria de ganhar de renda extra por mes?"<br />
+- R$500 a R$1.000<br />
+- R$1.000 a R$3.000<br />
+- R$3.000 a R$5.000<br />
+- Mais de R$5.000</p>
+<p><strong>PERGUNTA 4 (qualificacao):</strong><br />
+"Qual dessas opcoes MAIS te descreve?"<br />
+- Quero algo que funcione no piloto automatico, sem aparecer<br />
+- Estou disposto(a) a aprender algo novo e dedicar tempo<br />
+- Quero resultados rapidos, mesmo que precise investir um pouco<br />
+- Preciso de algo com baixo risco e retorno garantido</p>
+<p><strong>PERGUNTA 5 (qualificacao):</strong><br />
+"O que mais te impede de ganhar dinheiro extra HOJE?"<br />
+- Nao sei por onde comecar<br />
+- Ja comecei mas nao tive resultado<br />
+- Medo de perder dinheiro<br />
+- Falta de tempo</p>
+<p><strong>PERGUNTA 6 (qualificacao):</strong><br />
+"Voce tem algum valor disponivel para investir em algo que gere retorno?"<br />
+- Sim, posso investir ate R$50/mes<br />
+- Sim, posso investir ate R$200/mes<br />
+- Nao tenho nada para investir agora<br />
+- Depende se funcionar de verdade</p>
+<p><strong>PERGUNTA 7 (estrategica):</strong><br />
+"Se eu te mostrasse um metodo testado para gerar renda extra sem aparecer na internet e sem precisar de experiencia, voce aplicaria?"<br />
+- Com certeza, e exatamente o que procuro<br />
+- Provavelmente sim, se fizer sentido<br />
+- Talvez, quero ver mais detalhes<br />
+- Nao estou pronto agora</p>
+<p><strong>TELA DE RESULTADO:</strong></p>
+<p>Titulo: "Seu Perfil: Empreendedor Silencioso"</p>
+<p>Texto:<br />
+"Seu perfil e o de alguem que quer resultados reais sem se expor na internet. Voce nao quer gravar videos, fazer dancinha ou ficar o dia todo nas redes sociais. Quer algo que funcione nos bastidores enquanto voce vive sua vida.</p>
+<p>Isso e totalmente possivel — e mais comum do que voce imagina. Milhares de pessoas estao gerando entre R$2.000 e R$5.000 por mes como afiliados de produtos fisicos, sem aparecer, sem criar conteudo e sem experiencia previa.</p>
+<p>O Metodo Renda Silenciosa foi criado exatamente para esse perfil. Um guia passo a passo que te mostra como comecar do zero e gerar vendas todos os dias de forma silenciosa.</p>
+<p>Temos uma oferta especial para quem completou o quiz:"</p>
+<p>[Botao: "CONHECER O METODO RENDA SILENCIOSA" → link do checkout]</p>
+<p>"Satisfacao garantida em 7 dias ou seu dinheiro de volta"</p>
+<hr />
+<h3>5.3 Template 3: Quiz para Nicho de Relacionamento</h3>
+<p><strong>CAPA:</strong><br />
+- Headline: "Teste: Qual o Maior Sabotador do Seu Relacionamento?"<br />
+- Sub-headline: "Descubra em 2 minutos o que pode estar prejudicando sua vida amorosa"<br />
+- Botao: "FAZER O TESTE"</p>
+<p><strong>PERGUNTA 1 (aquecimento):</strong><br />
+"Qual sua situacao atual?"<br />
+- Solteiro(a) querendo um relacionamento serio<br />
+- Namorando mas com dificuldades<br />
+- Casado(a) mas sentindo distancia<br />
+- Recentemente terminei um relacionamento</p>
+<p><strong>PERGUNTA 2 (aquecimento):</strong><br />
+"Ha quanto tempo voce lida com essa situacao?"<br />
+- Menos de 3 meses<br />
+- 3 a 12 meses<br />
+- 1 a 3 anos<br />
+- Mais de 3 anos</p>
+<p><strong>PERGUNTA 3 (aquecimento):</strong><br />
+"Com que frequencia voce se sente inseguro(a) sobre o amor?"<br />
+- Raramente<br />
+- As vezes<br />
+- Frequentemente<br />
+- Quase sempre</p>
+<p><strong>PERGUNTA 4 (qualificacao):</strong><br />
+"Qual frase mais define como voce se sente?"<br />
+- "Sinto que dou mais do que recebo no relacionamento"<br />
+- "Tenho medo de ser abandonado(a) ou traido(a)"<br />
+- "Nao consigo me comunicar sem brigar"<br />
+- "Acho que nao mereco ser amado(a) de verdade"</p>
+<p><strong>PERGUNTA 5 (qualificacao):</strong><br />
+"O que voce ja tentou para melhorar isso?"<br />
+- Conversei com amigos/familia mas nao ajudou muito<br />
+- Li artigos e videos na internet<br />
+- Fiz terapia por um tempo<br />
+- Nunca busquei ajuda, sofro em silencio</p>
+<p><strong>PERGUNTA 6 (qualificacao):</strong><br />
+"Se voce pudesse mudar UMA coisa na sua vida amorosa, o que seria?"<br />
+- Ter mais confianca e autoestima<br />
+- Encontrar a pessoa certa<br />
+- Melhorar a comunicacao com meu parceiro(a)<br />
+- Superar um termino e seguir em frente</p>
+<p><strong>PERGUNTA 7 (estrategica):</strong><br />
+"Voce acredita que um guia pratico, baseado em psicologia, poderia te ajudar a transformar sua vida amorosa?"<br />
+- Sim, preciso de orientacao pratica<br />
+- Acho que sim, vale a pena tentar<br />
+- Talvez, se for realmente diferente do que ja vi<br />
+- Nao tenho certeza</p>
+<p><strong>TELA DE RESULTADO:</strong></p>
+<p>Titulo: "Seu Sabotador: Padrao de Inseguranca Emocional"</p>
+<p>Texto:<br />
+"Suas respostas revelam um padrao que atinge milhoes de brasileiros: a inseguranca emocional que se manifesta como medo de abandono, dificuldade de comunicacao ou autoestima baixa no amor.</p>
+<p>Isso nao e culpa sua. Geralmente vem de experiencias passadas que criaram crencas limitantes sobre relacionamentos. A boa noticia: com as tecnicas certas, esse padrao pode ser reprogramado em semanas, nao em anos.</p>
+<p>O guia [nome do produto] foi desenvolvido por especialistas em psicologia dos relacionamentos e ja ajudou mais de 8.000 pessoas a transformarem seus padroes amorosos.</p>
+<p>Oferta exclusiva para quem completou o teste:"</p>
+<p>[Botao: "QUERO TRANSFORMAR MEU PADRAO" → link do checkout]</p>
+<p>"Garantia incondicional de 7 dias"</p>
+<hr />
+<h3>Como Adaptar os Templates ao Seu Produto</h3>
+<ol>
+<li><strong>Copie o template mais proximo do seu nicho</strong></li>
+<li><strong>Personalize as perguntas</strong> para refletir as dores especificas do publico do seu produto</li>
+<li><strong>Ajuste o resultado</strong> para direcionar para o beneficio principal do seu produto</li>
+<li><strong>Insira o link correto do checkout</strong></li>
+<li><strong>Teste com 5-10 pessoas</strong> antes de lancar com trafego pago — peca feedback sobre clareza e fluidez</li>
+</ol>
+<hr />
+<h2>CONCLUSAO</h2>
+<p>Voce agora tem tudo o que precisa para criar quizzes que vendem de verdade:</p>
+<ul>
+<li>Entende POR QUE quizzes convertem 2-3x mais (psicologia, micro-compromissos, personalizacao)</li>
+<li>Sabe a ESTRUTURA exata: 7 perguntas, da capa ao resultado</li>
+<li>Conhece as FERRAMENTAS: Typebot (gratis), involve.me, HTML puro</li>
+<li>Sabe CONECTAR ao checkout, instalar pixel e criar remarketing</li>
+<li>Tem 3 TEMPLATES prontos para copiar e adaptar</li>
+</ul>
+<p>O proximo passo e simples: escolha um template, personalize para o seu produto, coloque no ar e rode trafego. Seu primeiro quiz pode estar funcionando em 24-48 horas.</p>
+<p>Nao espere estar "perfeito" para lancar. O primeiro quiz nao precisa ser o melhor — precisa existir. Voce vai otimizar com base nos dados. O importante e comecar.</p>
+<p>Uma dica final: combine o quiz com tudo que voce aprendeu no Renda Silenciosa Pro (trafego pago). Use o quiz como destino dos seus anuncios no Facebook em vez de mandar direto para a pagina de vendas. Com o trafego pago certo + quiz otimizado, voce tem uma maquina de vendas que funciona 24 horas por dia.</p>
+<p>Boas vendas.</p>
+<hr />
+<p><strong>Quer ir alem?</strong> Se voce ainda nao tem o Metodo Renda Silenciosa (guia principal) ou o Renda Silenciosa Pro (trafego pago avancado), acesse os links abaixo para garantir o pack completo com desconto:</p>
+<p>[BOTAO: VER OFERTA DO PACK COMPLETO]</p>
+<hr />
+<p><em>Quiz Que Vende — Como Criar Funis Interativos que Convertem 3x Mais</em><br />
+<em>Copyright 2026. Todos os direitos reservados.</em></p>
+    </div>
+</body>
+</html>
