@@ -1,3 +1,4 @@
+<!-- PIXEL: Substitua XXXXXXXXXXXXXXXXX pelo seu Pixel ID em todos os 3 arquivos -->
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -656,6 +657,22 @@
             .mute-btn { width: 36px; height: 36px; font-size: 16px; }
         }
     </style>
+    <!-- Facebook Pixel - SUBSTITUA 'XXXXXXXXXXXXXXXXX' pelo seu Pixel ID do Meta Business -->
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', 'XXXXXXXXXXXXXXXXX');
+      fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXXXX&ev=PageView&noscript=1"/></noscript>
+    <!-- Fim Facebook Pixel -->
 </head>
 <body>
 
@@ -1205,6 +1222,7 @@ function runLoader() {
                     setTimeout(function() {
                         renderResult();
                         showScreen(9, 'fade');
+                        if(typeof fbq==='function')fbq('track','Lead');
                         launchConfetti();
                         playCelebration();
                         staggerRevealResult();

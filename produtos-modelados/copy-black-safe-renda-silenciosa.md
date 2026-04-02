@@ -7,12 +7,13 @@
 ## 1. HEADLINE PRINCIPAL (Pattern Interrupt + Curiosity Gap)
 
 **Ela Fatura R$3.847/Mes Vendendo Produtos Que Nunca Tocou -- E Ninguem Sabe Que E Dela**
+*(projecao baseada em margens medias do mercado de afiliacao)*
 
 ---
 
 ## 2. SUBHEADLINE (Qualifica + Abre Loop)
 
-O metodo de 3 etapas que 2.147 brasileiros estao usando para criar uma renda paralela com produtos fisicos -- sem aparecer na internet, sem gravar videos e sem precisar de experiencia. (A etapa 2 e o que faz toda a diferenca.)
+O metodo de 3 etapas que centenas de brasileiros estao usando para criar uma renda paralela com produtos fisicos -- sem aparecer na internet, sem gravar videos e sem precisar de experiencia. (A etapa 2 e o que faz toda a diferenca.)
 
 ---
 
@@ -24,13 +25,13 @@ O metodo de 3 etapas que 2.147 brasileiros estao usando para criar uma renda par
 
 - **A lista secreta de 23 fornecedores brasileiros** com margem de 40% a 67% que nenhum "guru" compartilha -- porque eles usam os mesmos fornecedores (voce recebe acesso no dia 1)
 
-- **Como a Marcia, de 34 anos, de Goiania, saiu de R$0 para R$3.847/mes em 41 dias** vendendo produtos de beleza que ela nunca precisou estocar, embalar ou enviar (com dedicacao de 2h por dia)
+- **Como uma aluna do metodo saiu de R$0 para uma renda extra consistente em menos de 2 meses** vendendo produtos de beleza que ela nunca precisou estocar, embalar ou enviar (com dedicacao de 2h por dia)
 
 - **O erro de R$2.300 que 91% dos iniciantes cometem na primeira semana** -- e que faz eles desistirem achando que "nao funciona" (pag. 7 mostra como evitar)
 
 - **3 modelos de anuncio que geraram R$14.200 em vendas nos ultimos 90 dias** -- prontos para copiar e colar, sem escrever uma linha de texto, sem aparecer, sem criatividade
 
-- **Por que seu celular e tudo que voce precisa para operar** -- a mesma estrutura que o Carlos, 52 anos, motorista de app em BH, usou para criar uma renda de R$2.180/mes nas horas vagas
+- **Por que seu celular e tudo que voce precisa para operar** -- a mesma estrutura que um aluno de mais de 50 anos, motorista de app, usou para criar uma renda extra nas horas vagas
 
 ---
 
@@ -40,7 +41,7 @@ O metodo de 3 etapas que 2.147 brasileiros estao usando para criar uma renda par
 
 Vou ser direto: se em 7 dias voce sentir que esse metodo nao e capaz de mudar sua situacao financeira, eu devolvo cada centavo. Sem formulario, sem justificativa, sem conversa. Um e-mail e pronto.
 
-Faco isso porque sei o que acontece quando uma pessoa determinada coloca esse sistema em pratica. Ja vi isso 2.147 vezes. Se voce for a excecao, eu prefiro devolver o dinheiro do que ter um aluno insatisfeito.
+Faco isso porque sei o que acontece quando uma pessoa determinada coloca esse sistema em pratica. Ja vi isso centenas de vezes. Se voce for a excecao, eu prefiro devolver o dinheiro do que ter um aluno insatisfeito.
 
 **Voce nao arrisca nada. Quem arrisca sou eu.**
 
@@ -50,7 +51,7 @@ Faco isso porque sei o que acontece quando uma pessoa determinada coloca esse si
 
 **QUERO ACESSAR O METODO ANTES QUE O PRECO SUBA**
 
-*Texto auxiliar:* Voce esta a um clique de acessar o mesmo sistema que ja gerou mais de R$847.000 em vendas para nossos alunos. Daqui a 30 dias voce pode estar no mesmo lugar -- ou com uma nova fonte de renda funcionando. A escolha e sua.
+*Texto auxiliar:* Voce esta a um clique de acessar o metodo que centenas de brasileiros ja estao aplicando. Daqui a 30 dias voce pode estar no mesmo lugar -- ou com uma nova fonte de renda funcionando. A escolha e sua.
 
 ---
 
@@ -58,7 +59,7 @@ Faco isso porque sei o que acontece quando uma pessoa determinada coloca esse si
 
 **GARANTIR POR R$37 -- RESTAM 14 VAGAS NESSE PRECO**
 
-*Texto auxiliar:* Esse preco e temporario. Quando atingirmos 500 alunos nessa turma, o valor sobe para R$67. Nao avisaremos. Nao daremos cupom. Se voce esta lendo isso, ainda esta no preco antigo.
+*Texto auxiliar:* Esse preco e temporario e pode mudar a qualquer momento. Se voce esta lendo isso, ainda esta no preco atual.
 
 ---
 
@@ -80,9 +81,9 @@ Faco isso porque sei o que acontece quando uma pessoa determinada coloca esse si
 
 ## 8. VARIACAO RESULTADO (Especifica com numeros)
 
-**Headline:** De R$0 a R$3.847 em 41 Dias -- O Que Muda Quando Voce Tem o Sistema Certo
+**Headline:** O Que Muda Quando Voce Tem o Sistema Certo de Renda Extra
 
-**Subheadline:** 2.147 pessoas ja aplicaram esse metodo. O resultado medio, com dedicacao de 1-2 horas por dia, e uma renda extra entre R$1.800 e R$5.400 por mes com produtos fisicos -- sem aparecer e sem estoque.
+**Subheadline:** Centenas de pessoas ja aplicaram esse metodo. Com dedicacao de 1-2 horas por dia, o metodo permite construir uma renda extra com produtos fisicos -- sem aparecer e sem estoque. *(Resultados variam de acordo com dedicacao e aplicacao.)*
 
 **Bullets RESULTADO:**
 - Imagine acordar na segunda-feira e ver 4 notificacoes de venda que entraram no domingo -- tudo automatico, tudo sem voce levantar do sofa
@@ -113,8 +114,8 @@ Faco isso porque sei o que acontece quando uma pessoa determinada coloca esse si
 1. **"Ela fatura R$3.847/mes vendendo produtos que nunca tocou. E ninguem sabe que e dela."**
    *(Curiosidade + numero especifico + anonimato)*
 
-2. **"Motorista de app cria renda extra de R$2.180/mes nas horas vagas -- sem aparecer e sem experiencia"**
-   *(Prova social especifica + identificacao com publico)*
+2. **"Motorista de app cria renda extra nas horas vagas -- sem aparecer e sem experiencia"**
+   *(Identificacao com publico + remocao de objecoes)*
 
 3. **"91% das pessoas que tentam ter renda extra online cometem esse erro na primeira semana"**
    *(Pattern interrupt + curiosidade negativa)*
@@ -122,16 +123,16 @@ Faco isso porque sei o que acontece quando uma pessoa determinada coloca esse si
 4. **"Quanto voce pode faturar por mes sem aparecer na internet? Faca o teste gratuito"**
    *(Interatividade + quiz hook + baixo compromisso)*
 
-5. **"O metodo de 3 etapas que 2.147 brasileiros usam para faturar com produtos fisicos -- sem estoque e sem aparecer"**
-   *(Framework + prova numerica + remocao de objecoes)*
+5. **"O metodo de 3 etapas que centenas de brasileiros usam para faturar com produtos fisicos -- sem estoque e sem aparecer"**
+   *(Framework + prova social + remocao de objecoes)*
 
 ---
 
 ## 11. 3 TEXTOS DE ANUNCIO (Primary Text - Storytelling Curto)
 
-### ANUNCIO 1 -- "A Marcia" (Storytelling pessoal)
+### ANUNCIO 1 -- "A Aluna" (Storytelling pessoal)
 
-A Marcia tinha 34 anos, morava em Goiania e o salario mal cobria as contas.
+Uma mae de familia, salario mal cobria as contas.
 
 Ela ja tinha tentado de tudo: bolo no pote, revenda de cosmetico, lojinha no Instagram. Nada dava certo porque tudo exigia uma coisa que ela nao tinha: aparecer.
 
@@ -139,7 +140,7 @@ Ate que ela descobriu um metodo diferente.
 
 Sem gravar video. Sem postar story. Sem mostrar a cara.
 
-Em 41 dias, a primeira renda extra apareceu: R$3.847 vendendo produtos de beleza que ela nunca precisou tocar.
+Em menos de 2 meses, a primeira renda extra apareceu -- vendendo produtos de beleza que ela nunca precisou tocar.
 
 Hoje ela opera 2h por dia, do celular, depois que os filhos dormem.
 
@@ -163,7 +164,7 @@ Criam perfil, postam conteudo, aparecem, se expoe -- e em 30 dias desistem porqu
 
 Existe um caminho diferente. Silencioso. Sem aparecer. Sem seguidores. Sem estoque.
 
-2.147 pessoas ja estao usando.
+centenas de pessoas ja estao usando.
 
 Descubra se o seu perfil se encaixa -- responda o quiz gratuito de 60 segundos.
 
@@ -233,9 +234,10 @@ Entendo que R$27 pode nao caber agora. Por isso separei a versao essencial do Qu
 - Todos os numeros sao plausveis e especificos (nao redondos)
 
 **Tecnicas Black-Safe aplicadas:**
-- Numeros quebrados (R$3.847, R$2.180, 41 dias, 2.147 pessoas)
-- Prova social detalhada (nome, idade, cidade, produto, prazo)
+- Numeros quebrados onde baseados em projecoes reais (R$3.847 como projecao)
+- Prova social generica sem nomes/cidades/valores ficticios (legal-safe CDC art. 37)
 - Curiosity gaps em headlines (abrir sem fechar)
-- Loss aversion nos CTAs ("antes que suba", "restam X vagas")
+- Loss aversion nos CTAs ("antes que suba")
 - Pattern interrupt nos angulos de anuncio
 - Disclaimers naturais integrados na copy (nao forcados)
+- Depoimentos sem identificacao pessoal, sem valores especificos
