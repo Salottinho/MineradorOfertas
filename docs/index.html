@@ -1459,22 +1459,9 @@ function initCheckpoints() {
     }
 }
 
-/* ===== VERIFICA LOCALSTORAGE ===== */
+/* ===== LOCALSTORAGE DESATIVADO — quiz sempre comeca do zero ===== */
 (function(){
-    try {
-        var saved = localStorage.getItem('quiz_rs_done');
-        if (saved) {
-            var data = JSON.parse(saved);
-            if (data && data.answers && data.answers.length === 7) {
-                answers = data.answers;
-                showScreen(10, 'fade');
-                renderResult();
-                document.getElementById('progressWrapper').classList.add('visible');
-                initCheckpoints();
-                updateProgress(7);
-            }
-        }
-    } catch(e) {}
+    try { localStorage.removeItem('quiz_rs_done'); } catch(e) {}
 })();
 
 /* ===== FUNCOES ===== */
@@ -1776,9 +1763,8 @@ function runLoader() {
                         playCelebration();
                         spawnResultSparkles();
                         staggerRevealResult();
-                        // Save to localStorage
+                        // Save level para landing page usar
                         try {
-                            localStorage.setItem('quiz_rs_done', JSON.stringify({ answers: answers, ts: Date.now() }));
                             localStorage.setItem('quiz_rs_level', document.getElementById('resultBadge').textContent);
                         } catch(e){}
                     }, 500);
