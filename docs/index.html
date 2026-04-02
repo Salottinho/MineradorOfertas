@@ -1034,19 +1034,11 @@ var totalQuestions = 7;
 var lastScreen = -1;
 
 /* ===== VERIFICA LOCALSTORAGE ===== */
+/* DESATIVADO: quiz sempre comeca do zero */
 (function(){
     try {
-        var saved = localStorage.getItem('quiz_rs_done');
-        if (saved) {
-            var data = JSON.parse(saved);
-            if (data && data.answers && data.answers.length === 7) {
-                answers = data.answers;
-                showScreen(9, 'fade');
-                renderResult();
-                document.getElementById('progressWrapper').classList.add('visible');
-                updateProgress(7);
-            }
-        }
+        localStorage.removeItem('quiz_rs_done');
+        if (false) {
     } catch(e) {}
 })();
 
