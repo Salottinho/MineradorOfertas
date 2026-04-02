@@ -77,7 +77,7 @@ URL: https://www.metodoromperdigital.com.br.romperdigital.com/
 - **Estilo visual:** ESTILO 3 — RENDA & OPORTUNIDADE (dark mode, verde limao, Syne + JetBrains Mono)
 - **Tom de copy:** Direto, sem promessa impossivel, passo a passo
 - **Marca/Dominio:** rendasilenciosa.com.br
-- **Instagram:** @renda.silenciosa
+- **Instagram:** @metodo.renda.silenciosa
 - **Nome exibicao:** Metodo Renda Silenciosa
 
 ---

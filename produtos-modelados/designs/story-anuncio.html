@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<title>Story Anuncio</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400&family=JetBrains+Mono:wght@700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1080px;
+    height: 1920px;
+    overflow: hidden;
+    background: #0f0f0f;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
+  .spacer-top {
+    height: 180px;
+    flex-shrink: 0;
+  }
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    gap: 40px;
+    padding: 0 80px;
+  }
+  .valor {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+    font-size: 160px;
+    color: #a3e635;
+    line-height: 1;
+  }
+  .por-mes {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 56px;
+    color: #ffffff;
+    margin-top: -16px;
+  }
+  .sem-aparecer {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 36px;
+    color: #888888;
+  }
+  .separador {
+    width: 200px;
+    height: 3px;
+    background: #a3e635;
+    margin: 16px 0;
+  }
+  .checks {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    align-items: flex-start;
+  }
+  .check-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  .check-icon {
+    width: 36px;
+    height: 36px;
+    color: #a3e635;
+  }
+  .check-text {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 32px;
+    color: #e8e8e8;
+  }
+  .cta {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 36px;
+    color: #0f0f0f;
+    background: #22c55e;
+    padding: 32px 72px;
+    border-radius: 16px;
+    letter-spacing: 2px;
+    margin-top: 24px;
+  }
+  .rodape {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    color: #444444;
+    position: absolute;
+    bottom: 60px;
+  }
+</style>
+</head>
+<body>
+  <div class="spacer-top"></div>
+  <div class="content">
+    <div class="valor">R$3.847</div>
+    <div class="por-mes">por mes</div>
+    <div class="sem-aparecer">sem aparecer na internet</div>
+    <div class="separador"></div>
+    <div class="checks">
+      <div class="check-item">
+        <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="#a3e635" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="20 6 9 17 4 12"/>
+        </svg>
+        <span class="check-text">Sem criar conteudo</span>
+      </div>
+      <div class="check-item">
+        <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="#a3e635" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="20 6 9 17 4 12"/>
+        </svg>
+        <span class="check-text">Sem experiencia</span>
+      </div>
+      <div class="check-item">
+        <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="#a3e635" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="20 6 9 17 4 12"/>
+        </svg>
+        <span class="check-text">Sem mostrar o rosto</span>
+      </div>
+    </div>
+    <div class="cta">DESCUBRA COMO &rarr;</div>
+  </div>
+  <div class="rodape">Resultados variam com dedicacao</div>
+</body>
+</html>
+<!-- Abra no Chrome, Ctrl+Shift+I, toggle device toolbar, defina resolucao 1080x1920, screenshot -->

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<title>Como Funciona - Card 1</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1080px;
+    height: 1080px;
+    overflow: hidden;
+    background: #0f0f0f;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    position: relative;
+  }
+  /* Engrenagem decorativa */
+  .gear {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 600px;
+    opacity: 0.06;
+  }
+  .titulo-branco {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 64px;
+    color: #ffffff;
+    z-index: 1;
+  }
+  .titulo-verde {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 96px;
+    color: #a3e635;
+    z-index: 1;
+    line-height: 1;
+  }
+  .sub {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 36px;
+    color: #888888;
+    z-index: 1;
+    margin-top: 8px;
+  }
+</style>
+</head>
+<body>
+  <!-- Engrenagem SVG decorativa -->
+  <svg class="gear" viewBox="0 0 100 100" fill="#1a1a1a">
+    <path d="M50 20 L54 8 L58 20 Q62 18 65 15 L72 5 L70 18 Q74 18 77 20 L86 12 L80 24 Q83 27 85 30 L96 28 L88 38 Q89 42 90 46 L100 50 L90 54 Q89 58 88 62 L96 72 L85 70 Q83 73 80 76 L86 88 L77 80 Q74 82 70 82 L72 95 L65 85 Q62 82 58 80 L54 92 L50 80 Q46 82 42 80 L38 92 L35 80 Q32 82 28 82 L30 95 L23 85 Q20 82 17 80 L12 88 L15 76 Q12 73 10 70 L0 72 L8 62 Q7 58 6 54 L-4 50 L6 46 Q7 42 8 38 L0 28 L10 30 Q12 27 15 24 L8 12 L18 20 Q22 18 26 18 L24 5 L30 15 Q34 18 38 20 L42 8 L46 20 Q48 20 50 20 Z M50 35 A15 15 0 1 0 50 65 A15 15 0 1 0 50 35"/>
+  </svg>
+  <div class="titulo-branco">Como Gerar Renda</div>
+  <div class="titulo-verde">Sem Aparecer</div>
+  <div class="sub">em 3 passos simples</div>
+</body>
+</html>
+<!-- Abra no Chrome, Ctrl+Shift+I, toggle device toolbar, defina resolucao 1080x1080, screenshot -->
