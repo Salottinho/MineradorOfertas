@@ -496,34 +496,6 @@
             100% { opacity: 0; }
         }
 
-        /* ===== TELA EMAIL CAPTURE ===== */
-        .email-screen { text-align: center; }
-        .email-screen h2 { font-family: var(--font-headline); font-size: 1.6rem; margin-bottom: 8px; }
-        .email-screen h2 .hl { color: var(--accent); }
-        .email-screen p { color: var(--muted); margin-bottom: 24px; font-size: 0.95rem; }
-        .email-input-wrap {
-            display: flex; flex-direction: column; gap: 12px;
-            max-width: 400px; margin: 0 auto;
-        }
-        .email-input-wrap input {
-            background: var(--surface); border: 2px solid var(--border);
-            color: var(--text); font-family: var(--font-body); font-size: 1rem;
-            padding: 14px 16px; border-radius: 12px; outline: none;
-            transition: border-color 0.2s ease;
-        }
-        .email-input-wrap input:focus { border-color: var(--accent); }
-        .email-input-wrap input::placeholder { color: #555; }
-        .email-submit-btn {
-            background: var(--cta); color: #000; font-family: var(--font-headline);
-            font-size: 1.1rem; font-weight: 700; padding: 16px;
-            border: none; border-radius: 12px; cursor: pointer;
-            transition: all 0.2s ease; min-height: 56px;
-        }
-        .email-submit-btn:hover { background: var(--cta-hover); transform: scale(1.02); }
-        .email-skip { color: var(--muted); font-size: 0.8rem; margin-top: 12px; cursor: pointer; text-decoration: underline; }
-        .email-skip:hover { color: var(--text); }
-        .email-lock { display: flex; align-items: center; justify-content: center; gap: 6px; color: var(--muted); font-size: 0.75rem; margin-top: 16px; }
-
         /* ===== TELA LOADING ===== */
         .loading-screen { position: relative; }
 
@@ -1085,23 +1057,8 @@
         </div>
     </div>
 
-    <!-- TELA 8: EMAIL CAPTURE -->
-    <div class="screen email-screen" data-screen="8">
-        <h2>Seu diagnostico esta <span class="hl">quase pronto</span></h2>
-        <p>Digite seu melhor email para receber o resultado completo e dicas exclusivas</p>
-        <div class="email-input-wrap">
-            <input type="email" id="quizEmail" placeholder="seu@email.com" autocomplete="email">
-            <button class="email-submit-btn" onclick="submitEmail()">VER MEU DIAGNOSTICO</button>
-        </div>
-        <div class="email-skip" onclick="skipEmail()">Continuar sem email</div>
-        <div class="email-lock">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
-            Seus dados estao protegidos. Zero spam.
-        </div>
-    </div>
-
-    <!-- TELA 9: LOADING -->
-    <div class="screen loading-screen" data-screen="9">
+    <!-- TELA 8: LOADING -->
+    <div class="screen loading-screen" data-screen="8">
         <div class="orbit-container">
             <div class="orbit-ring"></div>
             <div class="orbit-ring"></div>
@@ -1119,8 +1076,8 @@
         </div>
     </div>
 
-    <!-- TELA 10: RESULTADO -->
-    <div class="screen result-screen" data-screen="10">
+    <!-- TELA 9: RESULTADO -->
+    <div class="screen result-screen" data-screen="9">
         <div class="result-glow"></div>
         <div class="result-header" id="resultHeader">
             <div class="result-badge" id="resultBadge">PERFIL AVANCADO</div>
@@ -1467,7 +1424,7 @@ function initCheckpoints() {
             var data = JSON.parse(saved);
             if (data && data.answers && data.answers.length === 7) {
                 answers = data.answers;
-                showScreen(10, 'fade');
+                showScreen(9, 'fade');
                 renderResult();
                 document.getElementById('progressWrapper').classList.add('visible');
                 initCheckpoints();
@@ -1662,37 +1619,9 @@ function selectOption(event, el, questionNum, value) {
             playSwoosh();
             showScreen(8, 'right');
             updateProgress(totalQuestions);
+            runLoader();
         }
     }, 600);
-}
-
-function submitEmail() {
-    var email = document.getElementById('quizEmail').value.trim();
-    if (email && email.indexOf('@') > 0) {
-        // Salvar email no Supabase
-        try {
-            fetch('https://ddgiyaqclmqnkqxrxtyx.supabase.co/rest/v1/quiz_leads', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'apikey': 'sb_publishable_1MFX_k1sd1B1oVd8Ny2yKA_bhO67ER7',
-                    'Authorization': 'Bearer sb_publishable_1MFX_k1sd1B1oVd8Ny2yKA_bhO67ER7'
-                },
-                body: JSON.stringify({ email: email, answers: answers, created_at: new Date().toISOString() })
-            });
-        } catch(e) {}
-    }
-    goToLoading();
-}
-
-function skipEmail() {
-    goToLoading();
-}
-
-function goToLoading() {
-    playSwoosh();
-    showScreen(9, 'fade');
-    runLoader();
 }
 
 function spawnLoaderTipParticles() {
@@ -1771,7 +1700,7 @@ function runLoader() {
                         setTimeout(function() { curtainL.remove(); curtainR.remove(); }, 1200);
 
                         renderResult();
-                        showScreen(10, 'fade');
+                        showScreen(9, 'fade');
                         launchConfetti();
                         playCelebration();
                         spawnResultSparkles();
