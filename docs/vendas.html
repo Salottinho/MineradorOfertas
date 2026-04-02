@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Metodo Renda Silenciosa - Como gerar R$3k-5k/mes com produtos fisicos na internet sem aparecer, sem criar conteudo e sem experiencia.">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Metodo Renda Silenciosa - Renda Extra Sem Aparecer">
+    <meta property="og:description" content="Como gerar R$3k-5k/mes com produtos fisicos na internet sem aparecer, sem criar conteudo e sem experiencia.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://rendasilenciosa.com.br">
+    <meta property="og:locale" content="pt_BR">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Metodo Renda Silenciosa">
+    <meta name="twitter:description" content="Como gerar R$3k-5k/mes com produtos fisicos na internet sem aparecer, sem criar conteudo e sem experiencia.">
+    <title>Metodo Renda Silenciosa - Renda Extra Sem Aparecer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* ===== MARCA D'AGUA ===== */
+        /* Produto: Metodo Renda Silenciosa | Proprietario: rendasilenciosa.com.br | ID: REND-20260402 */
+
+        :root {
+            --bg: #0f0f0f;
+            --surface: #1a1a1a;
+            --border: #2a2a2a;
+            --text: #e8e8e8;
+            --muted: #666666;
+            --accent: #a3e635;
+            --cta: #22c55e;
+            --cta-hover: #16a34a;
+            --gold: #f59e0b;
+            --font-headline: 'Syne', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+            --font-body: 'Inter', sans-serif;
+            --max-width: 720px;
+            --transition: all 0.2s ease;
+        }
+
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: var(--font-body);
+            font-size: 16px;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ===== TIMER URGENCIA ===== */
+        .urgency-bar {
+            background: linear-gradient(90deg, var(--cta), var(--accent));
+            color: #0f0f0f;
+            text-align: center;
+            padding: 10px 16px;
+            font-family: var(--font-mono);
+            font-weight: 700;
+            font-size: 14px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .urgency-bar span {
+            display: inline-block;
+            background: #0f0f0f;
+            color: var(--accent);
+            padding: 2px 8px;
+            border-radius: 4px;
+            margin: 0 2px;
+            min-width: 28px;
+            text-align: center;
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            padding: 60px 0 40px;
+            text-align: center;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(163, 230, 53, 0.1);
+            border: 1px solid rgba(163, 230, 53, 0.3);
+            color: var(--accent);
+            font-family: var(--font-mono);
+            font-size: 12px;
+            font-weight: 500;
+            padding: 6px 16px;
+            border-radius: 100px;
+            margin-bottom: 24px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero h1 {
+            font-family: var(--font-headline);
+            font-weight: 800;
+            font-size: clamp(28px, 6vw, 48px);
+            line-height: 1.15;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 .highlight {
+            color: var(--accent);
+        }
+
+        .hero .sub {
+            font-size: 18px;
+            color: var(--muted);
+            max-width: 560px;
+            margin: 0 auto 32px;
+            line-height: 1.6;
+        }
+
+        .hero .sub strong {
+            color: var(--text);
+        }
+
+        /* VSL Player Placeholder */
+        .vsl-wrapper {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            aspect-ratio: 16/9;
+            max-width: 640px;
+            margin: 0 auto 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .vsl-wrapper::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at center, rgba(163,230,53,0.05) 0%, transparent 70%);
+        }
+
+        .vsl-placeholder {
+            text-align: center;
+            color: var(--muted);
+            font-size: 14px;
+            z-index: 1;
+        }
+
+        .vsl-placeholder .play-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: var(--cta);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 12px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .vsl-placeholder .play-icon:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 30px rgba(34, 197, 94, 0.4);
+        }
+
+        .vsl-placeholder .play-icon::after {
+            content: '';
+            width: 0;
+            height: 0;
+            border-top: 12px solid transparent;
+            border-bottom: 12px solid transparent;
+            border-left: 20px solid #fff;
+            margin-left: 4px;
+        }
+
+        /* CTA Button */
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 56px;
+            padding: 16px 48px;
+            background: var(--cta);
+            color: #fff;
+            font-family: var(--font-headline);
+            font-size: 18px;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 12px;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 20px rgba(34, 197, 94, 0.3);
+            width: 100%;
+            max-width: 480px;
+        }
+
+        .cta-btn:hover {
+            background: var(--cta-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(34, 197, 94, 0.4);
+        }
+
+        .cta-btn:active {
+            transform: translateY(0);
+        }
+
+        .cta-sub {
+            font-size: 13px;
+            color: var(--muted);
+            margin-top: 12px;
+        }
+
+        .cta-sub svg {
+            width: 14px;
+            height: 14px;
+            vertical-align: -2px;
+            margin-right: 4px;
+        }
+
+        /* ===== SECAO GENERICA ===== */
+        section {
+            padding: 60px 0;
+        }
+
+        .section-divider {
+            width: 60px;
+            height: 3px;
+            background: var(--accent);
+            margin: 0 auto 40px;
+            border-radius: 2px;
+        }
+
+        .section-label {
+            font-family: var(--font-mono);
+            font-size: 12px;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-align: center;
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            font-family: var(--font-headline);
+            font-weight: 700;
+            font-size: clamp(24px, 4vw, 36px);
+            text-align: center;
+            margin-bottom: 40px;
+            line-height: 1.25;
+        }
+
+        /* ===== PROBLEMA ===== */
+        .problema {
+            background: var(--surface);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .pain-cards {
+            display: grid;
+            gap: 20px;
+        }
+
+        .pain-card {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px 24px;
+            transition: var(--transition);
+        }
+
+        .pain-card:hover {
+            border-color: rgba(163, 230, 53, 0.3);
+        }
+
+        .pain-card .icon {
+            font-size: 28px;
+            margin-bottom: 12px;
+        }
+
+        .pain-card h3 {
+            font-family: var(--font-headline);
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .pain-card p {
+            color: var(--muted);
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        /* ===== SOLUCAO ===== */
+        .solucao-intro {
+            text-align: center;
+            font-size: 17px;
+            color: var(--muted);
+            max-width: 600px;
+            margin: -20px auto 48px;
+            line-height: 1.7;
+        }
+
+        .solucao-intro strong {
+            color: var(--text);
+        }
+
+        .steps {
+            display: grid;
+            gap: 24px;
+            counter-reset: step;
+        }
+
+        .step {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px 24px 28px 80px;
+            position: relative;
+            counter-increment: step;
+            transition: var(--transition);
+        }
+
+        .step:hover {
+            border-color: rgba(163, 230, 53, 0.3);
+        }
+
+        .step::before {
+            content: counter(step);
+            position: absolute;
+            left: 24px;
+            top: 24px;
+            width: 40px;
+            height: 40px;
+            background: rgba(163, 230, 53, 0.1);
+            border: 1px solid rgba(163, 230, 53, 0.3);
+            color: var(--accent);
+            font-family: var(--font-mono);
+            font-size: 18px;
+            font-weight: 700;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .step h3 {
+            font-family: var(--font-headline);
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .step p {
+            color: var(--muted);
+            font-size: 15px;
+        }
+
+        /* ===== PROVA SOCIAL ===== */
+        .prova-social {
+            background: var(--surface);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .testimonials {
+            display: grid;
+            gap: 20px;
+        }
+
+        .testimonial {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px 24px;
+        }
+
+        .testimonial-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 16px;
+        }
+
+        .testimonial-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-headline);
+            font-weight: 700;
+            font-size: 18px;
+            color: var(--accent);
+            flex-shrink: 0;
+            /* <!-- SUBSTITUA: foto real do depoimento --> */
+        }
+
+        .testimonial-info h4 {
+            font-family: var(--font-headline);
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        .testimonial-info .result {
+            font-family: var(--font-mono);
+            font-size: 13px;
+            color: var(--gold);
+            font-weight: 500;
+        }
+
+        .testimonial-stars {
+            color: var(--gold);
+            font-size: 14px;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .testimonial p {
+            color: var(--muted);
+            font-size: 15px;
+            line-height: 1.6;
+            font-style: italic;
+        }
+
+        /* ===== COMPARACAO ===== */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 8px;
+        }
+
+        .comparison-table th {
+            font-family: var(--font-headline);
+            font-size: 14px;
+            font-weight: 700;
+            padding: 14px 16px;
+            text-align: left;
+            border-bottom: 2px solid var(--border);
+        }
+
+        .comparison-table th:nth-child(2) {
+            color: var(--muted);
+        }
+
+        .comparison-table th:nth-child(3) {
+            color: var(--accent);
+        }
+
+        .comparison-table td {
+            padding: 12px 16px;
+            font-size: 14px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .comparison-table td:first-child {
+            color: var(--muted);
+        }
+
+        .comparison-table .icon-no {
+            color: #ef4444;
+        }
+
+        .comparison-table .icon-yes {
+            color: var(--accent);
+        }
+
+        /* ===== OFERTA ===== */
+        .oferta {
+            background: var(--surface);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .oferta-box {
+            background: var(--bg);
+            border: 2px solid var(--accent);
+            border-radius: 16px;
+            padding: 40px 28px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .oferta-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--cta), var(--accent));
+        }
+
+        .oferta-titulo {
+            font-family: var(--font-headline);
+            font-size: 24px;
+            font-weight: 800;
+            margin-bottom: 28px;
+        }
+
+        .oferta-lista {
+            list-style: none;
+            text-align: left;
+            max-width: 440px;
+            margin: 0 auto 32px;
+        }
+
+        .oferta-lista li {
+            padding: 10px 0;
+            padding-left: 32px;
+            position: relative;
+            font-size: 15px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .oferta-lista li:last-child {
+            border-bottom: none;
+        }
+
+        .oferta-lista li::before {
+            content: '\2713';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: 700;
+            font-size: 16px;
+        }
+
+        .oferta-lista li span.bonus {
+            color: var(--gold);
+            font-family: var(--font-mono);
+            font-size: 11px;
+            font-weight: 500;
+            background: rgba(245, 158, 11, 0.1);
+            padding: 2px 8px;
+            border-radius: 4px;
+            margin-left: 6px;
+        }
+
+        .preco-wrapper {
+            margin-bottom: 28px;
+        }
+
+        .preco-antigo {
+            font-family: var(--font-mono);
+            font-size: 20px;
+            color: var(--muted);
+            text-decoration: line-through;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .preco-de-label {
+            font-size: 14px;
+            color: var(--muted);
+            margin-bottom: 2px;
+        }
+
+        .preco-novo {
+            font-family: var(--font-mono);
+            font-size: clamp(40px, 8vw, 56px);
+            font-weight: 700;
+            color: var(--accent);
+            line-height: 1.1;
+        }
+
+        .preco-novo small {
+            font-size: 24px;
+            vertical-align: super;
+        }
+
+        .preco-parcelado {
+            font-size: 14px;
+            color: var(--muted);
+            margin-top: 4px;
+        }
+
+        /* ===== GARANTIA ===== */
+        .garantia {
+            text-align: center;
+        }
+
+        .garantia-box {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 40px 28px;
+            max-width: 560px;
+            margin: 0 auto;
+        }
+
+        .garantia-icon {
+            font-size: 48px;
+            margin-bottom: 16px;
+        }
+
+        .garantia-box h3 {
+            font-family: var(--font-headline);
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .garantia-box h3 .dias {
+            color: var(--accent);
+        }
+
+        .garantia-box p {
+            color: var(--muted);
+            font-size: 15px;
+            line-height: 1.7;
+            max-width: 440px;
+            margin: 0 auto;
+        }
+
+        /* ===== CTA FINAL ===== */
+        .cta-final {
+            text-align: center;
+            background: var(--surface);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            padding: 60px 0;
+        }
+
+        .cta-final h2 {
+            font-family: var(--font-headline);
+            font-weight: 800;
+            font-size: clamp(24px, 5vw, 36px);
+            margin-bottom: 8px;
+            line-height: 1.2;
+        }
+
+        .cta-final h2 .highlight {
+            color: var(--accent);
+        }
+
+        .cta-final .cta-reminder {
+            font-size: 14px;
+            color: var(--muted);
+            margin-top: 16px;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid var(--border);
+        }
+
+        footer p {
+            font-size: 13px;
+            color: var(--muted);
+            margin-bottom: 6px;
+        }
+
+        footer a {
+            color: var(--muted);
+            text-decoration: underline;
+            transition: var(--transition);
+        }
+
+        footer a:hover {
+            color: var(--text);
+        }
+
+        /* ===== ANIMACOES ===== */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ===== PULSE CTA ===== */
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 4px 20px rgba(34, 197, 94, 0.3); }
+            50% { box-shadow: 0 4px 30px rgba(34, 197, 94, 0.5); }
+        }
+
+        .cta-btn { animation: pulse-glow 2.5s infinite; }
+        .cta-btn:hover { animation: none; }
+
+        /* ===== RESPONSIVO ===== */
+        @media (min-width: 640px) {
+            .pain-cards { grid-template-columns: 1fr; }
+            .testimonials { grid-template-columns: 1fr; }
+        }
+
+        @media (min-width: 768px) {
+            section { padding: 80px 0; }
+            .pain-cards { grid-template-columns: repeat(3, 1fr); }
+            .steps { grid-template-columns: 1fr; }
+            .testimonials { grid-template-columns: repeat(3, 1fr); }
+            .container { padding: 0 32px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ===== MARCA D'AGUA ===== -->
+<!-- Produto: Metodo Renda Silenciosa | Proprietario: rendasilenciosa.com.br | ID: REND-20260402T000000 -->
+<!-- Gerado em: 02/04/2026 | Uso autorizado apenas em rendasilenciosa.com.br -->
+
+<!-- ===== TIMER URGENCIA ===== -->
+<div class="urgency-bar" id="urgency-bar">
+    OFERTA ENCERRA EM: <span id="timer-h">00</span>:<span id="timer-m">00</span>:<span id="timer-s">00</span>
+</div>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+    <div class="container">
+        <div class="hero-badge">Metodo testado e validado</div>
+        <h1>
+            Como Gerar <span class="highlight">R$3.000 a R$5.000/mes</span> Com Produtos Fisicos na Internet
+        </h1>
+        <p class="sub">
+            <strong>Sem aparecer, sem criar conteudo e sem experiencia.</strong> O metodo silencioso que pessoas comuns estao usando para construir uma renda extra real.
+        </p>
+
+        <!-- VSL Player: cole aqui o embed do Vturb ou Panda Video -->
+        <div class="vsl-wrapper">
+            <div class="vsl-placeholder">
+                <div class="play-icon"></div>
+                <!-- SUBSTITUA: embed do player Vturb ou Panda Video aqui -->
+                <p>Assista ao video e descubra o metodo</p>
+            </div>
+        </div>
+
+        <a href="#oferta" class="cta-btn">QUERO COMECAR AGORA POR R$37</a>
+        <p class="cta-sub">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+            Pagamento 100% seguro &bull; Acesso imediato
+        </p>
+    </div>
+</section>
+
+<!-- ===== PROBLEMA ===== -->
+<section class="problema">
+    <div class="container">
+        <p class="section-label">Voce se identifica?</p>
+        <h2 class="section-title">Se voce sente isso, <span style="color:var(--accent)">nao esta sozinho</span></h2>
+
+        <div class="pain-cards">
+            <div class="pain-card fade-in">
+                <div class="icon">&#128176;</div>
+                <h3>O salario nao chega ate o fim do mes</h3>
+                <p>Voce trabalha o mes inteiro e no dia 20 ja esta contando moedas. Parcelas, contas, imprevistos... e a sensacao de que nunca sobra nada pra voce.</p>
+            </div>
+            <div class="pain-card fade-in">
+                <div class="icon">&#128247;</div>
+                <h3>Medo de aparecer na internet</h3>
+                <p>Voce ja pensou em vender online, mas so de imaginar gravar video, fazer stories ou aparecer pra todo mundo ver, da um frio na barriga.</p>
+            </div>
+            <div class="pain-card fade-in">
+                <div class="icon">&#129300;</div>
+                <h3>Nao sabe por onde comecar</h3>
+                <p>Informacao demais, cursos caros, gurus prometendo milagre. Voce fica travado sem saber qual o primeiro passo concreto pra ganhar dinheiro online.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== SOLUCAO ===== -->
+<section class="solucao">
+    <div class="container">
+        <p class="section-label">A solucao</p>
+        <h2 class="section-title">Conheca o <span style="color:var(--accent)">Metodo Renda Silenciosa</span></h2>
+
+        <p class="solucao-intro">
+            O Metodo Renda Silenciosa e um sistema passo a passo para vender <strong>produtos fisicos na internet</strong> usando lojas automatizadas, sem precisar aparecer, sem criar conteudo e sem estoque. Voce monta uma operacao silenciosa que gera vendas todos os dias &mdash; mesmo enquanto dorme.
+        </p>
+
+        <div class="steps">
+            <div class="step fade-in">
+                <h3>Escolha o produto certo</h3>
+                <p>Voce aprende a encontrar produtos fisicos com alta demanda e pouca concorrencia usando ferramentas gratuitas. Nada de adivinhar.</p>
+            </div>
+            <div class="step fade-in">
+                <h3>Monte sua maquina de vendas</h3>
+                <p>Configure sua loja e seus anuncios seguindo o modelo pronto. Copie, cole e adapte &mdash; mesmo que nunca tenha feito isso antes.</p>
+            </div>
+            <div class="step fade-in">
+                <h3>Escale no silencio</h3>
+                <p>Com as primeiras vendas chegando, voce aprende a escalar investindo pouco e aumentando o lucro, tudo de forma anonima e automatizada.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== COMPARACAO ===== -->
+<section>
+    <div class="container">
+        <p class="section-label">Comparacao</p>
+        <h2 class="section-title">Por que produtos fisicos?</h2>
+
+        <div style="overflow-x:auto; border: 1px solid var(--border); border-radius: 12px; background: var(--surface);">
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Infoprodutos</th>
+                        <th>Renda Silenciosa</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Concorrencia</td>
+                        <td class="icon-no">&#10008; Altissima</td>
+                        <td class="icon-yes">&#10004; Baixa</td>
+                    </tr>
+                    <tr>
+                        <td>Precisa aparecer?</td>
+                        <td class="icon-no">&#10008; Sim</td>
+                        <td class="icon-yes">&#10004; Nao</td>
+                    </tr>
+                    <tr>
+                        <td>Criar conteudo?</td>
+                        <td class="icon-no">&#10008; Diariamente</td>
+                        <td class="icon-yes">&#10004; Zero</td>
+                    </tr>
+                    <tr>
+                        <td>Investimento inicial</td>
+                        <td class="icon-no">&#10008; R$500+</td>
+                        <td class="icon-yes">&#10004; A partir de R$50</td>
+                    </tr>
+                    <tr>
+                        <td>Tempo ate 1a venda</td>
+                        <td class="icon-no">&#10008; Semanas/meses</td>
+                        <td class="icon-yes">&#10004; Primeiros dias</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<!-- ===== PROVA SOCIAL ===== -->
+<section class="prova-social">
+    <div class="container">
+        <p class="section-label">Resultados reais</p>
+        <h2 class="section-title">Quem aplicou, <span style="color:var(--gold)">ja esta faturando</span></h2>
+
+        <div class="testimonials">
+            <div class="testimonial fade-in">
+                <div class="testimonial-header">
+                    <div class="testimonial-avatar">
+                        <!-- SUBSTITUA: foto de depoimento da Mariana -->
+                        M
+                    </div>
+                    <div class="testimonial-info">
+                        <h4>Mariana S.</h4>
+                        <span class="result">+R$4.230 no 2o mes</span>
+                    </div>
+                </div>
+                <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p>&ldquo;Eu tinha vergonha de aparecer e achava que nao tinha jeito de vender online. No segundo mes ja tinha feito mais de 4 mil reais. Meu marido nao acreditou.&rdquo;</p>
+            </div>
+
+            <div class="testimonial fade-in">
+                <div class="testimonial-header">
+                    <div class="testimonial-avatar">
+                        <!-- SUBSTITUA: foto de depoimento do Carlos -->
+                        C
+                    </div>
+                    <div class="testimonial-info">
+                        <h4>Carlos R.</h4>
+                        <span class="result">+R$3.870 trabalhando 2h/dia</span>
+                    </div>
+                </div>
+                <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p>&ldquo;Trabalho em fabrica das 6h as 14h e comecei a aplicar o metodo a noite. Em 3 semanas ja tava vendendo todo dia. Melhor investimento que fiz.&rdquo;</p>
+            </div>
+
+            <div class="testimonial fade-in">
+                <div class="testimonial-header">
+                    <div class="testimonial-avatar">
+                        <!-- SUBSTITUA: foto de depoimento da Fernanda -->
+                        F
+                    </div>
+                    <div class="testimonial-info">
+                        <h4>Fernanda L.</h4>
+                        <span class="result">+R$5.100 como dona de casa</span>
+                    </div>
+                </div>
+                <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p>&ldquo;Sou dona de casa e nunca tinha vendido nada na internet. Segui o passo a passo e no primeiro mes completo ja fiz mais de 5 mil. Ninguem sabe que sou eu por tras.&rdquo;</p>
+            </div>
+        </div>
+
+        <!-- SUBSTITUA: screenshot de comprovante de vendas / dashboard -->
+    </div>
+</section>
+
+<!-- ===== OFERTA ===== -->
+<section class="oferta" id="oferta">
+    <div class="container">
+        <div class="oferta-box">
+            <p class="section-label">Oferta especial</p>
+            <h2 class="oferta-titulo">Tudo que voce recebe hoje:</h2>
+
+            <ul class="oferta-lista">
+                <li>Metodo Renda Silenciosa completo (7 modulos)</li>
+                <li>Lista de 50+ produtos validados pra vender <span class="bonus">BONUS</span></li>
+                <li>Templates de anuncios prontos pra copiar</li>
+                <li>Planilha de controle financeiro automatizada <span class="bonus">BONUS</span></li>
+                <li>Acesso a comunidade exclusiva de alunos</li>
+                <li>Suporte por 30 dias direto com a equipe</li>
+                <li>Atualizacoes gratuitas por 1 ano</li>
+            </ul>
+
+            <div class="preco-wrapper">
+                <span class="preco-de-label">De</span>
+                <span class="preco-antigo">R$197,00</span>
+                <span class="preco-de-label">por apenas</span>
+                <div class="preco-novo"><small>R$</small>37</div>
+                <p class="preco-parcelado">ou 4x de R$10,17 sem juros</p>
+            </div>
+
+            <a href="#" class="cta-btn" id="cta-oferta">QUERO ACESSO IMEDIATO POR R$37</a>
+            <!-- SUBSTITUA: link de checkout real no href acima -->
+            <p class="cta-sub">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;vertical-align:-2px;margin-right:4px"><path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+                Compra segura &bull; Acesso imediato &bull; Garantia de 7 dias
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- ===== GARANTIA ===== -->
+<section class="garantia">
+    <div class="container">
+        <div class="garantia-box fade-in">
+            <div class="garantia-icon">&#128737;</div>
+            <h3>Garantia incondicional de <span class="dias">7 dias</span></h3>
+            <p>Se por qualquer motivo voce sentir que o Metodo Renda Silenciosa nao e pra voce, basta enviar um e-mail em ate 7 dias e devolvemos 100% do seu dinheiro. Sem perguntas, sem burocracia. O risco e todo nosso.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ===== CTA FINAL ===== -->
+<section class="cta-final">
+    <div class="container">
+        <h2>Sua renda extra <span class="highlight">silenciosa</span> comeca agora</h2>
+        <p style="color:var(--muted); margin-bottom:28px; font-size:16px;">Apenas R$37 para mudar sua realidade financeira. Sem risco.</p>
+        <a href="#oferta" class="cta-btn">SIM, QUERO COMECAR AGORA</a>
+        <p class="cta-reminder">Garantia de 7 dias &bull; Cancele quando quiser &bull; Acesso vitalicio</p>
+    </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+    <div class="container">
+        <p>&copy; 2026 Metodo Renda Silenciosa &mdash; Todos os direitos reservados.</p>
+        <p>rendasilenciosa.com.br</p>
+        <p style="margin-top:12px;">
+            <a href="#">Termos de Uso</a> &bull;
+            <a href="#">Politica de Privacidade</a> &bull;
+            <a href="#">Contato</a>
+        </p>
+        <p style="margin-top:16px; font-size:11px; max-width:500px; margin-left:auto; margin-right:auto;">
+            Este produto nao garante a obtencao de resultados. Qualquer referencia ao desempenho passado nao e indicacao de resultados futuros. Os resultados variam de pessoa para pessoa.
+        </p>
+    </div>
+</footer>
+
+<!-- ===== SCRIPTS ===== -->
+<script>
+// ===== VERIFICACAO DE DOMINIO =====
+(function() {
+    var dominiosAutorizados = [
+        'rendasilenciosa.com.br',
+        'www.rendasilenciosa.com.br',
+        'salottinho.github.io',
+        'localhost',
+        '127.0.0.1'
+    ];
+    var host = window.location.hostname;
+    if (dominiosAutorizados.indexOf(host) === -1) {
+        document.body.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:100vh;background:#0f0f0f;color:#ef4444;font-family:monospace;font-size:18px;text-align:center;padding:20px;">ACESSO NAO AUTORIZADO<br>Este conteudo e protegido.<br>Dominio: ' + host + '</div>';
+    }
+})();
+
+// ===== BLOQUEIO DE INSPECAO =====
+(function() {
+    // Bloqueia F12
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'F12' || e.keyCode === 123) {
+            e.preventDefault();
+            return false;
+        }
+        // Bloqueia Ctrl+Shift+I / Ctrl+Shift+J / Ctrl+U
+        if (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'i' || e.key === 'J' || e.key === 'j')) {
+            e.preventDefault();
+            return false;
+        }
+        if (e.ctrlKey && (e.key === 'U' || e.key === 'u')) {
+            e.preventDefault();
+            return false;
+        }
+    });
+    // Bloqueia right-click
+    document.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+        return false;
+    });
+})();
+
+// ===== TIMER DE URGENCIA =====
+(function() {
+    // Timer de 24h baseado no localStorage
+    var STORAGE_KEY = 'rs_timer_end';
+    var endTime = localStorage.getItem(STORAGE_KEY);
+    if (!endTime || parseInt(endTime) < Date.now()) {
+        endTime = Date.now() + (24 * 60 * 60 * 1000);
+        localStorage.setItem(STORAGE_KEY, endTime);
+    } else {
+        endTime = parseInt(endTime);
+    }
+
+    function updateTimer() {
+        var diff = endTime - Date.now();
+        if (diff <= 0) {
+            document.getElementById('timer-h').textContent = '00';
+            document.getElementById('timer-m').textContent = '00';
+            document.getElementById('timer-s').textContent = '00';
+            return;
+        }
+        var h = Math.floor(diff / 3600000);
+        var m = Math.floor((diff % 3600000) / 60000);
+        var s = Math.floor((diff % 60000) / 1000);
+        document.getElementById('timer-h').textContent = h < 10 ? '0' + h : h;
+        document.getElementById('timer-m').textContent = m < 10 ? '0' + m : m;
+        document.getElementById('timer-s').textContent = s < 10 ? '0' + s : s;
+    }
+
+    updateTimer();
+    setInterval(updateTimer, 1000);
+})();
+
+// ===== FADE-IN ON SCROLL =====
+(function() {
+    var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-in').forEach(function(el) {
+        observer.observe(el);
+    });
+})();
+</script>
+
+</body>
+</html>

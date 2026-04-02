@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Obrigado! - Metodo Renda Silenciosa</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0f0f0f;
+            --surface: #1a1a1a;
+            --border: #2a2a2a;
+            --text: #e8e8e8;
+            --muted: #888888;
+            --accent: #a3e635;
+            --cta: #22c55e;
+            --font-headline: 'Syne', sans-serif;
+            --font-body: 'Inter', sans-serif;
+        }
+
+        *, *::before, *::after {
+            margin: 0; padding: 0; box-sizing: border-box;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--font-body);
+            font-size: 16px;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .check-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: rgba(34, 197, 94, 0.15);
+            border: 3px solid var(--cta);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 32px;
+            font-size: 40px;
+            animation: scaleIn 0.5s ease forwards;
+        }
+
+        @keyframes scaleIn {
+            from { transform: scale(0); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        h1 {
+            font-family: var(--font-headline);
+            font-weight: 800;
+            font-size: clamp(24px, 5vw, 36px);
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+
+        h1 .hl {
+            color: var(--accent);
+        }
+
+        .subtitle {
+            font-size: 18px;
+            color: var(--muted);
+            margin-bottom: 40px;
+            max-width: 480px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .steps-box {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px 24px;
+            text-align: left;
+            margin-bottom: 32px;
+        }
+
+        .steps-box h3 {
+            font-family: var(--font-headline);
+            font-weight: 700;
+            font-size: 16px;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+
+        .step-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            margin-bottom: 16px;
+            font-size: 15px;
+            line-height: 1.5;
+        }
+
+        .step-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .step-num {
+            flex-shrink: 0;
+            width: 28px;
+            height: 28px;
+            border-radius: 8px;
+            background: rgba(163, 230, 53, 0.15);
+            color: var(--accent);
+            font-weight: 700;
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .footer-text {
+            font-size: 14px;
+            color: var(--muted);
+        }
+
+        .footer-text a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .footer-text a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="check-icon">&#10003;</div>
+
+    <h1>Compra <span class="hl">Confirmada!</span></h1>
+    <p class="subtitle">Parabens! Voce acabou de dar o primeiro passo para construir sua renda silenciosa.</p>
+
+    <div class="steps-box">
+        <h3>Proximos passos:</h3>
+        <div class="step-item">
+            <div class="step-num">1</div>
+            <div>Acesse seu e-mail e procure a mensagem com o assunto <strong>"Seu acesso ao Metodo Renda Silenciosa"</strong></div>
+        </div>
+        <div class="step-item">
+            <div class="step-num">2</div>
+            <div>Clique no link de acesso e faca seu cadastro na plataforma</div>
+        </div>
+        <div class="step-item">
+            <div class="step-num">3</div>
+            <div>Comece pelo <strong>Modulo 1</strong> e siga o passo a passo do dia 1 ao dia 30</div>
+        </div>
+    </div>
+
+    <p class="footer-text">Duvidas? Entre em contato pelo e-mail <a href="mailto:suporte@rendasilenciosa.com.br">suporte@rendasilenciosa.com.br</a></p>
+</div>
+
+</body>
+</html>
