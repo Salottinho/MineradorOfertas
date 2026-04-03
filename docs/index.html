@@ -1820,8 +1820,8 @@ function showScreen(n, direction) {
             target.classList.add('fade-in');
         }
         target.classList.add('active');
-        // So scrolla pro topo nas perguntas, nao no resultado (tela 10)
-        if (n <= 9) {
+        // So scrolla pro topo nas perguntas (1-7) e email (8)
+        if (n <= 8) {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     }
@@ -1996,21 +1996,37 @@ function selectOption(event, el, questionNum, value) {
 }
 
 function submitEmail() {
-    var email = document.getElementById('quizEmail').value.trim();
-    if (email && email.indexOf('@') > 0) {
-        // Salvar email no Supabase
-        try {
-            fetch('https://ddgiyaqclmqnkqxrxtyx.supabase.co/rest/v1/quiz_leads', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'apikey': 'sb_publishable_1MFX_k1sd1B1oVd8Ny2yKA_bhO67ER7',
-                    'Authorization': 'Bearer sb_publishable_1MFX_k1sd1B1oVd8Ny2yKA_bhO67ER7'
-                },
-                body: JSON.stringify({ email: email, answers: answers, created_at: new Date().toISOString() })
-            });
-        } catch(e) {}
+    var emailInput = document.getElementById('quizEmail');
+    var email = emailInput.value.trim();
+    var btn = document.querySelector('.email-submit-btn');
+
+    // Validar email
+    if (!email || email.indexOf('@') < 1 || email.indexOf('.') < 3) {
+        emailInput.style.borderColor = '#ef4444';
+        emailInput.setAttribute('placeholder', 'Digite um email valido');
+        setTimeout(function() { emailInput.style.borderColor = ''; }, 2000);
+        return;
     }
+
+    // Desabilitar botao pra evitar duplo clique
+    btn.disabled = true;
+    btn.textContent = 'ANALISANDO...';
+    btn.style.opacity = '0.7';
+
+    // Salvar email no Supabase
+    try {
+        fetch('https://ddgiyaqclmqnkqxrxtyx.supabase.co/rest/v1/quiz_leads', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'apikey': 'sb_publishable_1MFX_k1sd1B1oVd8Ny2yKA_bhO67ER7',
+                'Authorization': 'Bearer sb_publishable_1MFX_k1sd1B1oVd8Ny2yKA_bhO67ER7'
+            },
+            body: JSON.stringify({ email: email, answers: answers, created_at: new Date().toISOString() })
+        });
+    } catch(e) {}
+
+    // Avancar pro loading
     goToLoading();
 }
 
