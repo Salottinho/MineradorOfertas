@@ -947,25 +947,8 @@
             100% { transform: translateY(100vh) rotate(var(--rotate, 720deg)) scale(0.5); opacity: 0; }
         }
 
-        /* ===== MOBILE SCROLL INDICATOR ===== */
-        .scroll-indicator {
-            position: fixed;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 60;
-            pointer-events: none;
-            animation: scrollBounce 2s ease-in-out infinite;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        .scroll-indicator.visible { opacity: 0.6; }
-        .scroll-indicator svg {
-            width: 24px; height: 24px;
-            stroke: var(--accent);
-            fill: none;
-            stroke-width: 2;
-        }
+        /* ===== MOBILE SCROLL INDICATOR — DESATIVADO ===== */
+        .scroll-indicator { display: none !important; }
         @keyframes scrollBounce {
             0%, 100% { transform: translateX(-50%) translateY(0); }
             50% { transform: translateX(-50%) translateY(8px); }
@@ -981,7 +964,7 @@
             transform: translateY(30px);
             transition: all 0.7s cubic-bezier(0.22, 1, 0.36, 1);
         }
-        .offer-bridge.visible { opacity: 1; transform: translateY(0); }
+        .offer-bridge.visible, .offer-bridge { opacity: 1; transform: none; }
 
         .offer-divider {
             display: flex;
@@ -1034,7 +1017,7 @@
             transition: all 0.7s cubic-bezier(0.22, 1, 0.36, 1);
             box-shadow: 0 0 30px rgba(163,230,53,0.08);
         }
-        .offer-box.visible { opacity: 1; transform: translateY(0); }
+        .offer-box.visible, .offer-box { opacity: 1; transform: none; }
 
         .offer-title {
             font-family: var(--font-headline);
@@ -1161,7 +1144,7 @@
             transform: translateY(30px);
             transition: all 0.7s cubic-bezier(0.22, 1, 0.36, 1);
         }
-        .offer-guarantee.visible { opacity: 1; transform: translateY(0); }
+        .offer-guarantee.visible, .offer-guarantee { opacity: 1; transform: none; }
 
         .guarantee-icon {
             font-size: 40px;
@@ -1190,7 +1173,7 @@
             transform: translateY(30px);
             transition: all 0.7s cubic-bezier(0.22, 1, 0.36, 1);
         }
-        .offer-final.visible { opacity: 1; transform: translateY(0); }
+        .offer-final.visible, .offer-final { opacity: 1; transform: none; }
 
         .offer-timer-label {
             font-size: 14px;
@@ -1225,7 +1208,7 @@
             transform: translateY(30px);
             transition: all 0.7s cubic-bezier(0.22, 1, 0.36, 1);
         }
-        .offer-footer.visible { opacity: 1; transform: translateY(0); }
+        .offer-footer.visible, .offer-footer { opacity: 1; transform: none; }
         .offer-footer a {
             color: var(--muted);
             font-size: 13px;
@@ -2394,8 +2377,11 @@ var _originalRenderResult = renderResult;
 renderResult = function() {
     _originalRenderResult();
     // Start timer and observer after a short delay to let DOM settle
+    // Observer desativado (causava scroll). Secoes ja visiveis via CSS.
+    // Mostrar todos os elementos da oferta de uma vez
     setTimeout(function() {
-        initOfferObserver();
+        var items = document.querySelectorAll('.offer-list li');
+        items.forEach(function(li) { li.classList.add('visible'); });
         startOfferTimer();
     }, 500);
 };
