@@ -697,7 +697,7 @@
         }
 
         /* ===== TELA RESULTADO ===== */
-        .result-screen { text-align: left; align-items: stretch; }
+        .result-screen { text-align: left; align-items: stretch; justify-content: flex-start; }
 
         /* Curtain reveal */
         .curtain-left, .curtain-right {
@@ -966,6 +966,267 @@
             50% { transform: translateX(-50%) translateY(8px); }
         }
 
+        /* ===== OFERTA EMBUTIDA NO RESULTADO ===== */
+        .offer-bridge {
+            text-align: center;
+            margin: 40px 0 32px;
+            position: relative;
+            z-index: 1;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .offer-bridge.visible { opacity: 1; transform: translateY(0); }
+
+        .offer-divider {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+        .offer-divider::before, .offer-divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--accent), transparent);
+        }
+        .offer-divider-icon {
+            color: var(--accent);
+            font-size: 24px;
+            animation: spinSlow 4s linear infinite;
+        }
+        @keyframes spinSlow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .offer-bridge-text {
+            font-size: 17px;
+            color: var(--muted);
+            line-height: 1.7;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+        .offer-bridge-highlight {
+            display: block;
+            margin-top: 12px;
+            font-family: var(--font-headline);
+            font-weight: 700;
+            font-size: 20px;
+            color: var(--accent);
+        }
+
+        .offer-box {
+            background: #1a1a1a;
+            border: 2px solid var(--accent);
+            border-radius: 16px;
+            padding: 32px 24px;
+            margin-bottom: 24px;
+            position: relative;
+            z-index: 1;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+            box-shadow: 0 0 30px rgba(163,230,53,0.08);
+        }
+        .offer-box.visible { opacity: 1; transform: translateY(0); }
+
+        .offer-title {
+            font-family: var(--font-headline);
+            font-weight: 800;
+            font-size: clamp(22px, 5vw, 30px);
+            color: var(--accent);
+            text-align: center;
+            margin-bottom: 28px;
+        }
+
+        .offer-list {
+            list-style: none;
+            margin-bottom: 28px;
+        }
+        .offer-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 10px 0;
+            font-size: 15px;
+            line-height: 1.5;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            opacity: 0;
+            transform: translateX(-20px);
+            transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .offer-list li.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        .offer-list li:last-child { border-bottom: none; }
+
+        .offer-check {
+            flex-shrink: 0;
+            width: 24px;
+            height: 24px;
+            background: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 1px;
+        }
+        .offer-check svg {
+            width: 14px;
+            height: 14px;
+            stroke: #0f0f0f;
+            stroke-width: 3;
+            fill: none;
+        }
+
+        .offer-value {
+            color: var(--muted);
+            font-size: 13px;
+            font-family: var(--font-mono);
+        }
+
+        .offer-pricing {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+        .offer-price-old {
+            font-size: 18px;
+            color: var(--muted);
+            text-decoration: line-through;
+            margin-bottom: 8px;
+        }
+        .offer-price-new {
+            font-family: var(--font-mono);
+            font-weight: 700;
+            font-size: clamp(32px, 7vw, 44px);
+            color: var(--accent);
+            animation: pricePulse 2s ease-in-out infinite;
+        }
+        @keyframes pricePulse {
+            0%, 100% { text-shadow: 0 0 10px rgba(163,230,53,0.3); }
+            50% { text-shadow: 0 0 25px rgba(163,230,53,0.6); }
+        }
+        .offer-price-installments {
+            font-size: 14px;
+            color: var(--muted);
+            margin-top: 4px;
+        }
+
+        .btn-cta-offer {
+            display: block;
+            width: 100%;
+            background: var(--cta);
+            color: #0f0f0f;
+            font-family: var(--font-headline);
+            font-weight: 700;
+            font-size: 18px;
+            padding: 20px 32px;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            text-align: center;
+            text-decoration: none;
+            animation: ctaPulseGlow 2s ease-in-out infinite;
+            position: relative;
+            z-index: 1;
+        }
+        .btn-cta-offer:hover {
+            background: var(--cta-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(34,197,94,0.4);
+        }
+
+        .offer-guarantee {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            text-align: center;
+            margin-bottom: 24px;
+            position: relative;
+            z-index: 1;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .offer-guarantee.visible { opacity: 1; transform: translateY(0); }
+
+        .guarantee-icon {
+            font-size: 40px;
+            margin-bottom: 12px;
+            color: var(--accent);
+        }
+        .guarantee-title {
+            font-family: var(--font-headline);
+            font-weight: 700;
+            font-size: 20px;
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+        .guarantee-text {
+            font-size: 15px;
+            color: var(--muted);
+            line-height: 1.6;
+        }
+
+        .offer-final {
+            text-align: center;
+            margin-bottom: 24px;
+            position: relative;
+            z-index: 1;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .offer-final.visible { opacity: 1; transform: translateY(0); }
+
+        .offer-timer-label {
+            font-size: 14px;
+            color: var(--muted);
+            margin-bottom: 8px;
+        }
+        .offer-timer {
+            font-family: var(--font-mono);
+            font-weight: 700;
+            font-size: 32px;
+            color: var(--accent);
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+        .offer-timer.expired {
+            font-size: 16px;
+            color: var(--cta);
+        }
+
+        .offer-sub-info {
+            font-size: 12px;
+            color: var(--muted);
+            margin-top: 12px;
+        }
+
+        .offer-footer {
+            text-align: center;
+            padding: 24px 0 16px;
+            position: relative;
+            z-index: 1;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .offer-footer.visible { opacity: 1; transform: translateY(0); }
+        .offer-footer a {
+            color: var(--muted);
+            font-size: 13px;
+            text-decoration: none;
+            margin: 0 12px;
+        }
+        .offer-footer a:hover { color: var(--text); }
+
         /* ===== RESPONSIVO ===== */
         @media (max-width: 480px) {
             .quiz-container { padding: 16px; }
@@ -974,6 +1235,8 @@
             .insights-box, .problem-box, .solution-box { padding: 20px; }
             .mute-btn { width: 36px; height: 36px; font-size: 16px; }
             .progress-bar { height: 12px; }
+            .offer-box { padding: 24px 16px; }
+            .offer-list li { font-size: 14px; }
         }
     </style>
 </head>
@@ -1155,8 +1418,69 @@
             <p>Ele funciona com <strong>produtos fisicos reais</strong>, com demanda comprovada, usando uma operacao simples que cabe em qualquer rotina.</p>
         </div>
 
-        <a href="vendas.html" class="btn-cta" id="ctaButton">QUERO CONHECER O METODO</a>
-        <span class="btn-sub">Acesso imediato -- Garantia de 7 dias</span>
+        <!-- SECAO 1: BRIDGE -->
+        <div class="offer-bridge" id="offerBridge">
+            <div class="offer-divider">
+                <span class="offer-divider-icon">&#9881;</span>
+            </div>
+            <p class="offer-bridge-text">
+                Existe um metodo que pessoas com exatamente o seu perfil estao usando para gerar renda sem aparecer.
+                <span class="offer-bridge-highlight">E ele esta disponivel para voce agora.</span>
+            </p>
+        </div>
+
+        <!-- SECAO 2: OFERTA -->
+        <div class="offer-box" id="offerBox">
+            <div class="offer-title">Metodo Renda Silenciosa</div>
+            <ul class="offer-list" id="offerList">
+                <li>
+                    <span class="offer-check"><svg viewBox="0 0 24 24"><polyline points="4 12 10 18 20 6"/></svg></span>
+                    <div>Ebook completo -- 6 capitulos passo a passo <span class="offer-value">(valor R$197)</span></div>
+                </li>
+                <li>
+                    <span class="offer-check"><svg viewBox="0 0 24 24"><polyline points="4 12 10 18 20 6"/></svg></span>
+                    <div>Checklist 30 Dias do Afiliado <span class="offer-value">(valor R$47)</span></div>
+                </li>
+                <li>
+                    <span class="offer-check"><svg viewBox="0 0 24 24"><polyline points="4 12 10 18 20 6"/></svg></span>
+                    <div>Pack com 11 Templates Prontos <span class="offer-value">(valor R$67)</span></div>
+                </li>
+                <li>
+                    <span class="offer-check"><svg viewBox="0 0 24 24"><polyline points="4 12 10 18 20 6"/></svg></span>
+                    <div>Acesso imediato</div>
+                </li>
+                <li>
+                    <span class="offer-check"><svg viewBox="0 0 24 24"><polyline points="4 12 10 18 20 6"/></svg></span>
+                    <div>Atualizacoes gratuitas</div>
+                </li>
+            </ul>
+            <div class="offer-pricing">
+                <div class="offer-price-old">De R$311</div>
+                <div class="offer-price-new">Por apenas R$37</div>
+                <div class="offer-price-installments">ou 4x de R$10,09</div>
+            </div>
+            <a href="#checkout" class="btn-cta-offer" id="ctaOfferTop" onclick="try{fbq('track','InitiateCheckout')}catch(e){}">QUERO ACESSAR O METODO AGORA</a>
+        </div>
+
+        <!-- SECAO 3: GARANTIA -->
+        <div class="offer-guarantee" id="offerGuarantee">
+            <div class="guarantee-icon">&#128737;</div>
+            <div class="guarantee-title">7 Dias. Sem Risco.</div>
+            <p class="guarantee-text">Aplique por 7 dias. Se nao fizer sentido, devolvo cada centavo. Sem perguntas.</p>
+        </div>
+
+        <!-- SECAO 4: TIMER + CTA FINAL -->
+        <div class="offer-final" id="offerFinal">
+            <div class="offer-timer-label">Sua oferta exclusiva de diagnostico expira em:</div>
+            <div class="offer-timer" id="offerTimer">15:00</div>
+            <a href="#checkout" class="btn-cta-offer" id="ctaOfferBottom" onclick="try{fbq('track','InitiateCheckout')}catch(e){}">QUERO ACESSAR O METODO AGORA</a>
+            <div class="offer-sub-info">Acesso imediato apos a compra | 7 dias de garantia</div>
+        </div>
+
+        <!-- SECAO 5: FOOTER MINI -->
+        <div class="offer-footer" id="offerFooter">
+            <a href="privacidade.html">Privacidade</a> | <a href="termos.html">Termos</a>
+        </div>
     </div>
 
 </div>
@@ -1972,6 +2296,73 @@ function launchConfetti() {
         })(Math.random() * 2000);
     }
 }
+
+/* ===== OFFER SECTIONS: INTERSECTION OBSERVER + TIMER ===== */
+var offerTimerInterval = null;
+var offerTimerSeconds = 15 * 60; // 15 minutes
+
+function startOfferTimer() {
+    var timerEl = document.getElementById('offerTimer');
+    if (!timerEl) return;
+    offerTimerSeconds = 15 * 60;
+
+    offerTimerInterval = setInterval(function() {
+        offerTimerSeconds--;
+        if (offerTimerSeconds <= 0) {
+            clearInterval(offerTimerInterval);
+            timerEl.textContent = 'Oferta ainda disponivel';
+            timerEl.classList.add('expired');
+            return;
+        }
+        var m = Math.floor(offerTimerSeconds / 60);
+        var s = offerTimerSeconds % 60;
+        timerEl.textContent = (m < 10 ? '0' : '') + m + ':' + (s < 10 ? '0' : '') + s;
+    }, 1000);
+}
+
+function initOfferObserver() {
+    var revealTargets = [
+        document.getElementById('offerBridge'),
+        document.getElementById('offerBox'),
+        document.getElementById('offerGuarantee'),
+        document.getElementById('offerFinal'),
+        document.getElementById('offerFooter')
+    ];
+
+    var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+
+                // Animate offer list checks 1 by 1 when offer box becomes visible
+                if (entry.target.id === 'offerBox') {
+                    var items = entry.target.querySelectorAll('.offer-list li');
+                    items.forEach(function(li, i) {
+                        setTimeout(function() {
+                            li.classList.add('visible');
+                        }, i * 200);
+                    });
+                }
+            }
+        });
+    }, { threshold: 0.15 });
+
+    revealTargets.forEach(function(el) {
+        if (el) observer.observe(el);
+    });
+}
+
+// Patch renderResult to also start offer systems
+var _originalRenderResult = renderResult;
+renderResult = function() {
+    _originalRenderResult();
+    // Start timer and observer after a short delay to let DOM settle
+    setTimeout(function() {
+        initOfferObserver();
+        startOfferTimer();
+    }, 500);
+};
 </script>
 
 <div style="text-align:center;padding:24px 0 12px;font-size:12px;color:#666;">
