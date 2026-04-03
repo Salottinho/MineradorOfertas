@@ -1820,10 +1820,7 @@ function showScreen(n, direction) {
             target.classList.add('fade-in');
         }
         target.classList.add('active');
-        // So scrolla pro topo nas perguntas (1-7) e email (8)
-        if (n <= 8) {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
+        // SCROLL DESATIVADO — usuario controla
     }
     lastScreen = currentScreen;
     currentScreen = n;
