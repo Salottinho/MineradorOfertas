@@ -1100,6 +1100,13 @@
         .offer-price-new {
             font-family: var(--font-mono);
             font-weight: 700;
+            font-size: 18px;
+            color: var(--muted);
+            margin-bottom: 4px;
+        }
+        .offer-price-installments {
+            font-family: var(--font-mono);
+            font-weight: 700;
             font-size: clamp(32px, 7vw, 44px);
             color: var(--accent);
             animation: pricePulse 2s ease-in-out infinite;
@@ -1107,11 +1114,6 @@
         @keyframes pricePulse {
             0%, 100% { text-shadow: 0 0 10px rgba(163,230,53,0.3); }
             50% { text-shadow: 0 0 25px rgba(163,230,53,0.6); }
-        }
-        .offer-price-installments {
-            font-size: 14px;
-            color: var(--muted);
-            margin-top: 4px;
         }
 
         .btn-cta-offer {
@@ -1456,8 +1458,8 @@
             </ul>
             <div class="offer-pricing">
                 <div class="offer-price-old">De R$311</div>
-                <div class="offer-price-new">Por apenas R$37</div>
-                <div class="offer-price-installments">ou 4x de R$10,09</div>
+                <div class="offer-price-installments">4x de R$10,09</div>
+                <div class="offer-price-new">ou R$37 a vista</div>
             </div>
             <a href="#checkout" class="btn-cta-offer" id="ctaOfferTop" onclick="try{fbq('track','InitiateCheckout')}catch(e){}">QUERO ACESSAR O METODO AGORA</a>
         </div>
@@ -1818,7 +1820,10 @@ function showScreen(n, direction) {
             target.classList.add('fade-in');
         }
         target.classList.add('active');
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        // So scrolla pro topo nas perguntas, nao no resultado (tela 10)
+        if (n <= 9) {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
     }
     lastScreen = currentScreen;
     currentScreen = n;
