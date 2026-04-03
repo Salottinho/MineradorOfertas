@@ -76,7 +76,8 @@
             margin: 0 auto;
             padding: 20px;
             min-height: 100vh;
-            display: block;
+            display: flex;
+            flex-direction: column;
             position: relative;
             z-index: 1;
             overflow-anchor: none;
@@ -106,10 +107,9 @@
         }
         .mute-btn.muted { opacity: 0.4; }
 
-        /* ===== PROGRESS BAR — GAMIFICADA ===== */
+        /* ===== PROGRESS BAR ===== */
         .progress-wrapper {
-            position: sticky;
-            top: 0;
+            position: relative;
             background: var(--bg);
             padding: 16px 0 12px;
             z-index: 50;
@@ -219,8 +219,8 @@
 
         /* ===== SCREENS ===== */
         .screen {
+            flex: 1;
             display: none;
-            min-height: 80vh;
             flex-direction: column;
             justify-content: center;
             align-items: center;
@@ -706,8 +706,6 @@
             align-items: stretch;
             justify-content: flex-start;
             flex: none !important;
-            display: none;
-            flex-direction: column;
         }
         .result-screen.active {
             display: block !important;
@@ -2194,6 +2192,11 @@ function calculateScore() {
 
 function renderResult() {
     try { fbq('track', 'Lead'); } catch(e) {}
+    // Esconder barra de progresso e mute no resultado
+    var pw = document.getElementById('progressWrapper');
+    if (pw) pw.style.display = 'none';
+    var mb = document.getElementById('muteBtn');
+    if (mb) mb.style.display = 'none';
     var score = calculateScore();
     var level, range, badgeText, insights = [];
 
