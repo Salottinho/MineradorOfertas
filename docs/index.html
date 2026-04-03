@@ -47,6 +47,10 @@
             margin: 0; padding: 0; box-sizing: border-box;
         }
 
+        html, body {
+            overflow-anchor: none;
+            scroll-behavior: auto !important;
+        }
         body {
             background: var(--bg);
             color: var(--text);
@@ -76,6 +80,7 @@
             flex-direction: column;
             position: relative;
             z-index: 1;
+            overflow-anchor: none;
         }
 
         /* ===== MUTE BUTTON ===== */
@@ -1805,6 +1810,10 @@ function initCheckpoints() {
 
 /* ===== FUNCOES ===== */
 function showScreen(n, direction) {
+    // Salvar posicao de scroll ANTES de mudar tela
+    var savedScroll = window.scrollY;
+    var isResultOrAfter = (n >= 9);
+
     var screens = document.querySelectorAll('.screen');
     screens.forEach(function(s){
         s.classList.remove('active', 'slide-in-right', 'slide-in-left', 'fade-in');
@@ -1820,7 +1829,16 @@ function showScreen(n, direction) {
             target.classList.add('fade-in');
         }
         target.classList.add('active');
-        // SCROLL DESATIVADO — usuario controla
+
+        // Restaurar scroll pra resultado/oferta — NUNCA forcar scroll
+        if (isResultOrAfter) {
+            requestAnimationFrame(function() {
+                window.scrollTo(0, savedScroll);
+                requestAnimationFrame(function() {
+                    window.scrollTo(0, savedScroll);
+                });
+            });
+        }
     }
     lastScreen = currentScreen;
     currentScreen = n;
