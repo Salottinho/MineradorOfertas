@@ -76,8 +76,7 @@
             margin: 0 auto;
             padding: 20px;
             min-height: 100vh;
-            display: flex;
-            flex-direction: column;
+            display: block;
             position: relative;
             z-index: 1;
             overflow-anchor: none;
@@ -220,8 +219,8 @@
 
         /* ===== SCREENS ===== */
         .screen {
-            flex: 1;
             display: none;
+            min-height: 80vh;
             flex-direction: column;
             justify-content: center;
             align-items: center;
@@ -702,7 +701,17 @@
         }
 
         /* ===== TELA RESULTADO ===== */
-        .result-screen { text-align: left; align-items: stretch; justify-content: flex-start; }
+        .result-screen {
+            text-align: left;
+            align-items: stretch;
+            justify-content: flex-start;
+            flex: none !important;
+            display: none;
+            flex-direction: column;
+        }
+        .result-screen.active {
+            display: block !important;
+        }
 
         /* Curtain reveal */
         .curtain-left, .curtain-right {
@@ -1747,22 +1756,7 @@ function playCelebration() {
     });
 })();
 
-/* ===== MOBILE SCROLL INDICATOR ===== */
-(function(){
-    if (window.innerWidth > 480) return;
-    var indicator = document.getElementById('scrollIndicator');
-    function checkScroll() {
-        var scrollable = document.documentElement.scrollHeight > window.innerHeight + 50;
-        var atBottom = (window.innerHeight + window.scrollY) >= document.documentElement.scrollHeight - 50;
-        if (scrollable && !atBottom && currentScreen >= 1 && currentScreen <= 7) {
-            indicator.classList.add('visible');
-        } else {
-            indicator.classList.remove('visible');
-        }
-    }
-    window.addEventListener('scroll', checkScroll);
-    setInterval(checkScroll, 2000);
-})();
+/* ===== SCROLL INDICATOR REMOVIDO ===== */
 
 /* ===== ESTADO ===== */
 var answers = [];
@@ -1793,10 +1787,6 @@ function initCheckpoints() {
 
 /* ===== FUNCOES ===== */
 function showScreen(n, direction) {
-    // Salvar posicao de scroll ANTES de mudar tela
-    var savedScroll = window.scrollY;
-    var isResultOrAfter = (n >= 9);
-
     var screens = document.querySelectorAll('.screen');
     screens.forEach(function(s){
         s.classList.remove('active', 'slide-in-right', 'slide-in-left', 'fade-in');
@@ -1812,16 +1802,6 @@ function showScreen(n, direction) {
             target.classList.add('fade-in');
         }
         target.classList.add('active');
-
-        // Restaurar scroll pra resultado/oferta — NUNCA forcar scroll
-        if (isResultOrAfter) {
-            requestAnimationFrame(function() {
-                window.scrollTo(0, savedScroll);
-                requestAnimationFrame(function() {
-                    window.scrollTo(0, savedScroll);
-                });
-            });
-        }
     }
     lastScreen = currentScreen;
     currentScreen = n;
